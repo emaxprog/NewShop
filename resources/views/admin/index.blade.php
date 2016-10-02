@@ -10,9 +10,11 @@
                         <li><a href="{{route('admin.product.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
                                 товарами</a>
                         </li>
-                        <li><a href="/admin/category"><i class="fa fa-gamepad fa-lg"></i> Управление категориями</a>
+                        <li><a href="{{route('admin.category.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
+                                категориями</a>
                         </li>
-                        <li><a href="/admin/order"><i class="fa fa-gamepad fa-lg"></i> Управление заказами</a></li>
+                        <li><a href="{{route('admin.order.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
+                                заказами</a></li>
                         <li><a href="/admin/afisha"><i class="fa fa-gamepad fa-lg"></i> Управление афишей</a></li>
                         <li><a href="/admin/header"><i class="fa fa-gamepad fa-lg"></i> Управление шапкой</a></li>
                     </ul>

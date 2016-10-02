@@ -112,6 +112,40 @@ $(document).ready(function () {
         });
     });
 
+    $('.delete-category').click(function () {
+        var tr = $(this).parent().parent();
+        var category_id = tr.attr('data-id');
+        $.ajax({
+            url: '/admin/category/' + category_id,
+            type: 'DELETE',
+            data: {category_id: category_id},
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function () {
+                tr.remove();
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
+    $('.delete-order').click(function () {
+        var tr = $(this).parent().parent();
+        var order_id = tr.attr('data-id');
+        $.ajax({
+            url: '/admin/order/' + order_id,
+            type: 'DELETE',
+            data: {order_id: order_id},
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function () {
+                tr.remove();
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
     $(document).on('click', '#btn-remove-parameter', function () {
         var block;
         if (confirm('Удалить?')) {
@@ -173,7 +207,6 @@ $(document).ready(function () {
             }
         });
     });
-
 
 
     function total_cost() {

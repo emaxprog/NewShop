@@ -16,6 +16,8 @@ Route::post('delete_image', 'ProductController@delete_image');
 Route::get('upload', 'ProductController@upload');
 Route::resource('product', 'ProductController', ['only' => 'show']);
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::resource('order', 'OrderController');
+    Route::resource('category', 'CategoryController');
     Route::resource('product_attributes', 'ProductAttributeController');
     Route::resource('product', 'ProductController', ['except' => 'show']);
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
