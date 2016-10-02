@@ -1,0 +1,61 @@
+.container-form {
+  width: 100%;
+}
+
+.registration, .login {
+  margin: 20px auto;
+  width: 800px;
+  .form {
+    h2 {
+      color: $LIGHT_GREY_COLOR;
+    }
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: 1px solid $LIGHT_GREY_COLOR;
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: stretch;
+      width: 100%;
+      .btn {
+        align-self: center;
+      }
+    }
+    .row {
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  }
+
+  .error {
+    color: #ff0000;
+    .help-block {
+      font-size: 14px;
+    }
+  }
+
+  input[type=submit], button[type=submit] {
+    margin: 10px 0;
+    padding: 10px;
+    width: 300px;
+    border: none;
+    background: $AQUA_COLOR;
+    color: #ffffff;
+    font-size: 18px;
+    &:hover {
+      background: $DARK_GREY_COLOR;
+    }
+  }
+  input[type=text], input[type=email], input[type=password] {
+    @extend %input-blue;
+    height: 30px;
+    width: 100%;
+    border: 1px solid $LIGHT_GREY_COLOR;
+    padding: 2px;
+    font: {
+      size: 18px;
+    }
+  }
+}

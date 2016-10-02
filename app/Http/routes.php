@@ -1,0 +1,29 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+Route::auth();
+Route::post('delete_image', 'ProductController@delete_image');
+Route::get('upload', 'ProductController@upload');
+Route::resource('product', 'ProductController', ['only' => 'show']);
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::resource('product_attributes', 'ProductAttributeController');
+    Route::resource('product', 'ProductController', ['except' => 'show']);
+    Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
+});
+Route::post('checkout', ['as' => 'checkout', 'uses' => 'BasketController@store']);
+Route::get('checkout', ['as' => 'checkout', 'uses' => 'BasketController@create']);
+Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
+Route::group(['prefix' => 'catalog'], function () {
+    Route::get('category/{id}', ['as' => 'category', 'uses' => 'CatalogController@index'])->where(['id' => '[0-9]+']);
+});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index', 'middleware' => 'admin.redirect']);

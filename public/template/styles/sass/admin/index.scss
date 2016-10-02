@@ -1,0 +1,143 @@
+.center-admin {
+  width: 100%;
+}
+
+.admin, .admin-create, .admin-update, .admin-view, .admin-afisha {
+  ul.admin-menu {
+    @extend %ul-clear;
+    li {
+      margin: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: $AQUA_COLOR;
+      &:hover {
+        color: $DARK_GREY_COLOR;
+      }
+    }
+  }
+  .btn-more {
+    display: flex;
+    justify-content: center;
+    #btn-more {
+      display: flex;
+      justify-content: space-around;
+      border: none;
+      padding: 10px;
+      color: #FFFFFF;
+      background: $AQUA_COLOR;
+      font-size: 18px;
+      width: 200px;
+      &:hover {
+        background: $DARK_GREY_COLOR;
+      }
+    }
+  }
+
+  a.btn-add-product, a.btn-add-category {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    padding: 10px;
+    background: $AQUA_COLOR;
+    &:hover {
+      background: $DARK_GREY_COLOR;
+    }
+  }
+
+  a.btn-add-category {
+    width: 200px;
+  }
+
+  .table-products, .table-products-orders, .table-orders, .table-categories {
+    @extend %table-admin;
+  }
+
+  .table-orders-info {
+    border-collapse: collapse;
+    td, th {
+      padding: 0 20px;
+    }
+  }
+
+  input[type=text], select, textarea {
+    height: 30px;
+    width: 300px;
+    border: none;
+    padding: 2px;
+    background: $LIGHT_GREY_COLOR;
+    font: {
+      size: 18px;
+    }
+  }
+  textarea {
+    height: 100px;
+  }
+
+  input, select, textarea {
+    margin-bottom: 20px;
+  }
+
+  input[type=submit] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    background: $AQUA_COLOR;
+    color: #ffffff;
+    font-size: 18px;
+    &:hover {
+      background: $DARK_GREY_COLOR;
+    }
+  }
+}
+
+.admin-delete, .admin-view {
+
+  input[type=submit], .btn-back {
+    text-decoration: none;
+    padding: 10px;
+    border: none;
+    background: $AQUA_COLOR;
+    color: #ffffff;
+    font-size: 18px;
+    &:hover {
+      background: $DARK_GREY_COLOR;
+    }
+  }
+}
+
+.delete-product {
+  color: $AQUA_COLOR;
+  &:hover {
+    color: $DARK_GREY_COLOR;
+  }
+}
+
+.errors {
+  @extend %ul-clear;
+  color: #ff0000;
+  margin: 5px 20px;
+}
+
+#myModal {
+  font-size: 18px;
+  input {
+    @extend %input-blue;
+    height: 30px;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .buttons-params {
+    display: flex;
+    justify-content: space-between;
+    button {
+      @extend %button;
+      width: 100%;
+      height: 40px;
+      margin: 10px;
+    }
+  }
+}
