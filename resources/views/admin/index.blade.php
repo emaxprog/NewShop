@@ -15,8 +15,10 @@
                         </li>
                         <li><a href="{{route('admin.order.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
                                 заказами</a></li>
-                        <li><a href="/admin/afisha"><i class="fa fa-gamepad fa-lg"></i> Управление афишей</a></li>
-                        <li><a href="/admin/header"><i class="fa fa-gamepad fa-lg"></i> Управление шапкой</a></li>
+                        <li><a href="{{route('admin.afisha.edit')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
+                                афишей</a></li>
+                        <li><a href="{{route('admin.header.edit')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
+                                шапкой</a></li>
                     </ul>
                 </div>
             </div>

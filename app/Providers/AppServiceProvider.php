@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Category;
+use App\Header;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Category $categoryModel)
     {
         $categories = $categoryModel->getCategories();
+        $header = Header::find(1);
         view()->share('categories', $categories);
+        view()->share('header', $header);
     }
 
     /**

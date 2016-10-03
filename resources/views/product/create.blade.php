@@ -39,7 +39,7 @@
                     <input type="file" name="images[]"><br>
 
                     <label>Дополнительные изображения</label><br>
-                    <button type="button" id="add-images"><i class="fa fa-plus"></i></button>
+                    <button type="button" id="add-images-products"><i class="fa fa-plus"></i></button>
                     <br>
 
                     <label>Детальное описание</label><br>

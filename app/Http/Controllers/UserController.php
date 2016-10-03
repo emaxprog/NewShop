@@ -2,32 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Afisha;
-use App\Category;
-use App\Header;
-use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Auth;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Product $productModel)
+    public function index()
     {
-        $latestProducts = $productModel->getLatestProducts();
-        $recommendedProducts = $productModel->getRecommendedProducts();
-        $images = Afisha::getImages();
+        $user = Auth::user();
         $data = [
-            'latestProducts' => $latestProducts,
-            'recommendedProducts' => $recommendedProducts,
-            'images' => $images,
+            'user' => $user
         ];
-        return view('home', $data);
+        return view('user.index', $data);
     }
 
     /**
@@ -70,7 +64,12 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        $data = [
+            'user' => $user
+        ];
+
+        return view('user.edit', $data);
     }
 
     /**
@@ -82,7 +81,14 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->surname = $request->surname;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->save();
+
+        return redirect()->route('user.index');
     }
 
     /**

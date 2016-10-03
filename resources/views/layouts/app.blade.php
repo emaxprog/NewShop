@@ -24,15 +24,15 @@
     <div class="mid">
         <header class="header">
             <div class="logotype">
-                <img src="/template/images/site/logotype.png" alt="Логотип" title="Логотип">
+                <img src="{{$header->logotype}}" alt="Логотип" title="Логотип">
             </div>
             <div class="contacts">
                 <ul>
                     <li>
-                        <i class="fa fa-phone fa-lg"></i>
+                        <i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}
                     </li>
                     <li>
-                        <i class="fa fa-phone fa-lg"></i>
+                        <i class="fa fa-phone fa-lg"></i> {!! $header->phone2 !!}
                     </li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                         </li>
                     @else
                         <li>
-                            <a href="{{url('/cabinet')}}"><i class="fa fa-user fa-lg"></i> Личный кабинет</a>
+                            <a href="{{route('user.index')}}"><i class="fa fa-user fa-lg"></i> Личный кабинет</a>
                         </li>
                         <li>
                             <a href="{{url('/logout')}}"><i class="fa fa-unlock fa-lg"></i> Выйти</a>
@@ -121,8 +121,8 @@
                 <div class="f-contacts">
                     <h2>Контакты</h2>
                     <ul>
-                        <li>Тел: 8(900)000-00-00</li>
-                        <li>Адрес:</li>
+                        <li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>
+                        <li><i class="fa fa-map-marker fa-lg"></i> {!! $header->address !!}</li>
                     </ul>
                 </div>
             </div>

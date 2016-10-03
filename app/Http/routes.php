@@ -15,7 +15,13 @@ Route::auth();
 Route::post('delete_image', 'ProductController@delete_image');
 Route::get('upload', 'ProductController@upload');
 Route::resource('product', 'ProductController', ['only' => 'show']);
+Route::resource('user', 'UserController');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::put('header/update', ['as' => 'admin.header.update', 'uses' => 'HeaderController@update']);
+    Route::get('header/edit', ['as' => 'admin.header.edit', 'uses' => 'HeaderController@edit']);
+    Route::delete('afisha/destroy', 'AfishaController@destroy');
+    Route::get('afisha/edit', ['as' => 'admin.afisha.edit', 'uses' => 'AfishaController@edit']);
+    Route::put('afisha/update', ['as' => 'admin.afisha.update', 'uses' => 'AfishaController@update']);
     Route::resource('order', 'OrderController');
     Route::resource('category', 'CategoryController');
     Route::resource('product_attributes', 'ProductAttributeController');

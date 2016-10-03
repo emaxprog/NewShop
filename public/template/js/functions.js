@@ -180,9 +180,10 @@ $(document).ready(function () {
         });
     });
 
-    $('#add-images').click(function () {
+    $('#add-images-products').click(function () {
+        var imgs = $('img');
         var images = $('input[name="images[]"]');
-        if (images.length == 11)
+        if (imgs.length + images.length == 11)
             return;
         var image = $('input[name="images[]"]:first').clone();
         $(this).after(image);
@@ -208,6 +209,33 @@ $(document).ready(function () {
         });
     });
 
+    $('#add-image-afisha').click(function () {
+        var imgs = $('img');
+        var images = $('input[name="images[]"]');
+        if (imgs.length + images.length == 10)
+            return;
+        var image = '<input type="file" name="images[]">';
+        $(this).after(image);
+        $(this).after('<br>');
+    });
+
+    $('.delete-image-afisha').click(function () {
+        var div = $(this).parent();
+        var img = $(this).prev();
+        var src = img.attr('src');
+        $.ajax({
+            url: '/admin/afisha/destroy',
+            type: 'DELETE',
+            data: {src: src},
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function (data) {
+                div.remove();
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
 
     function total_cost() {
         var order = JSON.parse($.cookie('basket'));

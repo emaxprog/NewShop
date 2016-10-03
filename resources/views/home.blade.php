@@ -4,7 +4,7 @@
     @include('include.left')
     <div class="center">
         <div class="afisha">
-            {{--@include('include.slider')--}}
+            @include('include.slider')
         </div>
         <div class="latest-products">
             <h1>Последние товары</h1>
