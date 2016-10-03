@@ -46,5 +46,17 @@
           color: #ffffff; }
           .wrapper-content > .mid .center #tabs ul li a:hover {
             background: #303030; }
+  .wrapper-content > .mid .center .table-params {
+    width: 100%;
+    border-collapse: collapse; }
+    .wrapper-content > .mid .center .table-params tr:nth-child(odd) {
+      background: #cccccc; }
+    .wrapper-content > .mid .center .table-params tr td {
+      font-size: 18px;
+      padding: 5px; }
+  .wrapper-content > .mid .center .ui-tabs-nav {
+    border: none; }
+    .wrapper-content > .mid .center .ui-tabs-nav .ui-tabs-tab {
+      border: none; }
 
 /*# sourceMappingURL=styles.css.map */

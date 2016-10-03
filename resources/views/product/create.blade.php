@@ -65,7 +65,7 @@
                     </div>
                     <div class="row">
                         <label>Дополнительные изображения</label>
-                        <button type="button" id="add-images-products"><i class="fa fa-plus"></i></button>
+                        <button type="button" class="add-images-products"><i class="fa fa-plus"></i></button>
                     </div>
                     <div class="row {{$errors->has('description')?'error':''}}">
                         <label>Детальное описание</label>

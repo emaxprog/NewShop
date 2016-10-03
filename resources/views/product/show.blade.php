@@ -1,4 +1,4 @@
-@extends('layouts.product')
+@extends('layouts.app')
 @section('content')
     <div class="center">
         <div class="about-product">
@@ -11,8 +11,13 @@
                     <li><b>Наличие:</b> {!! $product->availability !!}</li>
                     <li><b>Производитель:</b> {!! $product->manufacturer_id !!}</li>
                 </ul>
-                <a href="#" data-id="{{$product->id}}" class="btn-add-to-cart"><i
-                            class="fa fa-shopping-cart fa-2x"></i> Добавить в корзину</a>
+                <div class="button-add-basket">
+                    <a href="" onclick="return false" data-id="{{$product->id}}"
+                       data-name="{{$product->name}}"
+                       data-price="{{$product->price}}"
+                       class="buy-btn"><i
+                                class="fa fa-cart-plus fa-2x"></i>Добавить в корзину</a>
+                </div>
             </section>
         </div>
 
@@ -25,10 +30,10 @@
                 <li><a href="#question-answer">Вопрос-ответ</a></li>
             </ul>
             <div id="about">
-                <h3>Краткое описание</h3>
+                <h2>Краткое описание</h2>
                 <p>{!! $product->description !!}</p>
-                <h3>Характеристики</h3>
-                <table>
+                <h2>Характеристики</h2>
+                <table class="table-params">
                     @foreach($params as $param)
                         <tr>
                             <td>{!! $param->name !!}</td>

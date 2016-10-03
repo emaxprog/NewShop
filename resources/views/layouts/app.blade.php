@@ -10,14 +10,26 @@
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">
     <script rel="script" type="text/javascript" src="/template/js/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/slider/js/jssor.slider-21.1.5.mini.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/slider/slider.js"></script>
-    <link rel="stylesheet" type="text/css" href="/template/js/slider/slider.css">
     <script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/menu-select.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/functions.min.js"></script>
+    <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
+
+    @if(isset($params))
+        <script rel="script" type="text/javascript"
+                src="/template/js/image-gallery-slider/js/jssor.slider-21.1.5.mini.js"></script>
+        <script rel="script" type="text/javascript"
+                src="/template/js/image-gallery-slider/image_gallery_slider.js"></script>
+        <link rel="stylesheet" type="text/css" href="/template/js/image-gallery-slider/image_gallery_slider.css">
+        <link rel="stylesheet" type="text/css" href="/template/styles/css/product/styles.css">
+    @else
+        <script rel="script" type="text/javascript" src="/template/js/slider/js/jssor.slider-21.1.5.mini.js"></script>
+        <script rel="script" type="text/javascript" src="/template/js/slider/slider.js"></script>
+        <link rel="stylesheet" type="text/css" href="/template/js/slider/slider.css">
+    @endif
+
+
 </head>
 <body>
 <div class="wrapper-header">
@@ -104,6 +116,9 @@
                             </li>
                             <li>
                                 <a href="about.php">О компании</a>
+                            </li>
+                            <li>
+                                @include('layouts.popup')
                             </li>
                             <li>
                                 <a href="guarantee.php">Гарантия</a>

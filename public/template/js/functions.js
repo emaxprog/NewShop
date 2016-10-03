@@ -182,7 +182,7 @@ $(document).ready(function () {
         });
     });
 
-    $('#add-images-products').click(function () {
+    $('.add-images-products').click(function () {
         var imgs = $('img');
         var images = $('input[name="images[]"]');
         if (imgs.length + images.length == 11)
