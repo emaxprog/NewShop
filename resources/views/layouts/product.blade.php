@@ -11,14 +11,13 @@
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">
     <script rel="script" type="text/javascript" src="/template/js/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/fixed_menu.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/fixed_hover.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/tabs.js"></script>
+    <script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>
+    <script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>
+    <script rel="script" type="text/javascript" src="/template/js/tabs.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/image-gallery-slider/js/jssor.slider-21.1.5.mini.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/image-gallery-slider/image_gallery_slider.js"></script>
     <link rel="stylesheet" type="text/css" href="/template/js/image-gallery-slider/image_gallery_slider.css">
-    <script rel="script" type="text/javascript" src="/template/js/menu-select.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
+    <script rel="script" type="text/javascript" src="/template/js/functions.min.js"></script>
 </head>
 <body>
 <div class="wrapper-header">

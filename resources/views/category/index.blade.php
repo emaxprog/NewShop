@@ -24,7 +24,7 @@
                         <td>{!! \App\Category::getVisivilityText($category->visibility) !!}</td>
                         <td><a href="{{route('admin.category.edit',['id'=>$category->id])}}"
                                title="Редактировать"><i class="fa fa-edit fa-lg"></i></a></td>
-                        <td><span class="delete-category"><i class="fa fa-trash-o fa-lg"></i></span></td>
+                        <td><span class="delete delete-category"><i class="fa fa-trash-o fa-lg"></i></span></td>
                     </tr>
                 @endforeach
             </table>

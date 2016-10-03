@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$AQUA_COLOR".
-        on line 13 of sass/admin/index.scss
+        on line 17 of sass/admin/index.scss
 
-8:     li {
-9:       margin: 10px;
-10:     }
-11:     a {
-12:       text-decoration: none;
-13:       color: $AQUA_COLOR;
-14:       &:hover {
-15:         color: $DARK_GREY_COLOR;
-16:       }
-17:     }
-18:   }
+12:     li {
+13:       margin: 10px;
+14:     }
+15:     a {
+16:       text-decoration: none;
+17:       color: $AQUA_COLOR;
+18:       &:hover {
+19:         color: $DARK_GREY_COLOR;
+20:       }
+21:     }
+22:   }
 
 Backtrace:
-sass/admin/index.scss:13
+sass/admin/index.scss:17
 /var/lib/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
 /var/lib/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -89,4 +89,4 @@ sass/admin/index.scss:13
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$AQUA_COLOR\".\A         on line 13 of sass/admin/index.scss\A \A 8:     li {\A 9:       margin: 10px;\A 10:     }\A 11:     a {\A 12:       text-decoration: none;\A 13:       color: $AQUA_COLOR;\A 14:       &:hover {\A 15:         color: $DARK_GREY_COLOR;\A 16:       }\A 17:     }\A 18:   }"; }
+  content: "Error: Undefined variable: \"$AQUA_COLOR\".\A         on line 17 of sass/admin/index.scss\A \A 12:     li {\A 13:       margin: 10px;\A 14:     }\A 15:     a {\A 16:       text-decoration: none;\A 17:       color: $AQUA_COLOR;\A 18:       &:hover {\A 19:         color: $DARK_GREY_COLOR;\A 20:       }\A 21:     }\A 22:   }"; }

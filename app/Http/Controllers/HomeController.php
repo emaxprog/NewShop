@@ -95,4 +95,19 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function feedback(Request $request)
+    {
+        $userEmail = $request->email;
+        $userName = $request->name;
+        $userPhone = $request->phone;
+        $userMessage = $request->message;
+        $adminEmail = 'alexandr@localhost';
+        $subject = 'Тема';
+        $message = "От кого:" . $userEmail . "\n\nТел:" . $userPhone . "\n\nСообщение:" . $userMessage;
+        $headers = "Content-type:text/plain; charset=utf-8";
+
+        mail($adminEmail, $subject, $message, $headers);
+        return 'Сообщение отправлено!';
+    }
 }

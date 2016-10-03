@@ -5,24 +5,24 @@
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -48,24 +48,24 @@ div.mid {
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -126,24 +126,24 @@ div.mid {
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -184,24 +184,24 @@ div.mid {
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -301,14 +301,14 @@ div.mid {
   .feedback-content .feedback-button, .row .feedback-button {
     display: flex;
     justify-content: center; }
-    .feedback-content .feedback-button #submitbtn, .row .feedback-button #submitbtn {
+    .feedback-content .feedback-button #feedback-btn, .row .feedback-button #feedback-btn {
       border: none;
       padding: 10px;
       text-transform: uppercase;
       background: #00a2e8;
       color: #ffffff;
       font-size: 16px; }
-      .feedback-content .feedback-button #submitbtn:hover, .row .feedback-button #submitbtn:hover {
+      .feedback-content .feedback-button #feedback-btn:hover, .row .feedback-button #feedback-btn:hover {
         background: #303030; }
 
 .label {
@@ -357,6 +357,11 @@ div.mid {
   .wrapper-content > .mid .center {
     flex-basis: 940px; }
 
+.error {
+  color: #ff0000; }
+  .error .help-block {
+    font-size: 14px; }
+
 /*Меню товаров*/
 .contacts > ul, .authorization > ul, .wrapper-menu .menu > ul, .menu-products ul, .block .about-product ul, ul.pagination, .f-nav > .f-menu ul, .f-contacts ul, .cart .brief-info > ul, .admin ul.admin-menu, .admin-create ul.admin-menu, .admin-update ul.admin-menu, .admin-view ul.admin-menu, .admin-afisha ul.admin-menu, .errors, .cabinet-menu {
   list-style: none;
@@ -364,24 +369,24 @@ div.mid {
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -506,24 +511,24 @@ div.mid {
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -640,24 +645,24 @@ ul.pagination {
   margin: 0;
   padding: 0; }
 
-.menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, .cart textarea:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
 
-.cart .table-cart, .admin .table-products, .admin .table-products-orders, .admin .table-orders, .admin .table-categories, .admin-create .table-products, .admin-create .table-products-orders, .admin-create .table-orders, .admin-create .table-categories, .admin-update .table-products, .admin-update .table-products-orders, .admin-update .table-orders, .admin-update .table-categories, .admin-view .table-products, .admin-view .table-products-orders, .admin-view .table-orders, .admin-view .table-categories, .admin-afisha .table-products, .admin-afisha .table-products-orders, .admin-afisha .table-orders, .admin-afisha .table-categories {
+.cart .table-cart, .table-products, .table-products-orders, .table-orders, .table-categories {
   width: 100%;
   border-spacing: 70px 0px;
   margin: 20px 0; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th, .cart .table-cart td, .admin .table-products td, .admin .table-products-orders td, .admin .table-orders td, .admin .table-categories td, .admin-create .table-products td, .admin-create .table-products-orders td, .admin-create .table-orders td, .admin-create .table-categories td, .admin-update .table-products td, .admin-update .table-products-orders td, .admin-update .table-orders td, .admin-update .table-categories td, .admin-view .table-products td, .admin-view .table-products-orders td, .admin-view .table-orders td, .admin-view .table-categories td, .admin-afisha .table-products td, .admin-afisha .table-products-orders td, .admin-afisha .table-orders td, .admin-afisha .table-categories td {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th, .cart .table-cart td, .table-products td, .table-products-orders td, .table-orders td, .table-categories td {
     padding: 10px;
     text-align: center; }
-    .cart .table-cart th a, .admin .table-products th a, .admin .table-products-orders th a, .admin .table-orders th a, .admin .table-categories th a, .admin-create .table-products th a, .admin-create .table-products-orders th a, .admin-create .table-orders th a, .admin-create .table-categories th a, .admin-update .table-products th a, .admin-update .table-products-orders th a, .admin-update .table-orders th a, .admin-update .table-categories th a, .admin-view .table-products th a, .admin-view .table-products-orders th a, .admin-view .table-orders th a, .admin-view .table-categories th a, .admin-afisha .table-products th a, .admin-afisha .table-products-orders th a, .admin-afisha .table-orders th a, .admin-afisha .table-categories th a, .cart .table-cart td a, .admin .table-products td a, .admin .table-products-orders td a, .admin .table-orders td a, .admin .table-categories td a, .admin-create .table-products td a, .admin-create .table-products-orders td a, .admin-create .table-orders td a, .admin-create .table-categories td a, .admin-update .table-products td a, .admin-update .table-products-orders td a, .admin-update .table-orders td a, .admin-update .table-categories td a, .admin-view .table-products td a, .admin-view .table-products-orders td a, .admin-view .table-orders td a, .admin-view .table-categories td a, .admin-afisha .table-products td a, .admin-afisha .table-products-orders td a, .admin-afisha .table-orders td a, .admin-afisha .table-categories td a {
+    .cart .table-cart th a, .table-products th a, .table-products-orders th a, .table-orders th a, .table-categories th a, .cart .table-cart td a, .table-products td a, .table-products-orders td a, .table-orders td a, .table-categories td a {
       text-decoration: none;
       color: #00a2e8; }
-      .cart .table-cart th a:hover, .admin .table-products th a:hover, .admin .table-products-orders th a:hover, .admin .table-orders th a:hover, .admin .table-categories th a:hover, .admin-create .table-products th a:hover, .admin-create .table-products-orders th a:hover, .admin-create .table-orders th a:hover, .admin-create .table-categories th a:hover, .admin-update .table-products th a:hover, .admin-update .table-products-orders th a:hover, .admin-update .table-orders th a:hover, .admin-update .table-categories th a:hover, .admin-view .table-products th a:hover, .admin-view .table-products-orders th a:hover, .admin-view .table-orders th a:hover, .admin-view .table-categories th a:hover, .admin-afisha .table-products th a:hover, .admin-afisha .table-products-orders th a:hover, .admin-afisha .table-orders th a:hover, .admin-afisha .table-categories th a:hover, .cart .table-cart td a:hover, .admin .table-products td a:hover, .admin .table-products-orders td a:hover, .admin .table-orders td a:hover, .admin .table-categories td a:hover, .admin-create .table-products td a:hover, .admin-create .table-products-orders td a:hover, .admin-create .table-orders td a:hover, .admin-create .table-categories td a:hover, .admin-update .table-products td a:hover, .admin-update .table-products-orders td a:hover, .admin-update .table-orders td a:hover, .admin-update .table-categories td a:hover, .admin-view .table-products td a:hover, .admin-view .table-products-orders td a:hover, .admin-view .table-orders td a:hover, .admin-view .table-categories td a:hover, .admin-afisha .table-products td a:hover, .admin-afisha .table-products-orders td a:hover, .admin-afisha .table-orders td a:hover, .admin-afisha .table-categories td a:hover {
+      .cart .table-cart th a:hover, .table-products th a:hover, .table-products-orders th a:hover, .table-orders th a:hover, .table-categories th a:hover, .cart .table-cart td a:hover, .table-products td a:hover, .table-products-orders td a:hover, .table-orders td a:hover, .table-categories td a:hover {
         color: #303030; }
-  .cart .table-cart th, .admin .table-products th, .admin .table-products-orders th, .admin .table-orders th, .admin .table-categories th, .admin-create .table-products th, .admin-create .table-products-orders th, .admin-create .table-orders th, .admin-create .table-categories th, .admin-update .table-products th, .admin-update .table-products-orders th, .admin-update .table-orders th, .admin-update .table-categories th, .admin-view .table-products th, .admin-view .table-products-orders th, .admin-view .table-orders th, .admin-view .table-categories th, .admin-afisha .table-products th, .admin-afisha .table-products-orders th, .admin-afisha .table-orders th, .admin-afisha .table-categories th {
+  .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
 #myModal .buttons-params button {
@@ -754,6 +759,8 @@ ul.pagination {
 .center-admin {
   width: 100%; }
 
+.admin h2, .admin-create h2, .admin-update h2, .admin-view h2, .admin-afisha h2 {
+  text-align: center; }
 .admin ul.admin-menu li, .admin-create ul.admin-menu li, .admin-update ul.admin-menu li, .admin-view ul.admin-menu li, .admin-afisha ul.admin-menu li {
   margin: 10px; }
 .admin ul.admin-menu a, .admin-create ul.admin-menu a, .admin-update ul.admin-menu a, .admin-view ul.admin-menu a, .admin-afisha ul.admin-menu a {
@@ -761,10 +768,54 @@ ul.pagination {
   color: #00a2e8; }
   .admin ul.admin-menu a:hover, .admin-create ul.admin-menu a:hover, .admin-update ul.admin-menu a:hover, .admin-view ul.admin-menu a:hover, .admin-afisha ul.admin-menu a:hover {
     color: #303030; }
-.admin .btn-more, .admin-create .btn-more, .admin-update .btn-more, .admin-view .btn-more, .admin-afisha .btn-more {
+.admin .admin-form, .admin-create .admin-form, .admin-update .admin-form, .admin-view .admin-form, .admin-afisha .admin-form {
   display: flex;
   justify-content: center; }
-  .admin .btn-more #btn-more, .admin-create .btn-more #btn-more, .admin-update .btn-more #btn-more, .admin-view .btn-more #btn-more, .admin-afisha .btn-more #btn-more {
+  .admin .admin-form .row, .admin-create .admin-form .row, .admin-update .admin-form .row, .admin-view .admin-form .row, .admin-afisha .admin-form .row {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 5px; }
+  .admin .admin-form input[type=text], .admin .admin-form select, .admin .admin-form textarea, .admin-create .admin-form input[type=text], .admin-create .admin-form select, .admin-create .admin-form textarea, .admin-update .admin-form input[type=text], .admin-update .admin-form select, .admin-update .admin-form textarea, .admin-view .admin-form input[type=text], .admin-view .admin-form select, .admin-view .admin-form textarea, .admin-afisha .admin-form input[type=text], .admin-afisha .admin-form select, .admin-afisha .admin-form textarea {
+    height: 30px;
+    width: 600px;
+    font-size: 18px; }
+  .admin .admin-form textarea, .admin-create .admin-form textarea, .admin-update .admin-form textarea, .admin-view .admin-form textarea, .admin-afisha .admin-form textarea {
+    height: 100px; }
+  .admin .admin-form select, .admin-create .admin-form select, .admin-update .admin-form select, .admin-view .admin-form select, .admin-afisha .admin-form select {
+    background: none; }
+  .admin .admin-form button, .admin-create .admin-form button, .admin-update .admin-form button, .admin-view .admin-form button, .admin-afisha .admin-form button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #00a2e8;
+    border: none;
+    padding: 10px; }
+    .admin .admin-form button:hover, .admin-create .admin-form button:hover, .admin-update .admin-form button:hover, .admin-view .admin-form button:hover, .admin-afisha .admin-form button:hover {
+      background: #303030; }
+  .admin .admin-form .btn-remove-parameter, .admin-create .admin-form .btn-remove-parameter, .admin-update .admin-form .btn-remove-parameter, .admin-view .admin-form .btn-remove-parameter, .admin-afisha .admin-form .btn-remove-parameter {
+    background: #ff0000; }
+  .admin .admin-form .form-param input[type='text'], .admin .admin-form .form-param select, .admin-create .admin-form .form-param input[type='text'], .admin-create .admin-form .form-param select, .admin-update .admin-form .form-param input[type='text'], .admin-update .admin-form .form-param select, .admin-view .admin-form .form-param input[type='text'], .admin-view .admin-form .form-param select, .admin-afisha .admin-form .form-param input[type='text'], .admin-afisha .admin-form .form-param select {
+    width: 300px; }
+  .admin .admin-form input, .admin .admin-form select, .admin .admin-form textarea, .admin-create .admin-form input, .admin-create .admin-form select, .admin-create .admin-form textarea, .admin-update .admin-form input, .admin-update .admin-form select, .admin-update .admin-form textarea, .admin-view .admin-form input, .admin-view .admin-form select, .admin-view .admin-form textarea, .admin-afisha .admin-form input, .admin-afisha .admin-form select, .admin-afisha .admin-form textarea {
+    margin-bottom: 20px; }
+  .admin .admin-form input[type=submit], .admin-create .admin-form input[type=submit], .admin-update .admin-form input[type=submit], .admin-view .admin-form input[type=submit], .admin-afisha .admin-form input[type=submit] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    background: #00a2e8;
+    color: #ffffff;
+    font-size: 18px; }
+    .admin .admin-form input[type=submit]:hover, .admin-create .admin-form input[type=submit]:hover, .admin-update .admin-form input[type=submit]:hover, .admin-view .admin-form input[type=submit]:hover, .admin-afisha .admin-form input[type=submit]:hover {
+      background: #303030; }
+  .admin .admin-form .delete-image, .admin-create .admin-form .delete-image, .admin-update .admin-form .delete-image, .admin-view .admin-form .delete-image, .admin-afisha .admin-form .delete-image {
+    background: #ff0000; }
+
+.btn-more {
+  display: flex;
+  justify-content: center; }
+  .btn-more #btn-more {
     display: flex;
     justify-content: space-around;
     border: none;
@@ -773,9 +824,10 @@ ul.pagination {
     background: #00a2e8;
     font-size: 18px;
     width: 200px; }
-    .admin .btn-more #btn-more:hover, .admin-create .btn-more #btn-more:hover, .admin-update .btn-more #btn-more:hover, .admin-view .btn-more #btn-more:hover, .admin-afisha .btn-more #btn-more:hover {
+    .btn-more #btn-more:hover {
       background: #303030; }
-.admin a.btn-add-product, .admin a.btn-add-category, .admin-create a.btn-add-product, .admin-create a.btn-add-category, .admin-update a.btn-add-product, .admin-update a.btn-add-category, .admin-view a.btn-add-product, .admin-view a.btn-add-category, .admin-afisha a.btn-add-product, .admin-afisha a.btn-add-category {
+
+a.btn-add-product, a.btn-add-category {
   text-decoration: none;
   color: white;
   display: flex;
@@ -784,34 +836,16 @@ ul.pagination {
   width: 150px;
   padding: 10px;
   background: #00a2e8; }
-  .admin a.btn-add-product:hover, .admin a.btn-add-category:hover, .admin-create a.btn-add-product:hover, .admin-create a.btn-add-category:hover, .admin-update a.btn-add-product:hover, .admin-update a.btn-add-category:hover, .admin-view a.btn-add-product:hover, .admin-view a.btn-add-category:hover, .admin-afisha a.btn-add-product:hover, .admin-afisha a.btn-add-category:hover {
+  a.btn-add-product:hover, a.btn-add-category:hover {
     background: #303030; }
-.admin a.btn-add-category, .admin-create a.btn-add-category, .admin-update a.btn-add-category, .admin-view a.btn-add-category, .admin-afisha a.btn-add-category {
+
+a.btn-add-category {
   width: 200px; }
-.admin .table-orders-info, .admin-create .table-orders-info, .admin-update .table-orders-info, .admin-view .table-orders-info, .admin-afisha .table-orders-info {
+
+.table-orders-info {
   border-collapse: collapse; }
-  .admin .table-orders-info td, .admin .table-orders-info th, .admin-create .table-orders-info td, .admin-create .table-orders-info th, .admin-update .table-orders-info td, .admin-update .table-orders-info th, .admin-view .table-orders-info td, .admin-view .table-orders-info th, .admin-afisha .table-orders-info td, .admin-afisha .table-orders-info th {
+  .table-orders-info td, .table-orders-info th {
     padding: 0 20px; }
-.admin input[type=text], .admin select, .admin textarea, .admin-create input[type=text], .admin-create select, .admin-create textarea, .admin-update input[type=text], .admin-update select, .admin-update textarea, .admin-view input[type=text], .admin-view select, .admin-view textarea, .admin-afisha input[type=text], .admin-afisha select, .admin-afisha textarea {
-  height: 30px;
-  width: 300px;
-  border: none;
-  padding: 2px;
-  background: #cccccc;
-  font-size: 18px; }
-.admin textarea, .admin-create textarea, .admin-update textarea, .admin-view textarea, .admin-afisha textarea {
-  height: 100px; }
-.admin input, .admin select, .admin textarea, .admin-create input, .admin-create select, .admin-create textarea, .admin-update input, .admin-update select, .admin-update textarea, .admin-view input, .admin-view select, .admin-view textarea, .admin-afisha input, .admin-afisha select, .admin-afisha textarea {
-  margin-bottom: 20px; }
-.admin input[type=submit], .admin-create input[type=submit], .admin-update input[type=submit], .admin-view input[type=submit], .admin-afisha input[type=submit] {
-  padding: 10px;
-  width: 300px;
-  border: none;
-  background: #00a2e8;
-  color: #ffffff;
-  font-size: 18px; }
-  .admin input[type=submit]:hover, .admin-create input[type=submit]:hover, .admin-update input[type=submit]:hover, .admin-view input[type=submit]:hover, .admin-afisha input[type=submit]:hover {
-    background: #303030; }
 
 .admin-delete input[type=submit], .admin-delete .btn-back, .admin-view input[type=submit], .admin-view .btn-back {
   text-decoration: none;
@@ -827,6 +861,16 @@ ul.pagination {
   color: #00a2e8; }
   .delete-product:hover {
     color: #303030; }
+
+.img-afisha {
+  position: relative; }
+  .img-afisha .delete-image-afisha {
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2; }
+  .img-afisha button.delete-image-afisha, .img-afisha .btn-remove-parameter {
+    background: #ff0000; }
 
 .errors {
   color: #ff0000;
@@ -845,6 +889,14 @@ ul.pagination {
       width: 100%;
       height: 40px;
       margin: 10px; }
+
+span.delete {
+  color: #00a2e8; }
+  span.delete:hover {
+    color: #303030; }
+
+span.delete, .btn {
+  cursor: pointer; }
 
 .cabinet-menu {
   margin: 20px 0; }
@@ -899,10 +951,6 @@ ul.pagination {
     .registration .form .row, .login .form .row {
       margin-bottom: 20px;
       padding: 0; }
-  .registration .error, .login .error {
-    color: #ff0000; }
-    .registration .error .help-block, .login .error .help-block {
-      font-size: 14px; }
   .registration input[type=submit], .registration button[type=submit], .login input[type=submit], .login button[type=submit] {
     margin: 10px 0;
     padding: 10px;

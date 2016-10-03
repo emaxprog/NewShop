@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('#tabs').tabs();
+
     $('.buy-btn').click(function () {
         var productId = parseInt($(this).attr('data-id'));
         var name = $(this).attr('data-name');

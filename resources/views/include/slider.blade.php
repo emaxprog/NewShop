@@ -3,7 +3,7 @@
     <!-- Loading Screen -->
     <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
         <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-        <div style="position:absolute;display:block;background:url('../../../public/template/js/slider/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        <div style="position:absolute;display:block;background:url('/template/js/slider/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
     </div>
     <div class="slides" data-u="slides"
          style="cursor: default; position: relative; top: 0px; left: 0px; width: 940px; height: 300px; overflow: hidden;">

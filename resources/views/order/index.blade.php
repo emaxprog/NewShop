@@ -25,7 +25,7 @@
                                         class="fa fa-eye fa-lg"></i></a></td>
                         <td><a href="{{route('admin.order.edit',['id'=>$order->id])}}" title="Редактировать"><i
                                         class="fa fa-edit fa-lg"></i></a></td>
-                        <td><span class="delete-order"><i class="fa fa-trash-o fa-lg"></i></span></td>
+                        <td><span class="delete delete-order"><i class="fa fa-trash-o fa-lg"></i></span></td>
                     </tr>
                 @endforeach
             </table>

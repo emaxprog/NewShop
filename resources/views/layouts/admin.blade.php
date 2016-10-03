@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" id="csrf-token" content="{{csrf_token()}}">
     <title>Интернет-магазин</title>
-    <link rel="icon" type="image/x-icon" href="/upload/logotype/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{$header->favicon}}">
     <link rel="stylesheet" type="text/css" href="/template/styles/font-awesome-4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/template/styles/css/styles.css">
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery-3.1.0.js"></script>
-    <link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">
-    <script rel="script" type="text/javascript" src="/template/js/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/slider/js/jssor.slider-21.1.5.mini.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/slider/slider.js"></script>
-    <link rel="stylesheet" type="text/css" href="/template/js/slider/slider.css">
-    <script rel="script" type="text/javascript" src="/template/js/fixed_menu.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/fixed_hover.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/tabs.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/addProductToCart.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/feedback.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/uploadProducts.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
 </head>

@@ -22,6 +22,14 @@ class HeaderController extends Controller
 
     public function update(Request $request)
     {
+        $this->validate($request, [
+            'phone1' => 'required|integer',
+            'phone2' => 'required|integer',
+            'address' => 'required|min:10',
+            'logotype' => 'image',
+            'favicon' => 'image'
+        ]);
+
         $root = $_SERVER['DOCUMENT_ROOT'];
         $header = Header::find(1);
         $header->phone1 = $request->phone1;

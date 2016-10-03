@@ -52,6 +52,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'code' => 'required|integer',
+            'price' => 'required|integer'
+        ]);
+
         $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
         $pathsToImages = [];
         foreach ($request->file('images') as $image) {
@@ -142,6 +148,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id, ProductAttributeValue $pavModel)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'code' => 'required|integer',
+            'price' => 'required|integer'
+        ]);
+
         $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
         $pathToImages = [];
 

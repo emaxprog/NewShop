@@ -47,6 +47,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'weight' => 'required|integer'
+        ]);
+
         Category::create($request->all());
 
         return redirect()->route('admin.category.index');
@@ -90,13 +95,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'weight' => 'required|integer'
+        ]);
+
         $category = Category::find($id);
         $category->name = $request->name;
         $category->parent_id = $request->parent_id;
         $category->weight = $request->weight;
         $category->visibility = $request->visibility;
         $category->save();
-        
+
         return redirect()->route('admin.category.index');
     }
 

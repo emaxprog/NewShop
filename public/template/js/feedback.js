@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#submitbtn').click(function () {
+    $('#feedback-btn').click(function () {
         $('.error').html('');
         var name = $('#name').val();
         var email = $('#email').val();

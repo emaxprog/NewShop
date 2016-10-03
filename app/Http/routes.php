@@ -16,6 +16,7 @@ Route::post('delete_image', 'ProductController@delete_image');
 Route::get('upload', 'ProductController@upload');
 Route::resource('product', 'ProductController', ['only' => 'show']);
 Route::resource('user', 'UserController');
+Route::post('feedback', 'HomeController@feedback');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::put('header/update', ['as' => 'admin.header.update', 'uses' => 'HeaderController@update']);
     Route::get('header/edit', ['as' => 'admin.header.edit', 'uses' => 'HeaderController@edit']);

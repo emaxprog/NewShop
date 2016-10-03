@@ -33,6 +33,17 @@ div.mid {
   }
 }
 
+.error {
+  color: #ff0000;
+  .help-block {
+    font-size: 14px;
+  }
+}
+
+input, select, textarea {
+  @extend %input-blue;
+}
+
 /*Меню товаров*/
 @import "layouts/left";
 /*Центр*/
@@ -53,7 +64,6 @@ div.mid {
 
 /*Авторизация*/
 @import "user/styles";
-
 
 @media screen and (max-width: 1200px) {
   div.mid {

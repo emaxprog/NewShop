@@ -88,14 +88,14 @@
   .feedback-content .feedback-button, .row .feedback-button {
     display: flex;
     justify-content: center; }
-    .feedback-content .feedback-button #submitbtn, .row .feedback-button #submitbtn {
+    .feedback-content .feedback-button #feedback-btn, .row .feedback-button #feedback-btn {
       border: none;
       padding: 10px;
       text-transform: uppercase;
       background: #00a2e8;
       color: #ffffff;
       font-size: 16px; }
-      .feedback-content .feedback-button #submitbtn:hover, .row .feedback-button #submitbtn:hover {
+      .feedback-content .feedback-button #feedback-btn:hover, .row .feedback-button #feedback-btn:hover {
         background: #303030; }
 
 .label {
