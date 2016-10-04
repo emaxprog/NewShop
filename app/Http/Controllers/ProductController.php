@@ -179,7 +179,7 @@ class ProductController extends Controller
             $images = $pathToImages;
             if ($product->images != null) {
                 $product->images = Product::getArrayImages($product->images);
-                $product->images += $images;
+                $product->images = array_merge($product->images, $images);
             } else
                 $product->images = $images;
             $product->images = Product::toStrImages($product->images);

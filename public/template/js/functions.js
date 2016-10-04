@@ -6,9 +6,11 @@ $(document).ready(function () {
         var name = $(this).attr('data-name');
         var price = parseInt($(this).attr('data-price'));
         var img = $('#img-' + productId).attr('src');
+        if (img == undefined)
+            img = $('img[data-u="image"]:first').attr('src');
 
         var order = $.cookie('basket') ? $.cookie('basket') : null;
-        order ? order = JSON.parse(order) : order = [];
+        order = order != null ? JSON.parse(order) : [];
         if (!order.length) {
             order.push({
                 'productId': productId,
@@ -36,7 +38,7 @@ $(document).ready(function () {
                 });
             }
         }
-        $.cookie('basket', JSON.stringify(order));
+        $.cookie('basket', JSON.stringify(order), {path: '/'});
         count_products();
     });
 

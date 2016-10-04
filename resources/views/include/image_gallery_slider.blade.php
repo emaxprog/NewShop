@@ -7,14 +7,21 @@
     </div>
     <div data-u="slides"
          style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden;">
-        @foreach($images as $image)
+        @if($images)
+            @foreach($images as $image)
+                <div data-p="112.50" style="display: none;">
+                    <img data-u="image" src="{{$image}}"/>
+                    <img data-u="thumb" src="{{$image}}"/>
+                </div>
+            @endforeach
+        @else
             <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="{{$image}}"/>
-                <img data-u="thumb" src="{{$image}}"/>
+                <img data-u="image" src="{{\App\Product::getImage(null)}}"/>
+                <img data-u="thumb" src="{{\App\Product::getImage(null)}}"/>
             </div>
-        @endforeach
-
-        <a data-u="add" href="http://www.jssor.com/demos/image-slider-2.slider" style="display:none">Image Slider 2</a>
+        @endif
+        <a data-u="add" href="http://www.jssor.com/demos/image-slider-2.slider" style="display:none">Image Slider
+            2</a>
 
     </div>
     <!-- Thumbnail Navigator -->

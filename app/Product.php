@@ -25,6 +25,7 @@ class Product extends Model
     public $timestamps = false;
 
     const PATH_TO_IMAGES_OF_PRODUCTS = '/template/images/content/products/';
+    const PATH_TO_NO_IMAGE = '/template/images/site/noImage.jpg';
 
     public function orders()
     {
@@ -66,14 +67,20 @@ class Product extends Model
 
     public static function getPreview($images)
     {
-        $noImage = '/template/images/site/noImage.jpg';
         if ($images != null) {
             $images = explode(';', $images);
             return $images[0];
         }
-        return $noImage;
+        return self::PATH_TO_NO_IMAGE;
     }
 
+    public static function getImage($imagePath)
+    {
+        if ($imagePath != null) {
+            return $imagePath;
+        }
+        return self::PATH_TO_NO_IMAGE;
+    }
 
     public function paginateProducts($num)
     {

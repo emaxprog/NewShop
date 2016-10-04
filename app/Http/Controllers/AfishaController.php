@@ -20,10 +20,6 @@ class AfishaController extends Controller
 
     public function update(Request $request)
     {
-        $this->validate($request, [
-            'images' => 'image'
-        ]);
-
         $pathToDirImages = $_SERVER['DOCUMENT_ROOT'] . Afisha::PATH_TO_DIR_IMAGES;
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
