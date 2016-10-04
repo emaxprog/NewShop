@@ -218,7 +218,7 @@ $(document).ready(function () {
         var images = $('input[name="images[]"]');
         if (imgs.length + images.length == 10)
             return;
-        var image = '<input type="file" name="images[]">';
+        var image = '<input type="file" name="images[]" accept="image/*">';
         $(this).after(image);
         $(this).after('<br>');
     });

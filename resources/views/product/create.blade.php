@@ -56,7 +56,7 @@
 
                     <div class="row {{$errors->has('images')?'error':''}}">
                         <label>Изображение товара</label>
-                        <input type="file" name="images[]">
+                        <input type="file" name="images[]" accept="image/*">
                         @if ($errors->has('images'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('images') }}</strong>

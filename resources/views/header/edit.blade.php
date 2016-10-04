@@ -37,7 +37,7 @@
                     <div class="row {{$errors->has('logotype')? 'error':''}}">
                         <label>Логотип</label>
                         <img src="{{$header->logotype}}" width="200px" alt=""/>
-                        <input type="file" name="logotype">
+                        <input type="file" name="logotype" accept="image/*">
                         @if($errors->has('logotype'))
                             <span class="help-block">
                                 <strong>{{$errors->first('logotype')}}</strong>
@@ -47,7 +47,7 @@
                     <div class="row {{$errors->has('favicon')? 'error':''}}">
                         <label>Иконка</label>
                         <img src="{{$header->favicon}}" width="16px" alt=""/>
-                        <input type="file" name="favicon">
+                        <input type="file" name="favicon" accept="image/*">
                         @if($errors->has('favicon'))
                             <span class="help-block">
                                 <strong>{{$errors->first('favicon')}}</strong>
