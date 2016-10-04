@@ -25,7 +25,9 @@ class HeaderController extends Controller
         $this->validate($request, [
             'phone1' => 'required|integer',
             'phone2' => 'required|integer',
-            'address' => 'required|min:10'
+            'address' => 'required|min:10',
+            'logotype' => 'image',
+            'favicon' => 'image'
         ]);
 
         $root = $_SERVER['DOCUMENT_ROOT'];
