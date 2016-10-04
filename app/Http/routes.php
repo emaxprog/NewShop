@@ -29,8 +29,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('product', 'ProductController', ['except' => 'show']);
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
 });
-Route::post('checkout', ['as' => 'checkout', 'uses' => 'BasketController@store']);
-Route::get('checkout', ['as' => 'checkout', 'uses' => 'BasketController@create']);
+Route::post('checkout', ['as' => 'checkout.store', 'uses' => 'BasketController@store']);
+Route::get('checkout', ['as' => 'checkout.create', 'uses' => 'BasketController@create']);
 Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
 Route::group(['prefix' => 'catalog'], function () {
     Route::get('category/{id}', ['as' => 'category', 'uses' => 'CatalogController@index'])->where(['id' => '[0-9]+']);

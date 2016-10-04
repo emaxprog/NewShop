@@ -3,6 +3,51 @@
 }
 
 .cart {
+  text-align: center;
+  .checkout {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    .row {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      margin: 5px;
+    }
+    select {
+      background: none;
+      width: 600px;
+      height: 30px;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      @extend %button;
+      font-size: 18px;
+      width: 300px;
+      padding: 10px;
+    }
+
+  }
+
+
+  div.btn-to-main {
+    display: flex;
+    justify-content: center;
+  }
+  a.btn-to-main {
+    display: block;
+    margin-bottom: 10px;
+    width: 200px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: $AQUA_COLOR;
+    padding: 10px;
+    &:hover {
+      background: $DARK_GREY_COLOR;
+    }
+  }
   .table-cart {
     @extend %table-admin;
   }
@@ -17,7 +62,7 @@
 
   a.checkout {
     display: flex;
-    width: 160px;
+    width: 200px;
     justify-content: space-around;
     align-items: center;
     margin: 20px 0;

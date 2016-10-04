@@ -34,7 +34,8 @@
                         @endforeach
                     </table>
                     <div class="total-cost"></div>
-                    <a class="checkout" href="{{route('checkout')}}"><i class="fa fa-credit-card fa-lg"></i> Оформить
+                    <a class="checkout" href="{{route('checkout.create')}}"><i class="fa fa-credit-card fa-lg"></i>
+                        Оформить
                         заказ</a>
                 </div>
             @else

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <div class="center">
-        <div class="cabinet">
-            <h3>Редактировать данные</h3>
+    <div class="cabinet-user-edit">
+        <h3>Редактировать данные</h3>
+        <div class="cabinet-form">
             <form action="{{route('user.update',$user->id)}}" method="post">{{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT">
                 <div class="row{{$errors->has('name')?' error':''}}">
@@ -45,8 +45,8 @@
                                     </span>
                     @endif
                 </div>
-                <div class="btn">
-                    <button type="submit" class="btn btn-reg"> Сохранить</button>
+                <div class="row">
+                    <button type="submit" class="btn btn-save-user"> Сохранить</button>
                 </div>
             </form>
         </div>

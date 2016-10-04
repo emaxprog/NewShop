@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$AQUA_COLOR".
-        on line 26 of sass/cart/styles.scss
+        on line 45 of sass/basket/styles.scss
 
-21:     justify-content: space-around;
-22:     align-items: center;
-23:     margin: 20px 0;
-24:     text-decoration: none;
-25:     color: #ffffff;
-26:     background: $AQUA_COLOR;
-27:     padding: 10px;
-28:     &:hover {
-29:       background: $DARK_GREY_COLOR;
-30:     }
-31:   }
+40:     display: block;
+41:     margin-bottom: 10px;
+42:     width: 200px;
+43:     text-decoration: none;
+44:     color: #FFFFFF;
+45:     background: $AQUA_COLOR;
+46:     padding: 10px;
+47:     &:hover {
+48:       background: $DARK_GREY_COLOR;
+49:     }
+50:   }
 
 Backtrace:
-sass/cart/styles.scss:26
+sass/basket/styles.scss:45
 /var/lib/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
 /var/lib/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
@@ -78,4 +78,4 @@ sass/cart/styles.scss:26
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$AQUA_COLOR\".\A         on line 26 of sass/cart/styles.scss\A \A 21:     justify-content: space-around;\A 22:     align-items: center;\A 23:     margin: 20px 0;\A 24:     text-decoration: none;\A 25:     color: #ffffff;\A 26:     background: $AQUA_COLOR;\A 27:     padding: 10px;\A 28:     &:hover {\A 29:       background: $DARK_GREY_COLOR;\A 30:     }\A 31:   }"; }
+  content: "Error: Undefined variable: \"$AQUA_COLOR\".\A         on line 45 of sass/basket/styles.scss\A \A 40:     display: block;\A 41:     margin-bottom: 10px;\A 42:     width: 200px;\A 43:     text-decoration: none;\A 44:     color: #FFFFFF;\A 45:     background: $AQUA_COLOR;\A 46:     padding: 10px;\A 47:     &:hover {\A 48:       background: $DARK_GREY_COLOR;\A 49:     }\A 50:   }"; }

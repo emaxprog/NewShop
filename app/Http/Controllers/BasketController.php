@@ -39,6 +39,8 @@ class BasketController extends Controller
      */
     public function create()
     {
+        if (!Auth::check())
+            return redirect('/login');
         if (!isset($_COOKIE['basket'])) {
             return redirect()->route('home');
         }

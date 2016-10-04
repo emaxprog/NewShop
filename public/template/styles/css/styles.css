@@ -25,11 +25,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 body {
@@ -68,11 +68,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .header-user {
@@ -146,11 +146,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .wrapper-menu {
@@ -204,11 +204,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .popup-checkbox, .popup {
@@ -389,11 +389,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .menu-products {
@@ -531,11 +531,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 /*Афиша*/
@@ -665,11 +665,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-#myModal .buttons-params button {
+.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  #myModal .buttons-params button:hover {
+  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .wrapper-footer {
@@ -717,43 +717,77 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
 .center-cart {
   width: 100%; }
 
-.cart .empty-cart {
-  margin-bottom: 100px; }
-.cart a.checkout {
-  display: flex;
-  width: 160px;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px 0;
-  text-decoration: none;
-  color: #ffffff;
-  background: #00a2e8;
-  padding: 10px; }
-  .cart a.checkout:hover {
-    background: #303030; }
-.cart input[type=text], .cart textarea {
-  height: 30px;
-  width: 300px;
-  border: none;
-  padding: 2px;
-  background: #cccccc;
-  font-size: 18px; }
-.cart textarea {
-  height: 100px; }
-.cart input, .cart textarea {
-  margin-bottom: 20px; }
-.cart .total-cost {
-  font-weight: bold;
-  font-size: 20px; }
-.cart input[type=submit] {
-  padding: 10px;
-  width: 300px;
-  border: none;
-  background: #00a2e8;
-  color: #ffffff;
-  font-size: 18px; }
-  .cart input[type=submit]:hover {
-    background: #303030; }
+.cart {
+  text-align: center; }
+  .cart .checkout {
+    display: flex;
+    justify-content: center;
+    font-size: 18px; }
+    .cart .checkout .row {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      margin: 5px; }
+    .cart .checkout select {
+      background: none;
+      width: 600px;
+      height: 30px;
+      font-size: 18px;
+      margin-bottom: 10px; }
+    .cart .checkout .btn {
+      font-size: 18px;
+      width: 300px;
+      padding: 10px; }
+  .cart div.btn-to-main {
+    display: flex;
+    justify-content: center; }
+  .cart a.btn-to-main {
+    display: block;
+    margin-bottom: 10px;
+    width: 200px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: #00a2e8;
+    padding: 10px; }
+    .cart a.btn-to-main:hover {
+      background: #303030; }
+  .cart .empty-cart {
+    margin-bottom: 100px; }
+  .cart a.checkout {
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #ffffff;
+    background: #00a2e8;
+    padding: 10px; }
+    .cart a.checkout:hover {
+      background: #303030; }
+  .cart input[type=text], .cart textarea {
+    height: 30px;
+    width: 300px;
+    border: none;
+    padding: 2px;
+    background: #cccccc;
+    font-size: 18px; }
+  .cart textarea {
+    height: 100px; }
+  .cart input, .cart textarea {
+    margin-bottom: 20px; }
+  .cart .total-cost {
+    font-weight: bold;
+    font-size: 20px; }
+  .cart input[type=submit] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    background: #00a2e8;
+    color: #ffffff;
+    font-size: 18px; }
+    .cart input[type=submit]:hover {
+      background: #303030; }
 
 /*Админка*/
 .center-admin {
@@ -929,6 +963,28 @@ span.delete, .btn {
 /*Авторизация*/
 .container-form {
   width: 100%; }
+
+.cabinet-user-edit {
+  margin: 0 auto;
+  text-align: center; }
+  .cabinet-user-edit .cabinet-form {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    text-align: center; }
+    .cabinet-user-edit .cabinet-form .row {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      font-size: 18px; }
+      .cabinet-user-edit .cabinet-form .row input[type="text"] {
+        width: 600px;
+        height: 30px;
+        font-size: 18px; }
+      .cabinet-user-edit .cabinet-form .row .btn {
+        width: 200px;
+        padding: 10px;
+        font-size: 18px; }
 
 .registration, .login {
   margin: 20px auto;

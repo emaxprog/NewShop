@@ -207,7 +207,17 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $images = Product::find($id)->images;
+        if (!$images) {
+            Product::destroy($id);
+            return "Продукт успешно удален!";
+        }
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        $images = Product::getArrayImages($images);
         Product::destroy($id);
+        foreach ($images as $image) {
+            unlink($root . $image);
+        }
         return "Продукт успешно удален!";
     }
 

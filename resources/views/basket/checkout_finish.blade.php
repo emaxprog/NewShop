@@ -23,7 +23,9 @@
                     @endforeach
                 </table>
                 <h2>Общая стоимость с доставкой: {{$totalCost}} руб.</h2>
-                <a href="{{route('home')}}">На главную</a>
+                <div class="btn-to-main">
+                    <a href="{{route('home')}}" class="btn-to-main">На главную</a>
+                </div>
             </div>
         </div>
     </div>

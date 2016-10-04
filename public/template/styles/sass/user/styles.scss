@@ -2,6 +2,34 @@
   width: 100%;
 }
 
+.cabinet-user-edit {
+  margin: 0 auto;
+  text-align: center;
+  .cabinet-form {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    text-align: center;
+    .row {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      font-size: 18px;
+      input[type="text"] {
+        width: 600px;
+        height: 30px;
+        font-size: 18px;
+      }
+      .btn {
+        @extend %button;
+        width: 200px;
+        padding: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 .registration, .login {
   margin: 20px auto;
   width: 800px;
@@ -28,7 +56,6 @@
       padding: 0;
     }
   }
-
 
   input[type=submit], button[type=submit] {
     margin: 10px 0;
