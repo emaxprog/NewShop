@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ProductAttribute;
+use App\ProductAttributeValue;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -87,6 +88,13 @@ class ProductAttributeController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+    }
+
+    public function deleteAttribute(Request $request, ProductAttributeValue $pavModel)
+    {
+        $productId = $request->productId;
+        $attributeId = $request->attributeId;
+        return $pavModel->deleteAttribute($productId, $attributeId);
     }
 }

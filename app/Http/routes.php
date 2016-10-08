@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::put('afisha/update', ['as' => 'admin.afisha.update', 'uses' => 'AfishaController@update']);
     Route::resource('order', 'OrderController');
     Route::resource('category', 'CategoryController');
+    Route::get('delete_pav', 'ProductAttributeController@deleteAttribute');
     Route::resource('product_attributes', 'ProductAttributeController');
     Route::resource('product', 'ProductController', ['except' => 'show']);
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);

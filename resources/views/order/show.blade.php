@@ -26,19 +26,19 @@
                 </tr>
                 <tr>
                     <td>Точка выдачи</td>
-                    <td>{!! $order->checkpoint_id !!}</td>
+                    <td>{!! $order->checkpoint->name !!}</td>
                 </tr>
                 <tr>
                     <td>Способ доставки</td>
-                    <td>{!! $order->delivery_id !!}</td>
+                    <td>{!! $order->delivery->name !!}</td>
                 </tr>
                 <tr>
                     <td>Способ оплаты</td>
-                    <td>{!! $order->payment_id !!}</td>
+                    <td>{!! $order->payment->name !!}</td>
                 </tr>
                 <tr>
                     <td>Статус заказа</td>
-                    <td>{!! $order->status !!}</td>
+                    <td>{!! $order->status->name !!}</td>
                 </tr>
 
             </table>

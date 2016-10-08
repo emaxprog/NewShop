@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Requests\Request;
 use Illuminate\Database\Eloquent\Model;
 
 class ProductAttributeValue extends Model
@@ -20,8 +21,8 @@ class ProductAttributeValue extends Model
         return $this->belongsTo('App\ProductAttribute');
     }
 
-    public function deleteAttributes($id)
+    public function deleteAttribute($productId, $attributeId)
     {
-        return $this->where('product_id', $id)->delete();
+        return $this->where('product_id', $productId)->where('attribute_id', $attributeId)->delete();
     }
 }

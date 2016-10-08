@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('checkpoint_id')->unsigned();
             $table->integer('delivery_id')->unsigned();
             $table->integer('payment_id')->unsigned();
-            $table->tinyInteger('status')->unsigned()->default(1);
+            $table->integer('status_id')->unsigned()->default(1);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
@@ -31,6 +31,9 @@ class CreateOrdersTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('payment_id')->references('id')->on('payments')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('status_id')->references('id')->on('order_status')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

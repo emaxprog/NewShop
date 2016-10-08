@@ -22,10 +22,10 @@
                     @foreach ($orders as $order)
                         <tr data-id="{{$order->id}}">
                             <td>{!! $order->created_at !!}</td>
-                            <td>{!! $order->checkpoint_id !!}</td>
-                            <td>{!! $order->delivery_id !!}</td>
-                            <td>{!! $order->payment_id !!}</td>
-                            <td>{!! $order->status !!}</td>
+                            <td>{!! $order->checkpoint->name !!}</td>
+                            <td>{!! $order->delivery->name !!}</td>
+                            <td>{!! $order->payment->name !!}</td>
+                            <td>{!! $order->status->name !!}</td>
                             <td><a href="{{route('admin.order.show',['id'=>$order->id])}}" title="Смотреть"><i
                                             class="fa fa-eye fa-lg"></i></a></td>
                             <td><a href="{{route('admin.order.edit',['id'=>$order->id])}}" title="Редактировать"><i

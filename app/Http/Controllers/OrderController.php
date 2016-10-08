@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\OrderStatus;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -73,8 +74,10 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::find($id);
+        $statusList = OrderStatus::all();
         $data = [
-            'order' => $order
+            'order' => $order,
+            'statusList' => $statusList
         ];
 
         return view('order.edit', $data);
@@ -90,7 +93,7 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
         $order = Order::find($id);
-        $order->status = $request->status;
+        $order->status_id = $request->status;
         $order->save();
 
         return redirect()->route('admin.order.index');

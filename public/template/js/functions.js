@@ -99,6 +99,27 @@ $(document).ready(function () {
         });
     });
 
+
+    $(document).on('click', '.btn-remove-parameter', function () {
+        var block = $(this).parent();
+        var productId = $(this).attr('data-product-id');
+        var attributeId = $(this).attr('data-attribute-id');
+        if (confirm('Удалить?')) {
+            $.ajax({
+                url: '/admin/delete_pav',
+                type: 'GET',
+                data: {productId: productId, attributeId: attributeId},
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                success: function (data) {
+                    block.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
+    });
+
     $('.delete-product').click(function () {
         var tr = $(this).parent().parent();
         var product_id = $(this).attr('data-id');
@@ -150,13 +171,6 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', '.btn-remove-parameter', function () {
-        var block;
-        if (confirm('Удалить?')) {
-            block = $(this).parent();
-            block.remove();
-        }
-    });
 
     $(document).on('click', '.btn-add-parameter', function () {
         $('#myModal').dialog({modal: true, height: 300, width: 500});

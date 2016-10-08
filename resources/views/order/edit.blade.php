@@ -12,14 +12,10 @@
                     </div>
                     <div class="row">
                         <select name="status">
-                            <option value="1" @if($order->status==1) selected @endif>Новый заказ
-                            </option>
-                            <option value="2" @if($order->status==2) selected @endif>В обработке
-                            </option>
-                            <option value="3" @if($order->status==3) selected @endif>Доставляется
-                            </option>
-                            <option value="4" @if($order->status==4) selected @endif>Закрыт
-                            </option>
+                            @foreach($statusList as $status)
+                                <option value="{{$status->id}}"
+                                        @if($order->status_id==$status->id) selected @endif>{!! $status->name !!}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="row">

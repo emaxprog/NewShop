@@ -32,4 +32,9 @@ class Order extends Model
     {
         return $this->belongsToMany('App\Product')->withPivot('amount')->withTimestamps();
     }
+
+    public function status()
+    {
+        return $this->belongsTo('App\OrderStatus');
+    }
 }

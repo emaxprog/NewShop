@@ -145,7 +145,8 @@
                                 <label>Значение параметра</label>
                                 <input type="text" name="values[]" placeholder="Значение параметра"
                                        value="{{$param->value}}">
-                                <button type="button" class="btn btn-remove-parameter"><i class="fa fa-minus"></i>
+                                <button data-attribute-id="{{$attribute->id}}" data-product-id="{{$product->id}}"
+                                        type="button" class="btn btn-remove-parameter"><i class="fa fa-minus"></i>
                                 </button>
 
                             </div>
