@@ -31,7 +31,6 @@
 
   }
 
-
   div.btn-to-main {
     display: flex;
     justify-content: center;
@@ -79,13 +78,33 @@
     @extend %input-blue;
     height: 30px;
     width: 300px;
-    border: none;
     padding: 2px;
-    background: $LIGHT_GREY_COLOR;
     font: {
       size: 18px;
     }
   }
+  td{
+    vertical-align: top;
+  }
+  .btn {
+    background: $AQUA_COLOR;
+    border: none;
+    padding: 10px;
+    color: #FFFFFF;
+    &:hover {
+      background: $DARK_GREY_COLOR;
+    }
+  }
+  .btn-delete {
+    background: none;
+    color: $AQUA_COLOR;
+    &:hover {
+      background: none;
+      color: $DARK_GREY_COLOR;
+    }
+  }
+
+
   textarea {
     height: 100px;
   }

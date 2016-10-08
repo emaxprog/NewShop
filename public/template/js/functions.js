@@ -287,6 +287,10 @@ $(document).ready(function () {
         for (var i = 0; i < order.length; i++) {
             count += parseInt(order[i].amount);
         }
+        if (count)
+            $('.count-products').addClass('amount-products');
+        else
+            $('.count-products').removeClass('amount-products');
         $('.count-products').html(count);
     }
 

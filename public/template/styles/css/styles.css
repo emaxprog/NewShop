@@ -81,9 +81,9 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
-    color: #000000; }
+    color: #303030; }
     .header-user > .mid a {
-      color: #000000;
+      color: #303030;
       text-decoration: none; }
       .header-user > .mid a:hover {
         color: #ffffff; }
@@ -114,10 +114,17 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
     .authorization > ul li:last-child {
       margin-right: 0; }
     .authorization > ul li a {
-      color: #000000;
+      color: #303030;
       text-decoration: none; }
+      .authorization > ul li a .amount-products {
+        background: #303030;
+        padding: 5px;
+        border-radius: 5px;
+        color: #FFFFFF; }
       .authorization > ul li a:hover {
         color: #00a2e8; }
+        .authorization > ul li a:hover .count-products {
+          background: #00a2e8; }
 
 /*Меню сайта*/
 .contacts > ul, .authorization > ul, .wrapper-menu .menu > ul, .menu-products ul, .block .about-product ul, ul.pagination, .f-nav > .f-menu ul, .f-contacts ul, .cart .brief-info > ul, .admin ul.admin-menu, .admin-create ul.admin-menu, .admin-update ul.admin-menu, .admin-view ul.admin-menu, .admin-afisha ul.admin-menu, .errors, .cabinet-menu {
@@ -768,10 +775,23 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart input[type=text], .cart textarea {
     height: 30px;
     width: 300px;
-    border: none;
     padding: 2px;
-    background: #cccccc;
     font-size: 18px; }
+  .cart td {
+    vertical-align: top; }
+  .cart .btn {
+    background: #00a2e8;
+    border: none;
+    padding: 10px;
+    color: #FFFFFF; }
+    .cart .btn:hover {
+      background: #303030; }
+  .cart .btn-delete {
+    background: none;
+    color: #00a2e8; }
+    .cart .btn-delete:hover {
+      background: none;
+      color: #303030; }
   .cart textarea {
     height: 100px; }
   .cart input, .cart textarea {

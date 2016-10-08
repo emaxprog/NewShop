@@ -66,8 +66,8 @@
                         </li>
                     @endif
                     <li>
-                        <a href="{{route('basket')}}"><i class="fa fa-shopping-cart fa-lg"></i> Корзина(<span
-                                    class="count-products"></span>)</a>
+                        <a href="{{route('basket')}}"><i class="fa fa-shopping-cart fa-lg"></i> Корзина <span
+                                    class="count-products"></span></a>
                     </li>
                 </ul>
             </div>

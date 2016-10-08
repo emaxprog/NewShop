@@ -1,70 +1,79 @@
 @import "../templates";
 
-.header-user{
+.header-user {
   background: $LIGHT_GREY_COLOR;
-  &>.mid{
+  & > .mid {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
-    color: #000000;
-    a{
-      color: #000000;
+    color: $DARK_GREY_COLOR;
+    a {
+      color: $DARK_GREY_COLOR;
 
       text-decoration: none;
-      &:hover{
+      &:hover {
         color: #ffffff;
       }
     }
   }
 }
 
-
 .header {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
   justify-content: space-between;
-  .logotype{
-    img{
+  .logotype {
+    img {
       max-width: 300px;
       max-height: 150px;
     }
   }
 }
 
-.contacts>ul{
+.contacts > ul {
   @extend %ul-clear;
   display: flex;
-  li{
+  li {
     white-space: nowrap;
     margin: 0 20px;
-    font:{
+    font: {
       size: 20px;
       weight: bold;
     }
   }
 }
 
-.authorization>ul{
+.authorization > ul {
   @extend %ul-clear;
   display: flex;
-  li{
-    &:first-child{
+  li {
+    &:first-child {
       margin: {
-       left: 0;
+        left: 0;
       }
     }
-    &:last-child{
-      margin:{
+    &:last-child {
+      margin: {
         right: 0;
       }
     }
     margin: 0 20px;
-    a{
-      color: #000000;
+    a {
+      color: $DARK_GREY_COLOR;
       text-decoration: none;
-      &:hover{
+
+      .amount-products {
+        background: $DARK_GREY_COLOR;
+        padding: 5px;
+        border-radius: 5px;
+        color: #FFFFFF;
+      }
+      &:hover {
         color: $AQUA_COLOR;
+        .count-products {
+          background: $AQUA_COLOR;
+        }
       }
     }
   }

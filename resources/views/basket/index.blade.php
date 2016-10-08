@@ -22,13 +22,14 @@
                                 <td>
                                     <input type="text" value="{{$product->amount}}"
                                            class="input-total-price">
-                                    <button type="button" class="btn btn-plus">+</button>
-                                    <button type="button" class="btn btn-minus">-</button>
+                                    <button type="button" class="btn btn-plus"><i class="fa fa-plus "></i></button>
+                                    <button type="button" class="btn btn-minus"><i class="fa fa-minus "></i>
+                                    </button>
                                 </td>
                                 <td>{{$product->price*$product->amount}} руб.</td>
                                 <td>
-                                    <button type="button" class="btn btn-delete"><i class="fa fa-trash-o fa-lg"></i>
-                                    </button>
+                                    <span class="btn btn-delete"><i class="fa fa-trash-o fa-lg"></i>
+                                    </span>
                                 </td>
                             </tr>
                         @endforeach
