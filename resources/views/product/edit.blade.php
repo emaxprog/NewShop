@@ -2,7 +2,7 @@
 @section('content')
     <div class="center-admin">
         <div class="admin-create">
-            <h2>РедактироватьS товар</h2>
+            <h2>Редактировать товар</h2>
             <div class="admin-form">
                 <form action="{{route('admin.product.update',['id'=>$product->id])}}" method="post"
                       enctype="multipart/form-data">
