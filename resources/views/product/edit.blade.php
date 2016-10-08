@@ -2,7 +2,7 @@
 @section('content')
     <div class="center-admin">
         <div class="admin-create">
-            <h2>Добавить новый товар</h2>
+            <h2>РедактироватьS товар</h2>
             <div class="admin-form">
                 <form action="{{route('admin.product.update',['id'=>$product->id])}}" method="post"
                       enctype="multipart/form-data">
@@ -121,8 +121,8 @@
                     <div class="row">
                         <label>Статус</label>
                         <select name="visibility">
-                            <option value="1" @if($product->visibility==1) selected @endif>Да</option>
-                            <option value="0" @if($product->visibility==0) selected @endif>Нет</option>
+                            <option value="1" @if($product->visibility==1) selected @endif>Отображается</option>
+                            <option value="0" @if($product->visibility==0) selected @endif>Скрыт</option>
                         </select>
                     </div>
                     <div class="row">

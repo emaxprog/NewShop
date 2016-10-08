@@ -21,6 +21,11 @@ class ProductAttributeValue extends Model
         return $this->belongsTo('App\ProductAttribute');
     }
 
+    public function deleteAttributes($id)
+    {
+        return $this->where('product_id', $id)->delete();
+    }
+
     public function deleteAttribute($productId, $attributeId)
     {
         return $this->where('product_id', $productId)->where('attribute_id', $attributeId)->delete();
