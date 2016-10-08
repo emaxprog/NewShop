@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="csrf-token" id="csrf-token" content="{{csrf_token()}}">
+    <link rel="icon" type="image/x-icon" href="{{$header->favicon}}">
     <title>Интернет-магазин</title>
     <link rel="icon" type="image/x-icon" href="/upload/logotype/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/template/styles/font-awesome-4.6.3/css/font-awesome.min.css">

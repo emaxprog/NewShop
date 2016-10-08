@@ -150,7 +150,7 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', '#btn-remove-parameter', function () {
+    $(document).on('click', '.btn-remove-parameter', function () {
         var block;
         if (confirm('Удалить?')) {
             block = $(this).parent();
@@ -158,7 +158,7 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on('click', '#btn-add-parameter', function () {
+    $(document).on('click', '.btn-add-parameter', function () {
         $('#myModal').dialog({modal: true, height: 300, width: 500});
     });
 
@@ -175,7 +175,7 @@ $(document).ready(function () {
             data: {name: name, unit: unit},
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (param) {
-                $('select[name="parameter"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
+                $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
                 $('#myModal').dialog('close');
             },
             error: function (msg) {

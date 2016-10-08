@@ -8,4 +8,7 @@ Homestead.json
 *~
 *.css.map
 .sass-cache
-public/template/images/
+public/template/images/content/afisha/
+public/template/images/content/products/
+
+.directory
