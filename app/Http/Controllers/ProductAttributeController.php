@@ -41,6 +41,9 @@ class ProductAttributeController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'attribute-name' => 'require|unique:product_attributes,name'
+        ]);
         $param = ProductAttribute::create($request->all());
         return $param;
     }
@@ -87,6 +90,7 @@ class ProductAttributeController extends Controller
      */
     public function destroy($id)
     {
-
+        ProductAttribute::destroy($id);
+        return $id;
     }
 }

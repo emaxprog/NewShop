@@ -37,6 +37,11 @@ class Product extends Model
         return $this->hasMany('App\ProductAttributeValue');
     }
 
+    public function manufacturer()
+    {
+        return $this->belongsTo('App\Manufacturer');
+    }
+
     public function getSelectedProducts($id, $num, $minPrice, $maxPrice, $manufacturersIds)
     {
         if ($minPrice == null && $maxPrice == null) {
@@ -96,6 +101,13 @@ class Product extends Model
     public function getUploadProducts($startFrom = 0)
     {
         return $this->latest('id')->skip($startFrom)->take(5)->get();
+    }
+
+    public static function getAvailabilityText($id)
+    {
+        if ($id)
+            return 'Да';
+        return 'Нет';
     }
 
     public static function getParams($id)

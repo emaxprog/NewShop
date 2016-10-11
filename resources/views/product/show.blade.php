@@ -8,8 +8,8 @@
                 <ul>
                     <li><b>Код товара:</b> {!! $product->code !!}</li>
                     <li><b>Цена:</b>{!! $product->price !!} руб.</li>
-                    <li><b>Наличие:</b> {!! $product->availability !!}</li>
-                    <li><b>Производитель:</b> {!! $product->manufacturer_id !!}</li>
+                    <li><b>Наличие:</b> {!! $product->getAvailabilityText($product->availability) !!}</li>
+                    <li><b>Производитель:</b> {!! $product->manufacturer->name !!}</li>
                 </ul>
                 <div class="button-add-basket">
                     <a href="" onclick="return false" data-id="{{$product->id}}"

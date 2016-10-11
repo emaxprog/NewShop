@@ -37,9 +37,11 @@ class ProductController extends Controller
     {
         $subcategories = $categoryModel->getSubcategoriesAll();
         $manufacturers = Manufacturer::all();
+        $productAttributes = ProductAttribute::all();
         $data = [
             'subcategories' => $subcategories,
-            'manufacturers' => $manufacturers
+            'manufacturers' => $manufacturers,
+            'productAttributes' => $productAttributes
         ];
         return view('product.create', $data);
     }
@@ -54,7 +56,7 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'code' => 'required|integer',
+            'code' => 'required|integer|unique:products',
             'price' => 'required|integer'
         ]);
 
@@ -150,7 +152,7 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'code' => 'required|integer',
+            'code' => 'required|integer|unique:products,code,' . $id,
             'price' => 'required|integer'
         ]);
 
@@ -221,7 +223,7 @@ class ProductController extends Controller
         return "Продукт успешно удален!";
     }
 
-    public function image_destroy($id,Request $request)
+    public function image_destroy($id, Request $request)
     {
         $image_path = $request->src;
         $root = $_SERVER['DOCUMENT_ROOT'];

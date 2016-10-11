@@ -104,6 +104,10 @@ $(document).ready(function () {
         var block = $(this).parent();
         var productId = $(this).attr('data-product-id');
         var attributeId = $(this).attr('data-attribute-id');
+        if (!productId) {
+            block.remove();
+            return;
+        }
         if (confirm('Удалить?')) {
             $.ajax({
                 url: '/admin/product/' + productId + '/pav',
@@ -173,11 +177,11 @@ $(document).ready(function () {
 
 
     $(document).on('click', '.btn-add-parameter', function () {
-        $('#myModal').dialog({modal: true, height: 300, width: 500});
+        $('#modal-add-attribute').dialog({modal: true, height: 300, width: 500});
     });
 
     $(document).on('click', '#btn-close', function () {
-        $('#myModal').dialog('close');
+        $('#modal-add-attribute').dialog('close');
     });
 
     $(document).on('click', '#btn-save', function () {
@@ -190,12 +194,38 @@ $(document).ready(function () {
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (param) {
                 $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
-                $('#myModal').dialog('close');
+                $('.table-attributes').append('<tr><td>' + param.name + '</td> <td data-id="' + param.id + '" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td></tr>');
+                $('#modal-add-attribute').dialog('close');
             },
             error: function (msg) {
                 console.log(msg);
             }
         });
+    });
+
+    $(document).on('click', '.delete-attribute', function () {
+        var tr = $(this).parent();
+        var id = $(this).attr('data-id');
+        $.ajax({
+            url: '/admin/product_attributes/' + id,
+            type: 'DELETE',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function (data) {
+                tr.remove();
+                $('option[value="' + data + '"]').remove();
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
+    $(document).on('click', '.btn-remove-attribute', function () {
+        $('#modal-delete-attribute').dialog({modal: true});
+    });
+
+    $(document).on('click', '#btn-da-close', function () {
+        $('#modal-delete-attribute').dialog('close');
     });
 
     $('.add-images-products').click(function () {

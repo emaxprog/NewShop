@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -25,11 +25,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 body {
@@ -48,7 +48,7 @@ div.mid {
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -68,11 +68,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .header-user {
@@ -133,7 +133,7 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -153,11 +153,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .wrapper-menu {
@@ -191,7 +191,7 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -211,11 +211,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .popup-checkbox, .popup {
@@ -376,7 +376,7 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -396,11 +396,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .menu-products {
@@ -518,7 +518,7 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -538,11 +538,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 /*Афиша*/
@@ -652,7 +652,7 @@ ul.pagination {
   margin: 0;
   padding: 0; }
 
-input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #myModal input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
+input:focus, select:focus, textarea:focus, .menu-select .range-price .price-input input[type=text]:focus, .cart input[type=text]:focus, #modal-add-attribute input:focus, #modal-delete-attribute input:focus, .registration input[type=text]:focus, .registration input[type=email]:focus, .registration input[type=password]:focus, .login input[type=text]:focus, .login input[type=email]:focus, .login input[type=password]:focus {
   border-color: rgba(82, 168, 236, 0);
   outline: 0;
   box-shadow: 0 0 10px 4px rgba(82, 168, 236, 0.6) !important; }
@@ -672,11 +672,11 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
   .cart .table-cart th, .table-products th, .table-products-orders th, .table-orders th, .table-categories th {
     border: none; }
 
-.cart .checkout .btn, #myModal .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
+.cart .checkout .btn, #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button, .cabinet-user-edit .cabinet-form .row .btn {
   border: none;
   color: #ffffff;
   background: #00a2e8; }
-  .cart .checkout .btn:hover, #myModal .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
+  .cart .checkout .btn:hover, #modal-add-attribute .buttons-params button:hover, #modal-delete-attribute .buttons-params button:hover, .cabinet-user-edit .cabinet-form .row .btn:hover {
     background: #303030; }
 
 .wrapper-footer {
@@ -813,58 +813,64 @@ input:focus, select:focus, textarea:focus, .menu-select .range-price .price-inpu
 .center-admin {
   width: 100%; }
 
-.admin h2, .admin-create h2, .admin-update h2, .admin-view h2, .admin-afisha h2 {
-  text-align: center; }
-.admin ul.admin-menu li, .admin-create ul.admin-menu li, .admin-update ul.admin-menu li, .admin-view ul.admin-menu li, .admin-afisha ul.admin-menu li {
-  margin: 10px; }
-.admin ul.admin-menu a, .admin-create ul.admin-menu a, .admin-update ul.admin-menu a, .admin-view ul.admin-menu a, .admin-afisha ul.admin-menu a {
-  text-decoration: none;
-  color: #00a2e8; }
-  .admin ul.admin-menu a:hover, .admin-create ul.admin-menu a:hover, .admin-update ul.admin-menu a:hover, .admin-view ul.admin-menu a:hover, .admin-afisha ul.admin-menu a:hover {
-    color: #303030; }
-.admin .admin-form, .admin-create .admin-form, .admin-update .admin-form, .admin-view .admin-form, .admin-afisha .admin-form {
-  display: flex;
-  justify-content: center; }
-  .admin .admin-form .row, .admin-create .admin-form .row, .admin-update .admin-form .row, .admin-view .admin-form .row, .admin-afisha .admin-form .row {
+.admin, .admin-create, .admin-update, .admin-view, .admin-afisha {
+  margin: 0 auto; }
+  .admin h2, .admin-create h2, .admin-update h2, .admin-view h2, .admin-afisha h2 {
+    text-align: center; }
+  .admin ul.admin-menu li, .admin-create ul.admin-menu li, .admin-update ul.admin-menu li, .admin-view ul.admin-menu li, .admin-afisha ul.admin-menu li {
+    margin: 10px; }
+  .admin ul.admin-menu a, .admin-create ul.admin-menu a, .admin-update ul.admin-menu a, .admin-view ul.admin-menu a, .admin-afisha ul.admin-menu a {
+    text-decoration: none;
+    color: #00a2e8; }
+    .admin ul.admin-menu a:hover, .admin-create ul.admin-menu a:hover, .admin-update ul.admin-menu a:hover, .admin-view ul.admin-menu a:hover, .admin-afisha ul.admin-menu a:hover {
+      color: #303030; }
+  .admin .admin-form, .admin-create .admin-form, .admin-update .admin-form, .admin-view .admin-form, .admin-afisha .admin-form {
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    margin: 5px; }
-  .admin .admin-form input[type=text], .admin .admin-form select, .admin .admin-form textarea, .admin-create .admin-form input[type=text], .admin-create .admin-form select, .admin-create .admin-form textarea, .admin-update .admin-form input[type=text], .admin-update .admin-form select, .admin-update .admin-form textarea, .admin-view .admin-form input[type=text], .admin-view .admin-form select, .admin-view .admin-form textarea, .admin-afisha .admin-form input[type=text], .admin-afisha .admin-form select, .admin-afisha .admin-form textarea {
-    height: 30px;
-    width: 600px;
-    font-size: 18px; }
-  .admin .admin-form textarea, .admin-create .admin-form textarea, .admin-update .admin-form textarea, .admin-view .admin-form textarea, .admin-afisha .admin-form textarea {
-    height: 100px; }
-  .admin .admin-form select, .admin-create .admin-form select, .admin-update .admin-form select, .admin-view .admin-form select, .admin-afisha .admin-form select {
-    background: none; }
-  .admin .admin-form button, .admin-create .admin-form button, .admin-update .admin-form button, .admin-view .admin-form button, .admin-afisha .admin-form button {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    color: #FFFFFF;
-    background: #00a2e8;
-    border: none;
-    padding: 10px; }
-    .admin .admin-form button:hover, .admin-create .admin-form button:hover, .admin-update .admin-form button:hover, .admin-view .admin-form button:hover, .admin-afisha .admin-form button:hover {
-      background: #303030; }
-  .admin .admin-form .btn-remove-parameter, .admin-create .admin-form .btn-remove-parameter, .admin-update .admin-form .btn-remove-parameter, .admin-view .admin-form .btn-remove-parameter, .admin-afisha .admin-form .btn-remove-parameter {
-    background: #ff0000; }
-  .admin .admin-form .form-param input[type='text'], .admin .admin-form .form-param select, .admin-create .admin-form .form-param input[type='text'], .admin-create .admin-form .form-param select, .admin-update .admin-form .form-param input[type='text'], .admin-update .admin-form .form-param select, .admin-view .admin-form .form-param input[type='text'], .admin-view .admin-form .form-param select, .admin-afisha .admin-form .form-param input[type='text'], .admin-afisha .admin-form .form-param select {
-    width: 300px; }
-  .admin .admin-form input, .admin .admin-form select, .admin .admin-form textarea, .admin-create .admin-form input, .admin-create .admin-form select, .admin-create .admin-form textarea, .admin-update .admin-form input, .admin-update .admin-form select, .admin-update .admin-form textarea, .admin-view .admin-form input, .admin-view .admin-form select, .admin-view .admin-form textarea, .admin-afisha .admin-form input, .admin-afisha .admin-form select, .admin-afisha .admin-form textarea {
-    margin-bottom: 20px; }
-  .admin .admin-form input[type=submit], .admin-create .admin-form input[type=submit], .admin-update .admin-form input[type=submit], .admin-view .admin-form input[type=submit], .admin-afisha .admin-form input[type=submit] {
-    padding: 10px;
-    width: 300px;
-    border: none;
-    background: #00a2e8;
-    color: #ffffff;
-    font-size: 18px; }
-    .admin .admin-form input[type=submit]:hover, .admin-create .admin-form input[type=submit]:hover, .admin-update .admin-form input[type=submit]:hover, .admin-view .admin-form input[type=submit]:hover, .admin-afisha .admin-form input[type=submit]:hover {
-      background: #303030; }
-  .admin .admin-form .delete-image, .admin-create .admin-form .delete-image, .admin-update .admin-form .delete-image, .admin-view .admin-form .delete-image, .admin-afisha .admin-form .delete-image {
-    background: #ff0000; }
+    justify-content: center; }
+    .admin .admin-form .row, .admin-create .admin-form .row, .admin-update .admin-form .row, .admin-view .admin-form .row, .admin-afisha .admin-form .row {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      margin: 5px; }
+    .admin .admin-form input[type=text], .admin .admin-form select, .admin .admin-form textarea, .admin-create .admin-form input[type=text], .admin-create .admin-form select, .admin-create .admin-form textarea, .admin-update .admin-form input[type=text], .admin-update .admin-form select, .admin-update .admin-form textarea, .admin-view .admin-form input[type=text], .admin-view .admin-form select, .admin-view .admin-form textarea, .admin-afisha .admin-form input[type=text], .admin-afisha .admin-form select, .admin-afisha .admin-form textarea {
+      height: 30px;
+      width: 600px;
+      font-size: 18px; }
+    .admin .admin-form textarea, .admin-create .admin-form textarea, .admin-update .admin-form textarea, .admin-view .admin-form textarea, .admin-afisha .admin-form textarea {
+      height: 100px; }
+    .admin .admin-form select, .admin-create .admin-form select, .admin-update .admin-form select, .admin-view .admin-form select, .admin-afisha .admin-form select {
+      background: none; }
+    .admin .admin-form button, .admin-create .admin-form button, .admin-update .admin-form button, .admin-view .admin-form button, .admin-afisha .admin-form button {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      color: #FFFFFF;
+      background: #00a2e8;
+      border: none;
+      padding: 10px; }
+      .admin .admin-form button:hover, .admin-create .admin-form button:hover, .admin-update .admin-form button:hover, .admin-view .admin-form button:hover, .admin-afisha .admin-form button:hover {
+        background: #303030; }
+    .admin .admin-form .form-param, .admin-create .admin-form .form-param, .admin-update .admin-form .form-param, .admin-view .admin-form .form-param, .admin-afisha .admin-form .form-param {
+      margin: 20px 0; }
+      .admin .admin-form .form-param input[type='text'], .admin .admin-form .form-param select, .admin-create .admin-form .form-param input[type='text'], .admin-create .admin-form .form-param select, .admin-update .admin-form .form-param input[type='text'], .admin-update .admin-form .form-param select, .admin-view .admin-form .form-param input[type='text'], .admin-view .admin-form .form-param select, .admin-afisha .admin-form .form-param input[type='text'], .admin-afisha .admin-form .form-param select {
+        width: 300px; }
+      .admin .admin-form .form-param .btn-remove-parameter, .admin-create .admin-form .form-param .btn-remove-parameter, .admin-update .admin-form .form-param .btn-remove-parameter, .admin-view .admin-form .form-param .btn-remove-parameter, .admin-afisha .admin-form .form-param .btn-remove-parameter {
+        background: #ff0000; }
+        .admin .admin-form .form-param .btn-remove-parameter:hover, .admin-create .admin-form .form-param .btn-remove-parameter:hover, .admin-update .admin-form .form-param .btn-remove-parameter:hover, .admin-view .admin-form .form-param .btn-remove-parameter:hover, .admin-afisha .admin-form .form-param .btn-remove-parameter:hover {
+          background: #303030; }
+    .admin .admin-form input, .admin .admin-form select, .admin .admin-form textarea, .admin-create .admin-form input, .admin-create .admin-form select, .admin-create .admin-form textarea, .admin-update .admin-form input, .admin-update .admin-form select, .admin-update .admin-form textarea, .admin-view .admin-form input, .admin-view .admin-form select, .admin-view .admin-form textarea, .admin-afisha .admin-form input, .admin-afisha .admin-form select, .admin-afisha .admin-form textarea {
+      margin-bottom: 20px; }
+    .admin .admin-form input[type=submit], .admin-create .admin-form input[type=submit], .admin-update .admin-form input[type=submit], .admin-view .admin-form input[type=submit], .admin-afisha .admin-form input[type=submit] {
+      padding: 10px;
+      width: 300px;
+      border: none;
+      background: #00a2e8;
+      color: #ffffff;
+      font-size: 18px; }
+      .admin .admin-form input[type=submit]:hover, .admin-create .admin-form input[type=submit]:hover, .admin-update .admin-form input[type=submit]:hover, .admin-view .admin-form input[type=submit]:hover, .admin-afisha .admin-form input[type=submit]:hover {
+        background: #303030; }
+    .admin .admin-form .delete-image, .admin-create .admin-form .delete-image, .admin-update .admin-form .delete-image, .admin-view .admin-form .delete-image, .admin-afisha .admin-form .delete-image {
+      background: #ff0000; }
 
 .btn-more {
   display: flex;
@@ -923,26 +929,33 @@ a.btn-add-category {
     right: 0;
     position: absolute;
     z-index: 2; }
-  .img-afisha button.delete-image-afisha, .img-afisha .btn-remove-parameter {
+  .img-afisha button.delete-image-afisha {
     background: #ff0000; }
 
 .errors {
   color: #ff0000;
   margin: 5px 20px; }
 
-#myModal {
+#modal-add-attribute, #modal-delete-attribute {
   font-size: 18px; }
-  #myModal input {
+  #modal-add-attribute input, #modal-delete-attribute input {
     height: 30px;
     width: 100%;
     margin: 10px 0; }
-  #myModal .buttons-params {
+  #modal-add-attribute .buttons-params, #modal-delete-attribute .buttons-params {
     display: flex;
     justify-content: space-between; }
-    #myModal .buttons-params button {
+    #modal-add-attribute .buttons-params button, #modal-delete-attribute .buttons-params button {
       width: 100%;
       height: 40px;
       margin: 10px; }
+  #modal-add-attribute .table-attributes, #modal-delete-attribute .table-attributes {
+    width: 100%; }
+    #modal-add-attribute .table-attributes .delete-attribute, #modal-delete-attribute .table-attributes .delete-attribute {
+      color: #00a2e8;
+      cursor: pointer; }
+      #modal-add-attribute .table-attributes .delete-attribute:hover, #modal-delete-attribute .table-attributes .delete-attribute:hover {
+        color: #303030; }
 
 span.delete {
   color: #00a2e8; }

@@ -116,7 +116,7 @@
             </div>
         </div>
     </div>
-    <div style="display:none" id="myModal" title="Добавить параметр">
+    <div style="display:none" id="modal-add-attribute" title="Добавить параметр">
         <label>Наименование параметра</label>
         <input type="text" name="attribute-name" placeholder="Наименование параметра">
         <label>Единица измерения</label>
@@ -124,6 +124,19 @@
         <div class="buttons-params">
             <button type="button" id="btn-close">Закрыть</button>
             <button type="button" id="btn-save">Сохранить изменения</button>
+        </div>
+    </div>
+    <div style="display: none" id="modal-delete-attribute" title="Удалить параметр">
+        <table class="table-attributes">
+            @foreach($productAttributes as $attribute)
+                <tr>
+                    <td>{!! $attribute->name !!}</td>
+                    <td data-id="{{$attribute->id}}" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td>
+                </tr>
+            @endforeach
+        </table>
+        <div class="buttons-params">
+            <button type="button" id="btn-da-close">Закрыть</button>
         </div>
     </div>
 @endsection

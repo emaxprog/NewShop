@@ -6,6 +6,7 @@
             <option value="{{$attribute->id}}">{!! $attribute->name !!} ({!! $attribute->unit !!})</option>
         @endforeach
     </select>
+    <button type="button" class="btn btn-remove-attribute"><i class="fa fa-minus"></i></button>
     <label>Значение параметра</label>
     <input type="text" name="values[]" placeholder="Значение параметра">
     @if($errors->has('values'))

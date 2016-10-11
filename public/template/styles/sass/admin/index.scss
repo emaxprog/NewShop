@@ -3,7 +3,7 @@
 }
 
 .admin, .admin-create, .admin-update, .admin-view, .admin-afisha {
-
+  margin: 0 auto;
   h2 {
     text-align: center;
   }
@@ -55,14 +55,18 @@
         background: $DARK_GREY_COLOR;
       }
     }
-    .btn-remove-parameter {
-      background: #ff0000;
-    }
 
     .form-param {
       input[type='text'], select {
         width: 300px;
       }
+      .btn-remove-parameter {
+        background: #ff0000;
+        &:hover {
+          background: $DARK_GREY_COLOR;
+        }
+      }
+      margin: 20px 0;
     }
 
     input, select, textarea {
@@ -163,7 +167,7 @@ a.btn-add-category {
     position: absolute;
     z-index: 2;
   }
-  button.delete-image-afisha, .btn-remove-parameter {
+  button.delete-image-afisha {
     background: #ff0000;
   }
 }
@@ -174,7 +178,7 @@ a.btn-add-category {
   margin: 5px 20px;
 }
 
-#myModal {
+#modal-add-attribute, #modal-delete-attribute {
   font-size: 18px;
   input {
     @extend %input-blue;
@@ -190,6 +194,16 @@ a.btn-add-category {
       width: 100%;
       height: 40px;
       margin: 10px;
+    }
+  }
+  .table-attributes {
+    width: 100%;
+    .delete-attribute {
+      color: $AQUA_COLOR;
+      cursor: pointer;
+      &:hover {
+        color: $DARK_GREY_COLOR;
+      }
     }
   }
 }
