@@ -76,6 +76,8 @@
     background: #00a2e8;
     color: #FFFFFF;
     margin: 0 20px 20px 20px; }
+    .menu-select #btn-selection:hover {
+      background: #303030; }
   .menu-select .checkbox + label {
     cursor: pointer; }
   .menu-select .checkbox:not(checked) {
