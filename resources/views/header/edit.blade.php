@@ -18,7 +18,7 @@
                     </div>
                     <div class="row {{$errors->has('phone2')? 'error':''}}">
                         <label for="phone2">Телефон</label>
-                        <input type="text" name="phone2" placeholder="Введите телефон" value="{!! $header->phone1 !!}">
+                        <input type="text" name="phone2" placeholder="Введите телефон" value="{!! $header->phone2 !!}">
                         @if($errors->has('phone2'))
                             <span class="help-block">
                                 <strong>{{$errors->first('phone2')}}</strong>

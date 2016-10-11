@@ -12,20 +12,20 @@
 */
 
 Route::auth();
-Route::post('delete_image', 'ProductController@delete_image');
-Route::get('upload', 'ProductController@upload');
 Route::resource('product', 'ProductController', ['only' => 'show']);
 Route::resource('user', 'UserController');
 Route::post('feedback', 'HomeController@feedback');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-    Route::put('header/update', ['as' => 'admin.header.update', 'uses' => 'HeaderController@update']);
-    Route::get('header/edit', ['as' => 'admin.header.edit', 'uses' => 'HeaderController@edit']);
-    Route::delete('afisha/destroy', 'AfishaController@destroy');
+    Route::put('header', ['as' => 'admin.header.update', 'uses' => 'HeaderController@update']);
+    Route::get('header', ['as' => 'admin.header.edit', 'uses' => 'HeaderController@edit']);
+    Route::delete('afisha', 'AfishaController@destroy');
     Route::get('afisha/edit', ['as' => 'admin.afisha.edit', 'uses' => 'AfishaController@edit']);
-    Route::put('afisha/update', ['as' => 'admin.afisha.update', 'uses' => 'AfishaController@update']);
+    Route::put('afisha', ['as' => 'admin.afisha.update', 'uses' => 'AfishaController@update']);
     Route::resource('order', 'OrderController');
     Route::resource('category', 'CategoryController');
-    Route::get('delete_pav', 'ProductAttributeController@deleteAttribute');
+    Route::delete('product/{id}/pav', 'ProductAttributeValueController@destroy');
+    Route::delete('product/{id}/image', 'ProductController@image_destroy');
+    Route::get('upload', 'ProductController@upload');
     Route::resource('product_attributes', 'ProductAttributeController');
     Route::resource('product', 'ProductController', ['except' => 'show']);
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
@@ -34,6 +34,6 @@ Route::post('checkout', ['as' => 'checkout.store', 'uses' => 'BasketController@s
 Route::get('checkout', ['as' => 'checkout.create', 'uses' => 'BasketController@create']);
 Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
 Route::group(['prefix' => 'catalog'], function () {
-    Route::get('category/{id}', ['as' => 'category', 'uses' => 'CatalogController@index'])->where(['id' => '[0-9]+']);
+    Route::get('category/{id}', ['as' => 'category', 'uses' => 'CatalogController@index']);
 });
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index', 'middleware' => 'admin.redirect']);

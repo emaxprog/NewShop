@@ -221,12 +221,11 @@ class ProductController extends Controller
         return "Продукт успешно удален!";
     }
 
-    public function delete_image(Request $request)
+    public function image_destroy($id,Request $request)
     {
-        $product_id = $request->product_id;
         $image_path = $request->src;
         $root = $_SERVER['DOCUMENT_ROOT'];
-        $product = Product::find($product_id);
+        $product = Product::find($id);
         $images = explode(';', $product->images);
         if (($key = array_search($image_path, $images)) >= 0) {
             unset($images[$key]);

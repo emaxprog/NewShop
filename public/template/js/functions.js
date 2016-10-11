@@ -106,9 +106,9 @@ $(document).ready(function () {
         var attributeId = $(this).attr('data-attribute-id');
         if (confirm('Удалить?')) {
             $.ajax({
-                url: '/admin/delete_pav',
-                type: 'GET',
-                data: {productId: productId, attributeId: attributeId},
+                url: '/admin/product/' + productId + '/pav',
+                type: 'DELETE',
+                data: {attributeId: attributeId},
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 success: function (data) {
                     block.remove();
@@ -214,9 +214,9 @@ $(document).ready(function () {
         var src = img.attr('src');
         var product_id = img.attr('data-id');
         $.ajax({
-            url: '/delete_image',
-            type: 'POST',
-            data: {src: src, product_id: product_id},
+            url: '/admin/product/' + product_id + '/image',
+            type: 'DELETE',
+            data: {src: src},
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
                 div.remove();
@@ -242,7 +242,7 @@ $(document).ready(function () {
         var img = $(this).prev();
         var src = img.attr('src');
         $.ajax({
-            url: '/admin/afisha/destroy',
+            url: '/admin/afisha',
             type: 'DELETE',
             data: {src: src},
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},

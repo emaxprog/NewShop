@@ -3,7 +3,7 @@ $(document).ready(function () {
     var startFrom = 5;
     $('#btn-more').click(function () {
         $.ajax({
-            url: '/upload',
+            url: '/admin/upload',
             type: 'GET',
             data: {startFrom: startFrom},
             beforeSend: function () {
