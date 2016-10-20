@@ -5,10 +5,10 @@
     <title>Интернет-магазин</title>
     <link rel="icon" type="image/x-icon" href="{{$header->favicon}}">
     <link rel="stylesheet" type="text/css" href="/template/styles/font-awesome-4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/template/styles/css/styles.css">
+    {{--<link rel="stylesheet" type="text/css" href="/template/styles/css/styles.css">--}}
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery-3.1.1.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery.cookie.js"></script>
-    <link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">
+    {{--<link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">--}}
     <script rel="script" type="text/javascript" src="/template/js/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>
@@ -16,13 +16,17 @@
     <script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
 
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <script rel="script" type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+    <div></div>
     @if(isset($params))
         <script rel="script" type="text/javascript"
                 src="/template/js/image-gallery-slider/js/jssor.slider-21.1.5.mini.js"></script>
         <script rel="script" type="text/javascript"
                 src="/template/js/image-gallery-slider/image_gallery_slider.js"></script>
         <link rel="stylesheet" type="text/css" href="/template/js/image-gallery-slider/image_gallery_slider.css">
-        <link rel="stylesheet" type="text/css" href="/template/styles/css/product/styles.css">
+        {{--<link rel="stylesheet" type="text/css" href="/template/styles/css/product/styles.css">--}}
     @else
         <script rel="script" type="text/javascript" src="/template/js/slider/js/jssor.slider-21.1.5.mini.js"></script>
         <script rel="script" type="text/javascript" src="/template/js/slider/slider.js"></script>

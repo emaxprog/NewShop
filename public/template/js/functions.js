@@ -140,22 +140,24 @@ $(document).ready(function () {
             }
         });
     });
+ajax(params) {
 
+        params.headers =  {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
+        return $.ajax(params);
+}
     $('.delete-category').click(function () {
         var tr = $(this).parent().parent();
         var category_id = tr.attr('data-id');
-        $.ajax({
+        //ajax()
+        ajax({
             url: '/admin/category/' + category_id,
             type: 'DELETE',
             data: {category_id: category_id},
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            success: function () {
+        }).done(() => {
                 tr.remove();
-            },
-            error: function (msg) {
-                console.log(msg);
-            }
-        });
+        }).fail(() => {
+            console.log(msg);
+        })
     });
 
     $('.delete-order').click(function () {

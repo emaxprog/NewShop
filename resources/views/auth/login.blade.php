@@ -9,7 +9,7 @@
                     {{csrf_field()}}
                     <div class="row{{$errors->has('email')?' error':''}}">
                         <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email" placeholder="Введите Email"
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Введите Email"
                                value="{{ old('email') }}">
                         @if ($errors->has('email'))
                             <span class="help-block">
