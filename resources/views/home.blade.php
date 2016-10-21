@@ -2,11 +2,25 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
+            <div class="block" style="background: #5e5e5e;height: 100px;"></div>
 
         </div>
-        <div class="col-md-8">
-
+        <div class="col-md-9">
+            <div class="row">
+                <div class="block" style="background: #5e5e5e;height: 100px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="block" style="background: #5e5e5e;height: 100px;"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="block" style="background: #5e5e5e;height: 100px;"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="block" style="background: #5e5e5e;height: 100px;"></div>
+                </div>
+            </div>
         </div>
     </div>
     {{--@include('include.left')--}}
