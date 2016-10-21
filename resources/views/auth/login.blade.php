@@ -6,9 +6,9 @@
             <form class="form form-horizontal" action="{{url('/login')}}" method="post">
                 {{csrf_field()}}
                 <h2>Вход</h2>
-                <div class="form-group {{$errors->has('email')?' error':''}}">
+                <div class="form-group">
                     <label for="email" class="col-md-2 control-label">E-Mail</label>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <input type="email" name="email" class="form-control" id="email" placeholder="Введите Email"
                                value="{{ old('email') }}">
                         @if ($errors->has('email'))
@@ -18,9 +18,9 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group {{$errors->has('password')?' error':''}}">
+                <div class="form-group">
                     <label for="password" class="col-md-2 control-label">Пароль:</label>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <input type="password" class="form-control" name="password" id="password"
                                placeholder="Введите пароль">
                         @if ($errors->has('password'))

@@ -36,60 +36,64 @@
     @endif
 </head>
 <body>
-<!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{route('home')}}">EmStorm</a>
+<header>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{route('home')}}">EmStorm</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="">О компании</a>
+                    </li>
+                    <li>
+                        {{--@include('layouts.popup')--}}
+                    </li>
+                    <li>
+                        <a href="">Гарантия</a>
+                    </li>
+                </ul>
+                <p class="navbar-text"><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</p>
+                <p class="navbar-text"><i class="fa fa-phone fa-lg"></i> {!! $header->phone2 !!}</p>
+                <ul class="nav navbar-nav navbar-right">
+                    @if(Auth::guest())
+                        <li>
+                            <a href="{{url('/login')}}"><i class="fa fa-lock fa-lg"></i> Войти</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/register')}}"><i class="fa fa-key fa-lg"></i> Регистрация</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{route('user.index')}}"><i class="fa fa-user fa-lg"></i> Личный кабинет</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/logout')}}"><i class="fa fa-unlock fa-lg"></i> Выйти</a>
+                        </li>
+                    @endif
+                    <li>
+                        <a href="{{route('basket')}}"><i class="fa fa-shopping-cart fa-lg"></i> Корзина <span
+                                    class="count-products"></span></a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="">О компании</a>
-                </li>
-                <li>
-                    {{--@include('layouts.popup')--}}
-                </li>
-                <li>
-                    <a href="">Гарантия</a>
-                </li>
-            </ul>
-            <p class="navbar-text"><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</p>
-            <p class="navbar-text"><i class="fa fa-phone fa-lg"></i> {!! $header->phone2 !!}</p>
-            <ul class="nav navbar-nav navbar-right">
-                @if(Auth::guest())
-                    <li>
-                        <a href="{{url('/login')}}"><i class="fa fa-lock fa-lg"></i> Войти</a>
-                    </li>
-                    <li>
-                        <a href="{{url('/register')}}"><i class="fa fa-key fa-lg"></i> Регистрация</a>
-                    </li>
-                @else
-                    <li>
-                        <a href="{{route('user.index')}}"><i class="fa fa-user fa-lg"></i> Личный кабинет</a>
-                    </li>
-                    <li>
-                        <a href="{{url('/logout')}}"><i class="fa fa-unlock fa-lg"></i> Выйти</a>
-                    </li>
-                @endif
-                <li>
-                    <a href="{{route('basket')}}"><i class="fa fa-shopping-cart fa-lg"></i> Корзина <span
-                                class="count-products"></span></a>
-                </li>
-            </ul>
-        </div><!--/.nav-collapse -->
+    </div>
+</header>
+<div class="content">
+    <div class="container">
+        @yield('content')
     </div>
 </div>
 
-<div class="container">
-    @yield('content')
-</div>
 {{--<div class="wrapper-footer">--}}
     {{--<div class="mid">--}}
         {{--<footer class="footer">--}}
