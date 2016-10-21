@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-default">
         <form action="{{url('/register')}}" method="post" class="form form-horizontal">{{csrf_field()}}
-            <h2>Регистрация</h2>
+            <h2 class="text-center">Регистрация</h2>
             <div class="form-group">
                 <label for="email" class="control-label col-md-2">E-Mail</label>
                 <div class="col-md-8">

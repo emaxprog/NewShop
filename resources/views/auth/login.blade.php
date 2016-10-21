@@ -5,7 +5,7 @@
         <div class="panel-body">
             <form class="form form-horizontal" action="{{url('/login')}}" method="post">
                 {{csrf_field()}}
-                <h2>Вход</h2>
+                <h2 class="text-center">Вход</h2>
                 <div class="form-group">
                     <label for="email" class="col-md-2 control-label">E-Mail</label>
                     <div class="col-md-9">

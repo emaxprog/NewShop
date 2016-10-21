@@ -5,7 +5,7 @@
         <div class="col-md-3">
             @include('include/left')
         </div>
-        <div class="col-md-9 products">
+        <div class="col-md-9 list-products">
             {{--<div class="row">--}}
             {{--<div class="block" style="background: #5e5e5e;height: 100px;"></div>--}}
             {{--</div>--}}
@@ -18,9 +18,8 @@
                             @endif
                             <a href="{{route('product.show',['id'=>$product->id])}}">
                                 <img src="{{\App\Product::getPreview($product->images)}}" alt="Apple MacBook"
-                                     title="Apple MacBook" id="img-{{$product->id}}" height="150px">
-
-                                <div class="about-product">
+                                     title="Apple MacBook" id="img-{{$product->id}}" class="img-rounded" height="150px">
+                                <div class="description">
                                     <ul>
                                         <li>{{$product->name}}</li>
                                         <li>{{$product->price}} руб.</li>
