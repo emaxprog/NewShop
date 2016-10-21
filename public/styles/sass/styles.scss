@@ -1,3 +1,4 @@
+@import "templates";
 body{
   padding-top: 50px;
 }
@@ -11,5 +12,58 @@ body{
   }
   .alert{
     margin: 10px 0;
+  }
+}
+
+.new{
+  position: absolute;
+  right: 20px;
+}
+
+.thumbnail{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 350px;
+}
+.products{
+  margin-top: 20px;
+}
+
+
+.menu-products {
+  margin: 20px 0;
+  ul {
+    @extend %ul-clear;
+    li {
+      position: relative;
+      &:hover .sub-menu {
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        border: 1px solid $AQUA_COLOR;
+        padding: 20px;
+        color: $DARK_GREY_COLOR;
+        margin-bottom: -1px;
+        &:hover {
+          background: $DARK_GREY_COLOR;
+          color: #ffffff;
+        }
+      }
+      .sub-menu {
+        position: absolute;
+        display: none;
+        left: 260px;
+        z-index: 10;
+        background: #ffffff;
+        top: 0;
+        border-left: 2px solid $AQUA_COLOR;
+        a {
+          width: 250px;
+        }
+      }
+    }
   }
 }

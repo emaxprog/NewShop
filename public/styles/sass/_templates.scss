@@ -1,0 +1,47 @@
+$AQUA_COLOR: #00a2e8;
+$DARK_GREY_COLOR: #303030;
+$LIGHT_GREY_COLOR: #cccccc;
+
+%ul-clear {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+%input-blue {
+  &:focus {
+    border-color: rgba(82, 168, 236, 0);
+    outline: 0;
+    box-shadow: 0 0 10px 4px rgba(82, 168, 236, .6) !important;
+  }
+}
+
+%table-admin {
+  width: 100%;
+  border-spacing: 70px 0px;
+  th, td {
+    padding: 10px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: $AQUA_COLOR;
+      &:hover {
+        color: $DARK_GREY_COLOR;
+      }
+    }
+  }
+  th {
+    border: none;
+  }
+  margin: 20px 0;
+}
+
+%button {
+  border: none;
+  color: #ffffff;
+  background: $AQUA_COLOR;
+  &:hover {
+    background: $DARK_GREY_COLOR;
+  }
+}
