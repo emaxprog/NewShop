@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    $('#tabs').tabs();
-
     $('.buy-btn').click(function () {
         var productId = parseInt($(this).attr('data-id'));
         var name = $(this).attr('data-name');
@@ -77,11 +75,11 @@ $(document).ready(function () {
     });
 
     $('.btn-plus').click(function () {
-        $(this).siblings('.input-total-price').val(parseInt($(this).siblings('.input-total-price').val()) + 1).change();
+        $(this).parent.children('.input-total-price').val(parseInt($(this).parent.children('.input-total-price').val()) + 1).change();
     });
 
     $('.btn-minus').click(function () {
-        $(this).siblings('.input-total-price').val(parseInt($(this).siblings('.input-total-price').val()) - 1).change();
+        $(this).parent.children('.input-total-price').val(parseInt($(this).parent.children('.input-total-price').val()) - 1).change();
     });
 
     $('#btn-add-parameters').click(function () {
@@ -140,24 +138,22 @@ $(document).ready(function () {
             }
         });
     });
-ajax(params) {
 
-        params.headers =  {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
-        return $.ajax(params);
-}
     $('.delete-category').click(function () {
         var tr = $(this).parent().parent();
         var category_id = tr.attr('data-id');
-        //ajax()
         ajax({
             url: '/admin/category/' + category_id,
             type: 'DELETE',
             data: {category_id: category_id},
-        }).done(() => {
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function () {
                 tr.remove();
-        }).fail(() => {
-            console.log(msg);
-        })
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
     });
 
     $('.delete-order').click(function () {
@@ -179,11 +175,15 @@ ajax(params) {
 
 
     $(document).on('click', '.btn-add-parameter', function () {
-        $('#modal-add-attribute').dialog({modal: true, height: 300, width: 500});
+        $('#modal-add-attribute').modal();
     });
 
-    $(document).on('click', '#btn-close', function () {
-        $('#modal-add-attribute').dialog('close');
+    $(document).on('click', '.btn-remove-attribute', function () {
+        $('#modal-delete-attribute').modal();
+    });
+
+    $(document).on('click', '#btn-da-close', function () {
+        $('#modal-delete-attribute').modal('close');
     });
 
     $(document).on('click', '#btn-save', function () {
@@ -197,7 +197,7 @@ ajax(params) {
             success: function (param) {
                 $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
                 $('.table-attributes').append('<tr><td>' + param.name + '</td> <td data-id="' + param.id + '" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td></tr>');
-                $('#modal-add-attribute').dialog('close');
+                $('#modal-add-attribute').modal('close');
             },
             error: function (msg) {
                 console.log(msg);
@@ -222,13 +222,7 @@ ajax(params) {
         });
     });
 
-    $(document).on('click', '.btn-remove-attribute', function () {
-        $('#modal-delete-attribute').dialog({modal: true});
-    });
 
-    $(document).on('click', '#btn-da-close', function () {
-        $('#modal-delete-attribute').dialog('close');
-    });
 
     $('.add-images-products').click(function () {
         var imgs = $('img');
@@ -328,5 +322,4 @@ ajax(params) {
 
     insert_total_cost();
     count_products();
-})
-;
+});

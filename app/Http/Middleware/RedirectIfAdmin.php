@@ -17,7 +17,7 @@ class RedirectIfAdmin
     public function handle($request, Closure $next)
     {
         if (Gate::allows('admin'))
-            return redirect()->route('admin');
+            return redirect()->route('admin.product.index');
         return $next($request);
     }
 }

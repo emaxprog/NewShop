@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Интернет-магазин</title>
     <link rel="icon" type="image/x-icon" href="{{$header->favicon}}">
     <link rel="stylesheet" type="text/css" href="/template/styles/font-awesome-4.6.3/css/font-awesome.min.css">
     {{--<link rel="stylesheet" type="text/css" href="/template/styles/css/styles.css">--}}
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery-3.1.1.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/jQuery/jquery.cookie.js"></script>
-    {{--<link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">--}}
+    <link rel="stylesheet" type="text/css" href="/template/js/jquery-ui-1.12.0.custom/jquery-ui.css">
     <script rel="script" type="text/javascript" src="/template/js/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>
+    {{--<script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>--}}
+    {{--<script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>--}}
     <script rel="script" type="text/javascript" src="/template/js/menu-select.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>
+    {{--<script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>--}}
     <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -93,53 +94,98 @@
         @yield('content')
     </div>
 </div>
+<footer class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Навигация</h2>
+                <nav>
+                    <ul class="nav">
+                        <li>
+                            <a href="{{route('home')}}">Главная</a>
+                        </li>
+                        <li>
+                            <a href="">О компании</a>
+                        </li>
+                        {{--<li>--}}
+                            {{--@include('layouts.popup')--}}
+                        {{--</li>--}}
+                        <li>
+                            <a href="">Гарантия</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-4">
+                <h2>Способы оплаты</h2>
+                <div class="payment-methods-img">
+                    <img src="/template/images/site/oplata_icon.png" alt="Способы оплаты"
+                         title="Способы оплаты">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>Контакты</h2>
+                <ul>
+                    <li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>
+                    <li><i class="fa fa-map-marker fa-lg"></i> {!! $header->address !!}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <span>2016 &copy; Интернет-магазин EmStorm</span>
+            </div>
+        </div>
+    </div>
+</footer>
 
 {{--<div class="wrapper-footer">--}}
-    {{--<div class="mid">--}}
-        {{--<footer class="footer">--}}
-            {{--<div class="f-container">--}}
-                {{--<div class="f-nav">--}}
-                    {{--<h2>Навигация</h2>--}}
-                    {{--<nav class="f-menu">--}}
-                        {{--<ul>--}}
-                            {{--<li>--}}
-                                {{--<a href="index.php">Главная</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="about.php">О компании</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--@include('layouts.popup')--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="guarantee.php">Гарантия</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="contacts.php">Контакты</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</nav>--}}
-                {{--</div>--}}
-                {{--<div class="f-payment-methods">--}}
-                    {{--<h2>Способы оплаты</h2>--}}
-                    {{--<div class="payment-methods-img">--}}
-                        {{--<img src="/template/images/site/oplata_icon.png" alt="Способы оплаты"--}}
-                             {{--title="Способы оплаты">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="f-contacts">--}}
-                    {{--<h2>Контакты</h2>--}}
-                    {{--<ul>--}}
-                        {{--<li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>--}}
-                        {{--<li><i class="fa fa-map-marker fa-lg"></i> {!! $header->address !!}</li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="copy">--}}
-                {{--<span>2016 &copy; Интернет-магазин EmStorm</span>--}}
-            {{--</div>--}}
-        {{--</footer>--}}
-    {{--</div>--}}
+{{--<div class="mid">--}}
+{{--<footer class="footer">--}}
+{{--<div class="f-container">--}}
+{{--<div class="f-nav">--}}
+{{--<h2>Навигация</h2>--}}
+{{--<nav class="f-menu">--}}
+{{--<ul>--}}
+{{--<li>--}}
+{{--<a href="index.php">Главная</a>--}}
+{{--</li>--}}
+{{--<li>--}}
+{{--<a href="about.php">О компании</a>--}}
+{{--</li>--}}
+{{--<li>--}}
+{{--@include('layouts.popup')--}}
+{{--</li>--}}
+{{--<li>--}}
+{{--<a href="guarantee.php">Гарантия</a>--}}
+{{--</li>--}}
+{{--<li>--}}
+{{--<a href="contacts.php">Контакты</a>--}}
+{{--</li>--}}
+{{--</ul>--}}
+{{--</nav>--}}
+{{--</div>--}}
+{{--<div class="f-payment-methods">--}}
+{{--<h2>Способы оплаты</h2>--}}
+{{--<div class="payment-methods-img">--}}
+{{--<img src="/template/images/site/oplata_icon.png" alt="Способы оплаты"--}}
+{{--title="Способы оплаты">--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="f-contacts">--}}
+{{--<h2>Контакты</h2>--}}
+{{--<ul>--}}
+{{--<li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>--}}
+{{--<li><i class="fa fa-map-marker fa-lg"></i> {!! $header->address !!}</li>--}}
+{{--</ul>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="copy">--}}
+{{--<span>2016 &copy; Интернет-магазин EmStorm</span>--}}
+{{--</div>--}}
+{{--</footer>--}}
+{{--</div>--}}
 {{--</div>--}}
 </body>
 </html>
