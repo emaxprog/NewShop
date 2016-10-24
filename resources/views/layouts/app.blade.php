@@ -14,7 +14,7 @@
     {{--<script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>--}}
     {{--<script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>--}}
     <script rel="script" type="text/javascript" src="/template/js/menu-select.min.js"></script>
-    {{--<script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>--}}
+    <script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -53,13 +53,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="">О компании</a>
+                        <a href="#">О компании</a>
                     </li>
                     <li>
-                        {{--@include('layouts.popup')--}}
+                        <a href="" onclick="return false" data-toggle="modal" data-target="#popup">Обратная связь</a>
                     </li>
                     <li>
-                        <a href="">Гарантия</a>
+                        <a href="#">Гарантия</a>
                     </li>
                 </ul>
                 <p class="navbar-text"><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</p>
@@ -82,7 +82,7 @@
                     @endif
                     <li>
                         <a href="{{route('basket')}}"><i class="fa fa-shopping-cart fa-lg"></i> Корзина <span
-                                    class="count-products"></span></a>
+                                    class="count-products badge"></span></a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -108,7 +108,7 @@
                             <a href="">О компании</a>
                         </li>
                         {{--<li>--}}
-                            {{--@include('layouts.popup')--}}
+                        {{--@include('layouts.popup')--}}
                         {{--</li>--}}
                         <li>
                             <a href="">Гарантия</a>
@@ -139,53 +139,48 @@
         </div>
     </div>
 </footer>
-
-{{--<div class="wrapper-footer">--}}
-{{--<div class="mid">--}}
-{{--<footer class="footer">--}}
-{{--<div class="f-container">--}}
-{{--<div class="f-nav">--}}
-{{--<h2>Навигация</h2>--}}
-{{--<nav class="f-menu">--}}
-{{--<ul>--}}
-{{--<li>--}}
-{{--<a href="index.php">Главная</a>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--<a href="about.php">О компании</a>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--@include('layouts.popup')--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--<a href="guarantee.php">Гарантия</a>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--<a href="contacts.php">Контакты</a>--}}
-{{--</li>--}}
-{{--</ul>--}}
-{{--</nav>--}}
-{{--</div>--}}
-{{--<div class="f-payment-methods">--}}
-{{--<h2>Способы оплаты</h2>--}}
-{{--<div class="payment-methods-img">--}}
-{{--<img src="/template/images/site/oplata_icon.png" alt="Способы оплаты"--}}
-{{--title="Способы оплаты">--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="f-contacts">--}}
-{{--<h2>Контакты</h2>--}}
-{{--<ul>--}}
-{{--<li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>--}}
-{{--<li><i class="fa fa-map-marker fa-lg"></i> {!! $header->address !!}</li>--}}
-{{--</ul>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--<div class="copy">--}}
-{{--<span>2016 &copy; Интернет-магазин EmStorm</span>--}}
-{{--</div>--}}
-{{--</footer>--}}
-{{--</div>--}}
-{{--</div>--}}
+<div class="modal fade" role="dialog" aria-hidden="true" id="popup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                <h2>Обратная связь</h2>
+            </div>
+            <div class="modal-body">
+                <form name="contact" id="feedback-form" method="post" class="form" action="/feedback"
+                      onsubmit="return false">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя"
+                               tabindex="1">
+                        <div class="text-danger error-name"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Введите телефон"
+                               tabindex="2">
+                        <div class="text-danger error-phone"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Введите Email"
+                               tabindex="3">
+                        <div class="text-danger error-email"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea name="message" id="message" rows="5" class="form-control" placeholder="Введите сообщение"
+                                  tabindex="4"></textarea>
+                        <div class="text-danger error-message"></div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" name="submitbtn" class="btn btn-primary" id="feedback-btn">Отправить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

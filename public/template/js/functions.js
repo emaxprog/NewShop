@@ -41,19 +41,6 @@ $(document).ready(function () {
     });
 
 
-    $('.input-total-price').bind('change keyup', function () {
-        var amount = $(this).val();
-        if (!amount.match(/[0-9]+/) || amount <= 0) {
-            $(this).val('1');
-            amount = 1;
-        }
-        var productId = $(this).parent().parent().attr('data-id');
-        var price = $(this).parent().prev().html();
-        $(this).parent().next().html(amount * price);
-        set_cookie_basket(productId, amount);
-        insert_total_cost();
-    });
-
     $('.btn-delete').click(function () {
         var tr = $(this).parent().parent();
         var productId = $(this).parent().parent().attr('data-id');
@@ -74,12 +61,31 @@ $(document).ready(function () {
         insert_total_cost();
     });
 
+    $('.input-total-price').bind('change keyup', function () {
+        var amount = $(this).val();
+        if (!amount.match(/[0-9]+/) || amount <= 0) {
+            $(this).val('1');
+            amount = 1;
+        }
+        var productId = $(this).attr('data-id');
+        var price = $(this).attr('data-price');
+        var tdTotalPrice = $('tr[data-id="' + productId + '"]').children('.total-price');
+        tdTotalPrice.html(amount * price + " руб.");
+        set_cookie_basket(productId, amount);
+        insert_total_cost();
+    });
+
+
     $('.btn-plus').click(function () {
-        $(this).parent.children('.input-total-price').val(parseInt($(this).parent.children('.input-total-price').val()) + 1).change();
+        var productId = $(this).attr('data-id');
+        var inputTotalPrice = $('input[data-id="' + productId + '"]');
+        inputTotalPrice.val(parseInt(inputTotalPrice.val()) + 1).change();
     });
 
     $('.btn-minus').click(function () {
-        $(this).parent.children('.input-total-price').val(parseInt($(this).parent.children('.input-total-price').val()) - 1).change();
+        var productId = $(this).attr('data-id');
+        var inputTotalPrice = $('input[data-id="' + productId + '"]');
+        inputTotalPrice.val(parseInt(inputTotalPrice.val()) - 1).change();
     });
 
     $('#btn-add-parameters').click(function () {
@@ -223,7 +229,6 @@ $(document).ready(function () {
     });
 
 
-
     $('.add-images-products').click(function () {
         var imgs = $('img');
         var images = $('input[name="images[]"]');
@@ -313,10 +318,6 @@ $(document).ready(function () {
         for (var i = 0; i < order.length; i++) {
             count += parseInt(order[i].amount);
         }
-        if (count)
-            $('.count-products').addClass('amount-products');
-        else
-            $('.count-products').removeClass('amount-products');
         $('.count-products').html(count);
     }
 
