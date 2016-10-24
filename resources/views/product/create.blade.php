@@ -116,27 +116,65 @@
             </div>
         </div>
     </div>
-    <div style="display:none" id="modal-add-attribute" title="Добавить параметр">
-        <label>Наименование параметра</label>
-        <input type="text" name="attribute-name" placeholder="Наименование параметра">
-        <label>Единица измерения</label>
-        <input type="text" name="unit" placeholder="Единица измерения">
-        <div class="buttons-params">
-            <button type="button" id="btn-close">Закрыть</button>
-            <button type="button" id="btn-save">Сохранить изменения</button>
+    <div class="modal fade" role="dialog" aria-hidden="true" id="modal-add-attribute">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Добавить параметр</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Наименование параметра</label>
+                        <input type="text" name="attribute-name" class="form-control"
+                               placeholder="Наименование параметра">
+                    </div>
+                    <div class="form-group">
+                        <label>Единица измерения</label>
+                        <input type="text" name="unit" class="form-control" placeholder="Единица измерения">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btn-close" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" id="btn-save">Сохранить изменения</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div style="display: none" id="modal-delete-attribute" title="Удалить параметр">
-        <table class="table-attributes">
-            @foreach($productAttributes as $attribute)
-                <tr>
-                    <td>{!! $attribute->name !!}</td>
-                    <td data-id="{{$attribute->id}}" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td>
-                </tr>
-            @endforeach
-        </table>
-        <div class="buttons-params">
-            <button type="button" id="btn-da-close">Закрыть</button>
+
+    <div class="modal fade" role="dialog" aria-hidden="true" id="modal-delete-attribute">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>Удалить параметр</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table-attributes table">
+                        <thead>
+                        <tr>
+                            <th>Параметр</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($productAttributes as $attribute)
+                            <tr>
+                                <td>{!! $attribute->name !!}</td>
+                                <td data-id="{{$attribute->id}}" class="delete-attribute">
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash fa-lg"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-da-close" class="btn btn-default" data-dismiss="modal">Закрыть
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

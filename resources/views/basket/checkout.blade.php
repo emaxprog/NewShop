@@ -1,44 +1,42 @@
 @extends('layouts.app')
 @section('content')
-    <div class="center-cart">
-        <div class="cart">
+    <div class="row">
+        <div class="col-md-12">
             <h2>Корзина</h2>
-            <div class="checkout">
-                <form action="{{route('checkout.store')}}" method="post">
-                    {{csrf_field()}}
-                    <div class="row">
-                        <label>Точка выдачи</label>
-                        <select name="checkpoint">
-                            @foreach($checkpoints as $checkpoint)
-                                <option value="{{$checkpoint->id}}">{!! $checkpoint->name !!}
-                                    ({!! $checkpoint->address !!})
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="row">
-                        <label>Метод доставки</label>
-                        <select name="delivery">
-                            @foreach($deliveries as $delivery)
-                                <option value="{{$delivery->id}}">{!! $delivery->name !!}
-                                    ({!! $delivery->price !!} руб.)
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="row">
-                        <label>Cпособ оплаты</label>
-                        <select name="payment">
-                            @foreach($payments as $payment)
-                                <option value="{{$payment->id}}">{!! $payment->name !!}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="row">
-                        <button type="submit" class="btn btn-checkout">Оформить заказ</button>
-                    </div>
-                </form>
-            </div>
+            <form action="{{route('checkout.store')}}" method="post" class="form">
+                {{csrf_field()}}
+                <div class="form-group">
+                    <label>Точка выдачи</label>
+                    <select name="checkpoint" class="form-control">
+                        @foreach($checkpoints as $checkpoint)
+                            <option value="{{$checkpoint->id}}">{!! $checkpoint->name !!}
+                                ({!! $checkpoint->address !!})
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Метод доставки</label>
+                    <select name="delivery"  class="form-control">
+                        @foreach($deliveries as $delivery)
+                            <option value="{{$delivery->id}}">{!! $delivery->name !!}
+                                ({!! $delivery->price !!} руб.)
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cпособ оплаты</label>
+                    <select name="payment"  class="form-control">
+                        @foreach($payments as $payment)
+                            <option value="{{$payment->id}}">{!! $payment->name !!}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-checkout btn-primary">Оформить заказ</button>
+                </div>
+            </form>
         </div>
     </div>
 @endsection

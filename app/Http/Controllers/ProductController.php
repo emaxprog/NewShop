@@ -19,9 +19,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Product $productModel)
+
+    public function __construct(Product $product,Category $category)
     {
-        $products = $productModel->getUploadProducts();
+        $this->product=$product;
+        $this->category=$category;
+    }
+
+    public function index()
+    {
+        $products = $this->product->getUploadProducts();
         $data = [
             'products' => $products
         ];
@@ -33,9 +40,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Category $categoryModel)
+    public function create()
     {
-        $subcategories = $categoryModel->getSubcategoriesAll();
+        $subcategories = $this->category->getSubcategoriesAll();
         $manufacturers = Manufacturer::all();
         $productAttributes = ProductAttribute::all();
         $data = [
@@ -103,11 +110,11 @@ class ProductController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Product $productModel)
+    public function show($id)
     {
         $product = Product::find($id);
         $images = Product::getArrayImages($product->images);
-        $params = $productModel->getParams($id);
+        $params = $this->product->getParams($id);
         $data = [
             'product' => $product,
             'params' => $params,
@@ -122,12 +129,12 @@ class ProductController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, Category $categoryModel)
+    public function edit($id)
     {
         $product = Product::find($id);
         $product->images != null ? $images = Product::getArrayImages($product->images) : $images = [];
         $manufacturers = Manufacturer::all();
-        $subcategories = $categoryModel->getSubcategoriesAll();
+        $subcategories = $this->category->getSubcategoriesAll();
         $params = Product::getParams($id);
         $productAttributes = ProductAttribute::all();
         $data = [
@@ -243,10 +250,10 @@ class ProductController extends Controller
         return 'OK';
     }
 
-    public function upload(Request $request, Product $productModel)
+    public function upload(Request $request)
     {
         $startFrom = $request->startFrom;
-        $products = $productModel->getUploadProducts($startFrom);
+        $products = $this->product->getUploadProducts($startFrom);
         $data = [
             'products' => $products
         ];

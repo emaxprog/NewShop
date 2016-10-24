@@ -1,46 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-form">
-        <div class="login">
-            <div class="registration-form form">
-                <h2>Вход</h2>
-                <form action="{{url('/login')}}" method="post">
-                    {{csrf_field()}}
-                    <div class="row{{$errors->has('email')?' error':''}}">
-                        <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email" placeholder="Введите Email"
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form form-horizontal" action="{{url('/login')}}" method="post">
+                {{csrf_field()}}
+                <h2 class="text-center">Вход</h2>
+                <div class="form-group">
+                    <label for="email" class="col-md-2 control-label">E-Mail</label>
+                    <div class="col-md-9">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Введите Email"
                                value="{{ old('email') }}">
                         @if ($errors->has('email'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                            <div class="alert alert-danger">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </div>
                         @endif
                     </div>
-                    <div class="row{{$errors->has('password')?' error':''}}">
-                        <label for="password">Пароль:</label>
-                        <input type="password" name="password" id="password" placeholder="Введите пароль">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-md-2 control-label">Пароль:</label>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Введите пароль">
                         @if ($errors->has('password'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                            <div class="alert alert-danger">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </div>
                         @endif
                     </div>
-                    <div class="btn">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox col-md-3 col-md-offset-2">
+                        <label>
+                            <input type="checkbox" name="remember"> Запомнить меня
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3 col-md-offset-2">
                         <button type="submit" class="btn btn-primary">
                             <i class="fa fa-btn fa-sign-in"></i> Вход
                         </button>
-                        <div>
-                            <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="remember"> Запомнить меня
-                            </label>
-                        </div>
+                        <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection

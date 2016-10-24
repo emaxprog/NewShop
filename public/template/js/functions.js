@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    $('#tabs').tabs();
-
     $('.buy-btn').click(function () {
         var productId = parseInt($(this).attr('data-id'));
         var name = $(this).attr('data-name');
@@ -43,19 +41,6 @@ $(document).ready(function () {
     });
 
 
-    $('.input-total-price').bind('change keyup', function () {
-        var amount = $(this).val();
-        if (!amount.match(/[0-9]+/) || amount <= 0) {
-            $(this).val('1');
-            amount = 1;
-        }
-        var productId = $(this).parent().parent().attr('data-id');
-        var price = $(this).parent().prev().html();
-        $(this).parent().next().html(amount * price);
-        set_cookie_basket(productId, amount);
-        insert_total_cost();
-    });
-
     $('.btn-delete').click(function () {
         var tr = $(this).parent().parent();
         var productId = $(this).parent().parent().attr('data-id');
@@ -76,12 +61,31 @@ $(document).ready(function () {
         insert_total_cost();
     });
 
+    $('.input-total-price').bind('change keyup', function () {
+        var amount = $(this).val();
+        if (!amount.match(/[0-9]+/) || amount <= 0) {
+            $(this).val('1');
+            amount = 1;
+        }
+        var productId = $(this).attr('data-id');
+        var price = $(this).attr('data-price');
+        var tdTotalPrice = $('tr[data-id="' + productId + '"]').children('.total-price');
+        tdTotalPrice.html(amount * price + " руб.");
+        set_cookie_basket(productId, amount);
+        insert_total_cost();
+    });
+
+
     $('.btn-plus').click(function () {
-        $(this).siblings('.input-total-price').val(parseInt($(this).siblings('.input-total-price').val()) + 1).change();
+        var productId = $(this).attr('data-id');
+        var inputTotalPrice = $('input[data-id="' + productId + '"]');
+        inputTotalPrice.val(parseInt(inputTotalPrice.val()) + 1).change();
     });
 
     $('.btn-minus').click(function () {
-        $(this).siblings('.input-total-price').val(parseInt($(this).siblings('.input-total-price').val()) - 1).change();
+        var productId = $(this).attr('data-id');
+        var inputTotalPrice = $('input[data-id="' + productId + '"]');
+        inputTotalPrice.val(parseInt(inputTotalPrice.val()) - 1).change();
     });
 
     $('#btn-add-parameters').click(function () {
@@ -144,7 +148,7 @@ $(document).ready(function () {
     $('.delete-category').click(function () {
         var tr = $(this).parent().parent();
         var category_id = tr.attr('data-id');
-        $.ajax({
+        ajax({
             url: '/admin/category/' + category_id,
             type: 'DELETE',
             data: {category_id: category_id},
@@ -177,11 +181,15 @@ $(document).ready(function () {
 
 
     $(document).on('click', '.btn-add-parameter', function () {
-        $('#modal-add-attribute').dialog({modal: true, height: 300, width: 500});
+        $('#modal-add-attribute').modal();
     });
 
-    $(document).on('click', '#btn-close', function () {
-        $('#modal-add-attribute').dialog('close');
+    $(document).on('click', '.btn-remove-attribute', function () {
+        $('#modal-delete-attribute').modal();
+    });
+
+    $(document).on('click', '#btn-da-close', function () {
+        $('#modal-delete-attribute').modal('close');
     });
 
     $(document).on('click', '#btn-save', function () {
@@ -195,7 +203,7 @@ $(document).ready(function () {
             success: function (param) {
                 $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
                 $('.table-attributes').append('<tr><td>' + param.name + '</td> <td data-id="' + param.id + '" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td></tr>');
-                $('#modal-add-attribute').dialog('close');
+                $('#modal-add-attribute').modal('close');
             },
             error: function (msg) {
                 console.log(msg);
@@ -220,13 +228,6 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', '.btn-remove-attribute', function () {
-        $('#modal-delete-attribute').dialog({modal: true});
-    });
-
-    $(document).on('click', '#btn-da-close', function () {
-        $('#modal-delete-attribute').dialog('close');
-    });
 
     $('.add-images-products').click(function () {
         var imgs = $('img');
@@ -317,14 +318,9 @@ $(document).ready(function () {
         for (var i = 0; i < order.length; i++) {
             count += parseInt(order[i].amount);
         }
-        if (count)
-            $('.count-products').addClass('amount-products');
-        else
-            $('.count-products').removeClass('amount-products');
         $('.count-products').html(count);
     }
 
     insert_total_cost();
     count_products();
-})
-;
+});
