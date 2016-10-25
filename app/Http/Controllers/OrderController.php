@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
+use App\Country;
 use App\Order;
 use App\OrderStatus;
+use App\Region;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Auth;
+use App\Delivery;
+use App\Payment;
 
 class OrderController extends Controller
 {
@@ -31,7 +37,25 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::check())
+            return redirect('/login');
+        if (!isset($_COOKIE['basket'])) {
+            return redirect()->route('home');
+        }
+
+        $deliveries = Delivery::all();
+        $payments = Payment::all();
+        $countries = Country::all();
+        $regions = Region::all();
+        $cities = City::all();
+        $data = [
+            'deliveries' => $deliveries,
+            'payments' => $payments,
+            'countries' => $countries,
+            'regions' => $regions,
+            'cities' => $cities
+        ];
+        return view('order.create', $data);
     }
 
     /**
@@ -42,7 +66,31 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'street' => 'required',
+            'num_home' => 'required|integer',
+            'mail_index' => 'required|integer'
+        ]);
+
+        $orderProducts = json_decode($_COOKIE['basket']);
+        $userId = Auth::user()->id;
+        $order = new Order();
+        $order->user_id = $userId;
+        $order->delivery_id = $request->delivery;
+        $order->payment_id = $request->payment;
+        $order->save();
+        $totalCost = 0;
+        foreach ($orderProducts as $product) {
+            $order->products()->attach($product->productId, ['amount' => $product->amount]);
+            $totalCost += $product->price * $product->amount;
+        }
+        $totalCost += Delivery::find($request->delivery)->price;
+        $data = [
+            'orderProducts' => $orderProducts,
+            'totalCost' => $totalCost
+        ];
+        setcookie('basket', '');
+        return view('order.store', $data);
     }
 
     /**
@@ -110,5 +158,27 @@ class OrderController extends Controller
         Order::destroy($id);
 
         return 'OK';
+    }
+
+    public function getRegions($id)
+    {
+        $regions = Country::find($id)->regions;
+
+        $data = [
+            'regions' => $regions
+        ];
+
+        return view('upload.regions', $data);
+    }
+
+    public function getCities($id)
+    {
+        $cities = Region::find($id)->cities;
+
+        $data = [
+            'cities' => $cities
+        ];
+
+        return view('upload.cities', $data);
     }
 }

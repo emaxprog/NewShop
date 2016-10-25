@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <a class="checkout btn btn-primary" href="{{route('checkout.create')}}"><i
+                        <a class="checkout btn btn-primary" href="{{route('order.create')}}"><i
                                     class="fa fa-credit-card fa-lg"></i>Оформитьзаказ</a>
                     </div>
                 </div>

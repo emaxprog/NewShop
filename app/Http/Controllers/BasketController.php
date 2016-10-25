@@ -39,20 +39,7 @@ class BasketController extends Controller
      */
     public function create()
     {
-        if (!Auth::check())
-            return redirect('/login');
-        if (!isset($_COOKIE['basket'])) {
-            return redirect()->route('home');
-        }
-        $checkpoints = Checkpoint::all();
-        $deliveries = Delivery::all();
-        $payments = Payment::all();
-        $data = [
-            'checkpoints' => $checkpoints,
-            'deliveries' => $deliveries,
-            'payments' => $payments
-        ];
-        return view('basket.checkout', $data);
+        //
     }
 
     /**
@@ -63,26 +50,7 @@ class BasketController extends Controller
      */
     public function store(Request $request)
     {
-        $orderProducts = json_decode($_COOKIE['basket']);
-        $userId = Auth::user()->id;
-        $order = new Order();
-        $order->user_id = $userId;
-        $order->checkpoint_id = $request->checkpoint;
-        $order->delivery_id = $request->delivery;
-        $order->payment_id = $request->payment;
-        $order->save();
-        $totalCost = 0;
-        foreach ($orderProducts as $product) {
-            $order->products()->attach($product->productId, ['amount' => $product->amount]);
-            $totalCost += $product->price * $product->amount;
-        }
-        $totalCost += Delivery::find($request->delivery)->price;
-        $data = [
-            'orderProducts' => $orderProducts,
-            'totalCost' => $totalCost
-        ];
-        setcookie('basket', '');
-        return view('basket.checkout_finish', $data);
+        //
     }
 
     /**

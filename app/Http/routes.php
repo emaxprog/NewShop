@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::delete('afisha', 'AfishaController@destroy');
     Route::get('afisha/edit', ['as' => 'admin.afisha.edit', 'uses' => 'AfishaController@edit']);
     Route::put('afisha', ['as' => 'admin.afisha.update', 'uses' => 'AfishaController@update']);
-    Route::resource('order', 'OrderController');
+    Route::resource('order', 'OrderController', ['except' => ['create', 'store']]);
     Route::resource('category', 'CategoryController');
     Route::delete('product/{id}/pav', 'ProductAttributeValueController@destroy');
     Route::delete('product/{id}/image', 'ProductController@image_destroy');
@@ -30,8 +30,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('product', 'ProductController', ['except' => 'show']);
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
 });
-Route::post('checkout', ['as' => 'checkout.store', 'uses' => 'BasketController@store']);
-Route::get('checkout', ['as' => 'checkout.create', 'uses' => 'BasketController@create']);
+
+Route::resource('order', 'OrderController', ['only' => ['create', 'store']]);
+
+Route::get('order/regions/{id}', 'OrderController@getRegions');
+Route::get('order/cities/{id}', 'OrderController@getCities');
+
 Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
 Route::group(['prefix' => 'catalog'], function () {
     Route::get('category/{id}', ['as' => 'category', 'uses' => 'CatalogController@index']);
