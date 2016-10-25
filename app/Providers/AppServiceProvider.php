@@ -15,10 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Category $categoryModel)
     {
-//        $categories = $categoryModel->getCategories();
-//        $header = Header::find(1);
-//        view()->share('categories', $categories);
-//        view()->share('header', $header);
+        $categories = $categoryModel->getCategories();
+        $header = Header::find(1);
+        view()->share('categories', $categories);
+        view()->share('header', $header);
     }
 
     /**

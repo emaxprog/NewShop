@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = ['user_id', 'checkpoint_id', 'delivery_id', 'payment_id'];
 
     public function user()

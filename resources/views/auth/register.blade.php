@@ -77,18 +77,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="address" class="control-label col-md-2">Адрес</label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" name="address" id="address" placeholder="Введите адрес"
-                           value="{{ old('address') }}">
-                    @if ($errors->has('address'))
-                        <div class="alert alert-danger">
-                            <strong>{{ $errors->first('address') }}</strong>
-                        </div>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group">
                 <div class="col-md-offset-5 col-md-2">
                     <button type="submit" class="btn btn-primary btn-block">
                         <i class="fa fa-btn fa-user"></i> Регистрация
