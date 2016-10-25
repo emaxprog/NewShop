@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('price')->unsigned();
             $table->integer('code')->unsigned();
-            $table->tinyInteger('availability')->unsigned()->default('1');
             $table->boolean('is_new')->default(true);
             $table->boolean('is_recommended')->default(false);
             $table->boolean('visibility')->default(true);

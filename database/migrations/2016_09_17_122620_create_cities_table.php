@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCheckpointsTable extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateCheckpointsTable extends Migration
      */
     public function up()
     {
-        Schema::create('checkpoints', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name', 50);
-            $table->string('address', 100);
-            $table->string('opening_hours', 100);
+            $table->integer('region_id')->unsigned();
+            $table->string('name', 100);
+            $table->foreign('region_id')->references('id')->on('regions')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateCheckpointsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('checkpoints');
+        Schema::drop('cities');
     }
 }

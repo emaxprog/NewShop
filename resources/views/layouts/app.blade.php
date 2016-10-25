@@ -107,9 +107,9 @@
                         <li>
                             <a href="">О компании</a>
                         </li>
-                        {{--<li>--}}
-                        {{--@include('layouts.popup')--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="" onclick="return false" data-toggle="modal" data-target="#popup">Обратная связь</a>
+                        </li>
                         <li>
                             <a href="">Гарантия</a>
                         </li>

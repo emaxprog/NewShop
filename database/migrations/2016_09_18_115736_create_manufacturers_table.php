@@ -16,6 +16,10 @@ class CreateManufacturersTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 30);
+            $table->integer('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

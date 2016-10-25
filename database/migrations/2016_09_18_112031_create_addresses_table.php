@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCitiesTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateCitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('region_id')->unsigned();
-            $table->string('name', 100);
-            $table->primary(['id', 'region_id']);
-            $table->foreign('region_id')->references('id')->on('regions')
+            $table->string('street', 100);
+            $table->string('num_home', 10);
+            $table->integer('mail_index')->unsigned();
+            $table->integer('city_id')->unsigned();
+            $table->foreign('city_id')->references('id')->on('cities')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -31,6 +31,6 @@ class CreateCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cities');
+        Schema::drop('addresses');
     }
 }
