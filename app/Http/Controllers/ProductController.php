@@ -84,7 +84,6 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->code = $request->code;
-        $product->availability = $request->availability;
         $product->is_new = $request->is_new;
         $product->is_recommended = $request->is_recommended;
         $product->visibility = $request->visibility;
@@ -173,7 +172,6 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->code = $request->code;
-        $product->availability = $request->availability;
         $product->is_new = $request->is_new;
         $product->is_recommended = $request->is_recommended;
         $product->visibility = $request->visibility;

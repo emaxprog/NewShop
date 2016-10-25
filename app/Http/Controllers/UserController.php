@@ -85,14 +85,12 @@ class UserController extends Controller
             'name' => 'required|min:2',
             'surname' => 'required',
             'phone' => 'required|integer',
-            'address' => 'required|min:10'
         ]);
 
         $user = User::find($id);
         $user->name = $request->name;
         $user->surname = $request->surname;
         $user->phone = $request->phone;
-        $user->address = $request->address;
         $user->save();
 
         return redirect()->route('user.index');

@@ -77,13 +77,6 @@
                         @endif
                     </div>
                     <div class="row">
-                        <label>Наличие на складе</label>
-                        <select name="availability">
-                            <option value="1" selected>Да</option>
-                            <option value="0">Нет</option>
-                        </select>
-                    </div>
-                    <div class="row">
                         <label>Новинка</label>
                         <select name="is_new">
                             <option value="1" selected>Да</option>

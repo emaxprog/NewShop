@@ -44,18 +44,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="control-label col-md-1">Адрес</label>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="address" id="address" placeholder="Введите адрес"
-                               value="{{ $user->address }}">
-                        @if ($errors->has('address'))
-                            <div class="alert alert-danger">
-                                <strong>{{ $errors->first('address') }}</strong>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group">
                     <button type="submit" class="btn btn-save-user btn-primary"> Сохранить</button>
                 </div>
             </form>
