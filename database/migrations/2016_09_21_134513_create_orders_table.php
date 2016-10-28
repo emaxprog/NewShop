@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('delivery_id')->unsigned();
             $table->integer('payment_id')->unsigned();
             $table->integer('status_id')->unsigned()->default(1);
+            $table->string('comment', 255)->nullable()->default(null);
             $table->timestamp('created_at');
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
