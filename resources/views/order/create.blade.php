@@ -30,31 +30,46 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Улица</label>
-                            <input type="text" name="street" class="form-control" value="{{old('street')}}"
-                                   placeholder="Пример: Шолохова">
-                        </div>
-                        <div class="col-md-2">
-                            <label>Номер дома</label>
-                            <input type="text" name="num_home" class="form-control" value="{{old('num_home')}}"
-                                   placeholder="Пример: 45А">
-                        </div>
-                        <div class="col-md-4">
-                            <label>Почтовый индекс</label>
-                            <input type="text" name="mail_index" class="form-control" value="{{old('mail_index')}}"
-                                   placeholder="Пример: 342423">
-                        </div>
-                    </div>
-                    @if(count($errors)>0)
-                        @foreach($errors->all() as $error)
-                            <div class="alert alert-danger">
-                                <strong>{!! $error !!}</strong>
-                            </div>
+                    <label>Точка выдачи</label>
+                    <select name="checkpoint" class="form-control" id="checkpoint">
+                        @foreach($checkpoints as $checkpoint)
+                            <option value="{{$checkpoint->id}}">{!! $checkpoint->name !!}
+                                ({!! $checkpoint->street !!} {!! $checkpoint->num_home !!})
+                            </option>
                         @endforeach
-                    @endif
+                    </select>
                 </div>
+
+                /*В точку выдачи*/
+                {{--<div class="form-group">--}}
+                {{--<div class="row">--}}
+                {{--<div class="col-md-6">--}}
+                {{--<label>Улица</label>--}}
+                {{--<input type="text" name="street" class="form-control" value="{{old('street')}}"--}}
+                {{--placeholder="Пример: Шолохова">--}}
+                {{--</div>--}}
+                {{--<div class="col-md-2">--}}
+                {{--<label>Номер дома</label>--}}
+                {{--<input type="text" name="num_home" class="form-control" value="{{old('num_home')}}"--}}
+                {{--placeholder="Пример: 45А">--}}
+                {{--</div>--}}
+                {{--<div class="col-md-4">--}}
+                {{--<label>Почтовый индекс</label>--}}
+                {{--<input type="text" name="mail_index" class="form-control" value="{{old('mail_index')}}"--}}
+                {{--placeholder="Пример: 342423">--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--@if(count($errors)>0)--}}
+                {{--@foreach($errors->all() as $error)--}}
+                {{--<div class="alert alert-danger">--}}
+                {{--<strong>{!! $error !!}</strong>--}}
+                {{--</div>--}}
+                {{--@endforeach--}}
+                {{--@endif--}}
+                {{--</div>--}}
+
+                /**/
+
                 <div class="form-group">
                     <label>Тип доставки</label>
                     <select name="delivery" class="form-control">

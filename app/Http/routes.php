@@ -35,6 +35,7 @@ Route::resource('order', 'OrderController', ['only' => ['create', 'store']]);
 
 Route::get('order/regions/{id}', 'OrderController@getRegions');
 Route::get('order/cities/{id}', 'OrderController@getCities');
+Route::get('order/checkpoints/{id}', 'OrderController@getCheckpoints');
 
 Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
 Route::group(['prefix' => 'catalog'], function () {

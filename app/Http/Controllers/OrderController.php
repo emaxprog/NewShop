@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Checkpoint;
 use App\City;
 use App\Country;
 use App\Order;
@@ -48,12 +49,14 @@ class OrderController extends Controller
         $countries = Country::all();
         $regions = Region::all();
         $cities = City::all();
+        $checkpoints = Checkpoint::all();
         $data = [
             'deliveries' => $deliveries,
             'payments' => $payments,
             'countries' => $countries,
             'regions' => $regions,
-            'cities' => $cities
+            'cities' => $cities,
+            'checkpoints' => $checkpoints
         ];
         return view('order.create', $data);
     }
@@ -180,5 +183,16 @@ class OrderController extends Controller
         ];
 
         return view('upload.cities', $data);
+    }
+
+    public function getCheckpoints($id)
+    {
+        $checkpoints = City::find($id)->checkpoints;
+
+        $data = [
+            'checkpoints' => $checkpoints
+        ];
+
+        return view('upload.checkpoints', $data);
     }
 }

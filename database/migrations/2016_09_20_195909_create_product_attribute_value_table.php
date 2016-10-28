@@ -18,6 +18,7 @@ class CreateProductAttributeValueTable extends Migration
             $table->integer('attribute_id')->unsigned();
             $table->string('value', 50);
             $table->primary(['product_id', 'attribute_id']);
+
             $table->foreign('product_id')->references('id')->on('products')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

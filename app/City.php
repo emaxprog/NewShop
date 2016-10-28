@@ -12,4 +12,9 @@ class City extends Model
     {
         return $this->belongsTo('App\Region');
     }
+
+    public function checkpoints()
+    {
+        return $this->belongsToMany('App\Checkpoint');
+    }
 }

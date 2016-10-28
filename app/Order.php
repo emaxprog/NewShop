@@ -25,10 +25,11 @@ class Order extends Model
         return $this->belongsTo('App\Payment');
     }
 
-    public function checkpoint()
+    public function checkpoints()
     {
         return $this->belongsTo('App\Checkpoint');
     }
+
 
     public function products()
     {

@@ -17,6 +17,7 @@ class CreateCitiesTable extends Migration
             $table->increments('id');
             $table->integer('region_id')->unsigned();
             $table->string('name', 100);
+
             $table->foreign('region_id')->references('id')->on('regions')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

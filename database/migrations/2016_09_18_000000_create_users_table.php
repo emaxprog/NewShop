@@ -20,9 +20,16 @@ class CreateUsersTable extends Migration
             $table->string('name', 30);
             $table->string('surname', 30);
             $table->string('phone', 11);
+            $table->string('address', 150);
+            $table->integer('postcode')->unsigned();
+            $table->integer('city_id')->unsigned();
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamp('created_at');
+
+            $table->foreign('city_id')->references('id')->on('cities')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

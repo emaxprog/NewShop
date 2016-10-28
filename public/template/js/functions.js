@@ -319,6 +319,22 @@ $(document).ready(function () {
         });
     });
 
+    /*Подгрузка точек выдачи*/
+    $('select#city').change(function () {
+        var cityId = $(this).val();
+        var selectCheckpoint = $('select#checkpoint');
+        $.ajax({
+            url: '/order/checkpoints/' + cityId,
+            type: 'GET',
+            success: function (data) {
+                selectCheckpoint.html(data);
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
     function total_cost() {
         var order = JSON.parse($.cookie('basket'));
         var total = 0;

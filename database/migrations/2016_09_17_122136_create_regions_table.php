@@ -16,7 +16,8 @@ class CreateRegionsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('country_id')->unsigned();
-            $table->string('name', 150);
+            $table->string('name', 100);
+
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
