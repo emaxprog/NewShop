@@ -58,6 +58,28 @@ body {
   }
 }
 
+/*Блоки товаров*/
+
+.list-products {
+  .thumbnail {
+    .img-rounded {
+      width: 200px;
+    }
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 320px;
+    a {
+      text-decoration: none;
+      color: $DARK_GREY_COLOR;
+    }
+    .product-price{
+      font-size: 20px;
+    }
+  }
+}
+
 /*Постраничный вывод*/
 
 .div-pagination {

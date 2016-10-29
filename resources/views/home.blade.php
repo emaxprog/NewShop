@@ -23,16 +23,18 @@
                                 <img src="{{\App\Product::getPreview($product->images)}}" alt="Apple MacBook"
                                      title="Apple MacBook" id="img-{{$product->id}}" class="img-rounded img-responsive"
                                      height="150px">
-                                <p>{{$product->name}}</p>
-                                <p>{{$product->price}} руб.</p>
+                                <p class="text-center">{{$product->name}}</p>
+                                <p class="text-center product-price">{{$product->price}} руб.</p>
                             </a>
                             <div class="caption">
                                 <button type="button" class="btn btn-primary btn-block buy-btn"
-                                   onclick="return false"
-                                   data-id="{{$product->id}}"
-                                   data-name="{{$product->name}}"
-                                   data-price="{{$product->price}}"><i class="fa fa-cart-plus fa-2x"></i> Добавить в
-                                    корзину</button>
+                                        onclick="return false"
+                                        data-id="{{$product->id}}"
+                                        data-name="{{$product->name}}"
+                                        data-price="{{$product->price}}"><i class="fa fa-cart-plus fa-2x"></i> Добавить
+                                    в
+                                    корзину
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -50,8 +52,8 @@
                                 <img src="{{\App\Product::getPreview($product->images)}}" alt="Apple MacBook"
                                      title="Apple MacBook" id="img-{{$product->id}}" class="img-rounded img-responsive"
                                      height="150px">
-                                <p>{{$product->name}}</p>
-                                <p>{{$product->price}} руб.</p>
+                                <p class="text-center">{{$product->name}}</p>
+                                <p class="text-center product-price">{{$product->price}} руб.</p>
                             </a>
                             <div class="caption">
                                 <button type="button" class="btn btn-primary btn-block buy-btn"

@@ -40,6 +40,21 @@ body {
     overflow: auto;
     height: 150px; }
 
+/*Блоки товаров*/
+.list-products .thumbnail {
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 320px; }
+  .list-products .thumbnail .img-rounded {
+    width: 200px; }
+  .list-products .thumbnail a {
+    text-decoration: none;
+    color: #303030; }
+  .list-products .thumbnail .product-price {
+    font-size: 20px; }
+
 /*Постраничный вывод*/
 .div-pagination {
   display: flex;

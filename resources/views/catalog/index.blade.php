@@ -77,8 +77,8 @@
                                 <img src="{{\App\Product::getPreview($product->images)}}" alt="Apple MacBook"
                                      title="Apple MacBook" id="img-{{$product->id}}" class="img-rounded img-responsive"
                                      height="150px">
-                                <p>{{$product->name}}</p>
-                                <p>{{$product->price}} руб.</p>
+                                <p class="text-center">{{$product->name}}</p>
+                                <p class="text-center product-price">{{$product->price}} руб.</p>
                             </a>
                             <div class="caption">
                                 <a href="" class="btn btn-primary btn-block buy-btn" onclick="return false"
