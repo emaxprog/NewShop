@@ -34,8 +34,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 Route::resource('order', 'OrderController', ['only' => ['create', 'store']]);
 
-Route::get('user/regions/{id}', 'OrderController@uploadRegions');
-Route::get('user/cities/{id}', 'OrderController@uploadCities');
+Route::get('user/regions/{id}', 'UserController@uploadRegions');
+Route::get('user/cities/{id}', 'UserController@uploadCities');
 
 Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
 Route::group(['prefix' => 'catalog'], function () {

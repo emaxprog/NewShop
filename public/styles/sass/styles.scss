@@ -22,8 +22,18 @@ body {
   li {
     position: relative;
     a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid $AQUA_COLOR;
       margin-bottom: -1px;
+      height: 60px;
+      font-size: 14px;
+      color: $DARK_GREY_COLOR;
+      &:hover {
+        background: $DARK_GREY_COLOR;
+        color: #FFFFFF;
+      }
     }
 
     &:hover .sub-menu {
@@ -64,6 +74,7 @@ body {
   .thumbnail {
     .img-rounded {
       width: 200px;
+      margin-bottom: 10px;
     }
     padding: 10px;
     display: flex;
@@ -74,10 +85,21 @@ body {
       text-decoration: none;
       color: $DARK_GREY_COLOR;
     }
-    .product-price{
+    .product-price {
       font-size: 20px;
     }
   }
+  .product-block:hover {
+    transform: scale(1.05);
+    transition: transform 0.7s;
+  }
+}
+
+/*Страница продукта*/
+
+.info-product{
+  font-size: 16px;
+  padding: 20px;
 }
 
 /*Постраничный вывод*/

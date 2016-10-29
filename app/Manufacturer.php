@@ -13,4 +13,9 @@ class Manufacturer extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
 }

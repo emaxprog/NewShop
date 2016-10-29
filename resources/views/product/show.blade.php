@@ -7,11 +7,11 @@
         <div class="col-md-6">
             <section class="info-product">
                 <h2>{{$product->name}}</h2>
+                <h1>{!! $product->price !!} руб.</h1>
                 <ul class="list-unstyled">
                     <li><b>Код товара:</b> {!! $product->code !!}</li>
-                    <li><b>Цена:</b>{!! $product->price !!} руб.</li>
-                    <li><b>Наличие:</b> {!! $product->getAvailabilityText($product->availability) !!}</li>
                     <li><b>Производитель:</b> {!! $product->manufacturer->name !!}</li>
+                    <li><b>Страна производства:</b> {!! $product->manufacturer->country->name !!}</li>
                 </ul>
                 <div class="button-add-basket">
                     <a href="" onclick="return false" data-id="{{$product->id}}"

@@ -14,8 +14,17 @@ body {
 .nav-products li {
   position: relative; }
   .nav-products li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #00a2e8;
-    margin-bottom: -1px; }
+    margin-bottom: -1px;
+    height: 60px;
+    font-size: 14px;
+    color: #303030; }
+    .nav-products li a:hover {
+      background: #303030;
+      color: #FFFFFF; }
   .nav-products li:hover .sub-menu {
     display: block; }
 .nav-products .sub-menu {
@@ -48,12 +57,21 @@ body {
   justify-content: space-between;
   height: 320px; }
   .list-products .thumbnail .img-rounded {
-    width: 200px; }
+    width: 200px;
+    margin-bottom: 10px; }
   .list-products .thumbnail a {
     text-decoration: none;
     color: #303030; }
   .list-products .thumbnail .product-price {
     font-size: 20px; }
+.list-products .product-block:hover {
+  transform: scale(1.05);
+  transition: transform 0.7s; }
+
+/*Страница продукта*/
+.info-product {
+  font-size: 16px;
+  padding: 20px; }
 
 /*Постраничный вывод*/
 .div-pagination {

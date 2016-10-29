@@ -14,7 +14,7 @@
             <div class="row list-products">
                 <h2>Последние добавленные</h2>
                 @foreach ($latestProducts as $product)
-                    <div class="col-md-4">
+                    <div class="col-md-4 product-block">
                         <div class="thumbnail">
                             @if ($product->is_new)
                                 <img src="/template/images/site/new.png" class="new img-responsive">
@@ -43,7 +43,7 @@
             <div class="row list-products">
                 <h2>Рекомендованные товары</h2>
                 @foreach ($recommendedProducts as $product)
-                    <div class="col-md-4">
+                    <div class="col-md-4 product-block">
                         <div class="thumbnail">
                             @if ($product->is_new)
                                 <img src="/template/images/site/new.png" class="new img-responsive">

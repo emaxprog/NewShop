@@ -17,4 +17,9 @@ class Country extends Model
     {
         return $this->hasManyThrough('App\City', 'App\Region');
     }
+
+    public function manufacturers()
+    {
+        return $this->belongsToMany('App\Manufacturer');
+    }
 }

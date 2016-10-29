@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
 
+use App\Country;
+use App\Region;
+
 class UserController extends Controller
 {
     /**

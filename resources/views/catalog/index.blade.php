@@ -66,9 +66,9 @@
             </div>
         </div>
         <div class="col-md-9 products">
-            <div class="row">
+            <div class="row list-products">
                 @foreach ($products as $product)
-                    <div class="col-md-4">
+                    <div class="col-md-4 product-block">
                         <div class="thumbnail">
                             @if ($product->is_new)
                                 <img src="/template/images/site/new.png" class="new">
@@ -81,11 +81,12 @@
                                 <p class="text-center product-price">{{$product->price}} руб.</p>
                             </a>
                             <div class="caption">
-                                <a href="" class="btn btn-primary btn-block buy-btn" onclick="return false"
-                                   data-id="{{$product->id}}"
-                                   data-name="{{$product->name}}"
-                                   data-price="{{$product->price}}"><i class="fa fa-cart-plus fa-2x"></i> Добавить в
-                                    корзину</a>
+                                <button type="button" class="btn btn-primary btn-block buy-btn" onclick="return false"
+                                        data-id="{{$product->id}}"
+                                        data-name="{{$product->name}}"
+                                        data-price="{{$product->price}}"><i class="fa fa-cart-plus fa-2x"></i> Добавить
+                                    в корзину
+                                </button>
                             </div>
                         </div>
                     </div>
