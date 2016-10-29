@@ -1,22 +1,26 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="center-admin">
-        <div class="admin-create admin-create-category">
-            <h2>Добавить новую категорию</h2>
-            <div class="admin-form">
-                <form action="{{route('admin.category.store')}}" method="post">
-                    {{csrf_field()}}
-                    <div class="row {{$errors->has('name')?'error':''}}">
-                        <label for="name">Название</label>
-                        <input type="text" name="name" id="name" placeholder="" value="{{old('name')}}">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{route('admin.category.store')}}" method="post" class="form form-horizontal">
+                {{csrf_field()}}
+                <h2 class="text-center">Добавить новую категорию</h2>
+                <div class="form-group">
+                    <label for="name" class="control-label col-md-2">Название</label>
+                    <div class="col-md-10">
+                        <input type="text" name="name" id="name" placeholder="Введите название категории"
+                               value="{{old('name')}}" class="form-control">
                         @if($errors->has('name'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{ $errors->first('name') }}</strong>
-                            </span>
+                            </div>
                         @endif
                     </div>
-                    <div class="row">
-                        <select name="parent_id">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Категория</label>
+                    <div class="col-md-10">
+                        <select name="parent_id" class="form-control">
                             <option value="0">Главная категория</option>
                             @if (isset($parents))
                                 @foreach ($parents as $parent)
@@ -25,27 +29,32 @@
                             @endif
                         </select>
                     </div>
-                    <div class="row {{$errors->has('weight')?'error':''}}">
-                        <label for="weight">Порядковый номер</label>
-                        <input type="text" name="weight" id="weight" placeholder="" value="{{old('weight')}}">
+                </div>
+                <div class="form-group">
+                    <label for="weight" class="control-label col-md-2">Порядковый номер</label>
+                    <div class="col-md-10">
+                        <input type="text" name="weight" id="weight" placeholder="Введите порядковый номер"
+                               value="{{old('weight')}}" class="form-control">
                         @if($errors->has('weight'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{ $errors->first('weight') }}</strong>
-                            </span>
+                            </div>
                         @endif
                     </div>
-                    <div class="row">
-                        <label>Статус</label>
-                        <select name="visibility">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Статус</label>
+                    <div class="col-md-10">
+                        <select name="visibility" class="form-control">
                             <option value="1" selected="selected">Отображается</option>
                             <option value="0">Скрыта</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <input type="submit" class="btn btn-default" value="Сохранить">
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary center-block">Сохранить</button>
+                </div>
+            </form>
         </div>
     </div>
 @endsection

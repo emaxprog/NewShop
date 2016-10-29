@@ -108,7 +108,8 @@
                             <a href="">О компании</a>
                         </li>
                         <li>
-                            <a href="" onclick="return false" data-toggle="modal" data-target="#popup">Обратная связь</a>
+                            <a href="" onclick="return false" data-toggle="modal" data-target="#popup">Обратная
+                                связь</a>
                         </li>
                         <li>
                             <a href="">Гарантия</a>
@@ -126,7 +127,7 @@
             </div>
             <div class="col-md-4">
                 <h2>Контакты</h2>
-                <ul>
+                <ul class="list-unstyled">
                     <li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>
                     <li><i class="fa fa-map-marker fa-lg"></i> {!! $header->address !!}</li>
                 </ul>
@@ -169,7 +170,8 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Сообщение</label>
-                        <textarea name="message" id="message" rows="5" class="form-control" placeholder="Введите сообщение"
+                        <textarea name="message" id="message" rows="5" class="form-control"
+                                  placeholder="Введите сообщение"
                                   tabindex="4"></textarea>
                         <div class="text-danger error-message"></div>
                     </div>

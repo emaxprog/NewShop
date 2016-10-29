@@ -93,12 +93,14 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
-        $customer = $order->user;
+        $user = $order->user;
         $products = $order->products;
+        $totalPrice = $order->products->sum('price');
         $data = [
             'order' => $order,
-            'customer' => $customer,
-            'products' => $products
+            'user' => $user,
+            'products' => $products,
+            'totalPrice' => $totalPrice
         ];
 
         return view('order.show', $data);

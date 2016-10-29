@@ -12,7 +12,7 @@
 */
 
 Route::auth();
-Route::resource('product', 'ProductController', ['only' => 'show']);
+Route::get('product/{id}', ['as' => 'product.show', 'uses' => 'ProductController@show']);
 Route::get('product/{id}/amount', 'ProductController@uploadAmount');
 Route::resource('user', 'UserController');
 Route::post('feedback', 'HomeController@feedback');

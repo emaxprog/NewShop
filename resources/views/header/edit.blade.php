@@ -1,64 +1,78 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="center-admin">
-        <div class="admin-update">
-            <h2>Редактировать шапку</h2>
-            <div class="admin-form">
-                <form action="{{route('admin.header.update')}}" method="post" enctype="multipart/form-data">
-                    {{csrf_field()}}
-                    <input type="hidden" name="_method" value="PUT">
-                    <div class="row {{$errors->has('phone1')? 'error':''}}">
-                        <label for="phone1">Телефон</label>
-                        <input type="text" name="phone1" placeholder="Введите телефон" value="{!! $header->phone1 !!}">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{route('admin.header.update')}}" method="post" enctype="multipart/form-data"
+                  class="form form-horizontal">
+                {{csrf_field()}}
+                <input type="hidden" name="_method" value="PUT">
+                <h2 class="text-center">Управление шапкой</h2>
+                <div class="form-group">
+                    <label for="phone1" class="control-label col-md-2">Телефон</label>
+                    <div class="col-md-10">
+                        <input type="text" name="phone1" placeholder="Введите телефон" class="form-control"
+                               value="{!! $header->phone1 !!}" id="phone1">
                         @if($errors->has('phone1'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{$errors->first('phone1')}}</strong>
-                            </span>
+                            </div>
                         @endif
                     </div>
-                    <div class="row {{$errors->has('phone2')? 'error':''}}">
-                        <label for="phone2">Телефон</label>
-                        <input type="text" name="phone2" placeholder="Введите телефон" value="{!! $header->phone2 !!}">
+                </div>
+                <div class="form-group">
+                    <label for="phone2" class="control-label col-md-2">Телефон</label>
+                    <div class="col-md-10">
+                        <input type="text" name="phone2" placeholder="Введите телефон" class="form-control"
+                               value="{!! $header->phone2 !!}" id="phone2">
                         @if($errors->has('phone2'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{$errors->first('phone2')}}</strong>
-                            </span>
+                            </div>
                         @endif
                     </div>
-                    <div class="row {{$errors->has('address')? 'error':''}}">
-                        <label>Адрес</label>
-                        <input type="text" name="address" placeholder="Введите адрес" value="{!! $header->address !!}">
+                </div>
+                <div class="form-group">
+                    <label for="address" class="control-label col-md-2">Адрес</label>
+                    <div class="col-md-10">
+                        <input type="text" name="address" placeholder="Введите адрес" class="form-control"
+                               value="{!! $header->address !!}"
+                               id="address">
                         @if($errors->has('address'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{$errors->first('address')}}</strong>
-                            </span>
+                            </div>
                         @endif
                     </div>
-                    <div class="row {{$errors->has('logotype')? 'error':''}}">
-                        <label>Логотип</label>
-                        <img src="{{$header->logotype}}" width="200px" alt=""/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Логотип</label>
+                    <div class="col-md-10">
                         <input type="file" name="logotype" accept="image/*">
                         @if($errors->has('logotype'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{$errors->first('logotype')}}</strong>
-                            </span>
+                            </div>
                         @endif
+                        <img src="{{$header->logotype}}" class="img-rounded" width="200px" alt=""/>
                     </div>
-                    <div class="row {{$errors->has('favicon')? 'error':''}}">
-                        <label>Иконка</label>
-                        <img src="{{$header->favicon}}" width="16px" alt=""/>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Иконка</label>
+                    <div class="col-md-10">
                         <input type="file" name="favicon" accept="image/*">
                         @if($errors->has('favicon'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{$errors->first('favicon')}}</strong>
-                            </span>
+                            </div>
                         @endif
+                        <img src="{{$header->favicon}}" class="img-rounded" width="16px" alt=""/>
                     </div>
-                    <div class="row">
-                        <input type="submit" class="btn btn-default" value="Сохранить">
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary center-block">Сохранить</button>
+                </div>
+            </form>
         </div>
     </div>
 @endsection

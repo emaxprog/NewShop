@@ -89,9 +89,11 @@
                                     <div class="thumbnail image-product">
                                         <img src="{{$image}}" class="img-rounded"
                                              data-id="{{$product->id}}">
-                                        <button type="button" class="btn btn-danger btn-block delete-image"><i
-                                                    class="fa fa-trash fa-lg"></i>
-                                        </button>
+                                        <div class="caption">
+                                            <button type="button" class="btn btn-danger btn-block delete-image"><i
+                                                        class="fa fa-trash fa-lg"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

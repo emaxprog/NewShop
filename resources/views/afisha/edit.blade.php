@@ -1,33 +1,39 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="admin">
-        <h2>Управление афишей</h2>
-        <div class="admin-form">
-            <form action="{{route('admin.afisha.update')}}" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{route('admin.afisha.update')}}" method="post" enctype="multipart/form-data"
+                  class="form form-horizontal">
                 {{csrf_field()}}
+                <h2 class="text-center">Управление афишей</h2>
                 <input type="hidden" name="_method" value="PUT">
                 <div class="row">
                     @if(isset($images))
                         @foreach($images as $image)
-                            <div class="img-afisha">
-                                <img src="{{$image}}" style="width: 940px;height: 300px;">
-                                <button type="button" class="delete-image-afisha"><i class="fa fa-minus fa-lg"></i>
-                                </button>
+                            <div class="thumbnail image-afisha">
+                                <img src="{{$image}}" class="img-rounded">
+                                <div class="caption">
+                                    <button type="button" class="btn btn-danger btn-block delete-image-afisha"><i
+                                                class="fa fa-trash fa-lg"></i>
+                                    </button>
+                                </div>
+
                             </div>
                         @endforeach
                     @endif
                 </div>
-                <div class="row {{$errors->has('images')? 'error':''}}">
+                <div class="form-group">
                     <h3>Изображения</h3>
-                    <button type="button" id="add-image-afisha"><i class="fa fa-plus fa-lg"></i></button>
+                    <button type="button" id="add-image-afisha" class="btn btn-default"><i class="fa fa-plus fa-lg"></i>
+                    </button>
                     @if($errors->has('images'))
-                        <span class="help-block">
-                                <strong>{{$errors->first('images')}}</strong>
-                            </span>
+                        <div class="alert alert-danger">
+                            <strong>{{$errors->first('images')}}</strong>
+                        </div>
                     @endif
                 </div>
-                <div class="row">
-                    <input type="submit" value="Сохранить">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary center-block">Сохранить</button>
                 </div>
             </form>
         </div>

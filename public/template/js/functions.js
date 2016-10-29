@@ -159,7 +159,7 @@ $(document).ready(function () {
                 url: '/admin/product/' + product_id,
                 type: 'DELETE',
                 data: {product_id: product_id},
-                success: function (data) {
+                success: function () {
                     tr.remove();
                 },
                 error: function (msg) {
@@ -170,35 +170,37 @@ $(document).ready(function () {
     });
 
     $('.delete-category').click(function () {
-        var tr = $(this).parent().parent();
-        var category_id = tr.attr('data-id');
-        ajax({
-            url: '/admin/category/' + category_id,
-            type: 'DELETE',
-            data: {category_id: category_id},
-            success: function () {
-                tr.remove();
-            },
-            error: function (msg) {
-                console.log(msg);
-            }
-        });
+        var category_id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + category_id + '"]');
+        if (confirm('Вы действительно хотите удалить данную категорию?')) {
+            $.ajax({
+                url: '/admin/category/' + category_id,
+                type: 'DELETE',
+                success: function () {
+                    tr.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
     });
 
     $('.delete-order').click(function () {
-        var tr = $(this).parent().parent();
-        var order_id = tr.attr('data-id');
-        $.ajax({
-            url: '/admin/order/' + order_id,
-            type: 'DELETE',
-            data: {order_id: order_id},
-            success: function () {
-                tr.remove();
-            },
-            error: function (msg) {
-                console.log(msg);
-            }
-        });
+        var order_id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + order_id + '"]');
+        if (confirm('Вы действительно хотите удалить данный заказ?')) {
+            $.ajax({
+                url: '/admin/order/' + order_id,
+                type: 'DELETE',
+                success: function () {
+                    tr.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
     });
 
 

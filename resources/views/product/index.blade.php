@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h2>Управление товарами</h2>
+            <h2 class="text-center">Управление товарами</h2>
             <a href="{{route('admin.product.create')}}" class="btn-add-product btn btn-primary"><i
                         class="fa fa-plus"></i> Добавить
                 товар</a>

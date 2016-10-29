@@ -2,9 +2,9 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h2>Оформление заказа</h2>
             <form action="{{route('order.store')}}" method="post" class="form">
                 {{csrf_field()}}
+                <h2>Оформление заказа</h2>
                 <div class="form-group">
                     <label>Тип доставки</label>
                     <select name="delivery" class="form-control">

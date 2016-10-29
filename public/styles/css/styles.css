@@ -49,4 +49,9 @@ body {
 .image-product img {
   height: 100px; }
 
+/*Управление афишей*/
+.image-afisha img {
+  width: 940px;
+  height: 300px; }
+
 /*# sourceMappingURL=styles.css.map */

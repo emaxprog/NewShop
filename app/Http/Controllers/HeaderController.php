@@ -49,6 +49,6 @@ class HeaderController extends Controller
         }
         $header->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin.product.index');
     }
 }

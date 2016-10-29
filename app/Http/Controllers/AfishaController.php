@@ -35,7 +35,7 @@ class AfishaController extends Controller
             }
         }
 
-        return redirect()->route('admin');
+        return redirect()->route('admin.product.index');
     }
 
     public function destroy(Request $request)
