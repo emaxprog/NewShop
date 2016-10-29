@@ -60,7 +60,8 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'code' => 'required|integer|unique:products',
-            'price' => 'required|integer'
+            'price' => 'required|integer',
+            'amount' => 'required|integer'
         ]);
 
         $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
@@ -83,12 +84,13 @@ class ProductController extends Controller
         $product->is_new = $request->is_new;
         $product->is_recommended = $request->is_recommended;
         $product->visibility = $request->visibility;
+        $product->amount = $request->amount;
         $product->images = $images;
         $product->save();
 
         $attrValue = isset($request->parameters) ? array_combine($request->parameters, $request->values) : null;
         if (empty($attrValue))
-            return redirect()->route('admin', ['message' => 'Товар сохранен!']);
+            return redirect()->route('admin.product.index', ['message' => 'Товар сохранен!']);
         foreach ($attrValue as $attr => $value) {
             $productAttrValue = new ProductAttributeValue();
             $productAttrValue->product_id = $product->id;
@@ -96,7 +98,7 @@ class ProductController extends Controller
             $productAttrValue->value = $value;
             $productAttrValue->save();
         }
-        return redirect()->route('admin', ['message' => 'Товар сохранен!']);
+        return redirect()->route('admin.product.index', ['message' => 'Товар сохранен!']);
     }
 
     /**
@@ -155,7 +157,8 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'code' => 'required|integer|unique:products,code,' . $id,
-            'price' => 'required|integer'
+            'price' => 'required|integer',
+            'amount' => 'required|integer'
         ]);
 
         $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
@@ -171,6 +174,7 @@ class ProductController extends Controller
         $product->is_new = $request->is_new;
         $product->is_recommended = $request->is_recommended;
         $product->visibility = $request->visibility;
+        $product->amount = $request->amount;
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 if (empty($image))

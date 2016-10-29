@@ -45,4 +45,8 @@ body {
   display: flex;
   justify-content: center; }
 
+/*Управление продуктами*/
+.image-product img {
+  height: 100px; }
+
 /*# sourceMappingURL=styles.css.map */

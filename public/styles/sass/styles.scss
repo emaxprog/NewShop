@@ -1,8 +1,9 @@
 @import "templates";
-@import "popup";
+
 body {
   padding-top: 70px;
 }
+
 /*Аутентификация*/
 .form {
   .alert {
@@ -11,7 +12,7 @@ body {
 }
 
 /*Список продуктов на главной*/
-.list-products{
+.list-products {
   margin: 20px 0;
 }
 
@@ -20,7 +21,7 @@ body {
 .nav-products {
   li {
     position: relative;
-    a{
+    a {
       border: 1px solid $AQUA_COLOR;
       margin-bottom: -1px;
     }
@@ -37,21 +38,21 @@ body {
     position: absolute;
     margin-left: 260px;
     z-index: 10;
-    top:0;
+    top: 0;
   }
 }
 
 /*Меню выборки в каталоге*/
 
-.menu-select{
+.menu-select {
   margin: 20px 0;
   padding: 20px;
   border: 1px solid $AQUA_COLOR;
-  #slider-range{
+  #slider-range {
     margin: 10px 0;
   }
-  .manufacturer-list{
-    padding:0 10px;
+  .manufacturer-list {
+    padding: 0 10px;
     overflow: auto;
     height: 150px;
   }
@@ -59,7 +60,15 @@ body {
 
 /*Постраничный вывод*/
 
-.div-pagination{
+.div-pagination {
   display: flex;
   justify-content: center;
+}
+
+/*Управление продуктами*/
+
+.image-product {
+    img{
+      height: 100px;
+    }
 }

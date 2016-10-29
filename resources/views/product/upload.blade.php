@@ -1,5 +1,5 @@
 @foreach ($products as $product)
-    <tr>
+    <tr data-id="{{$product->id}}">
         <td>{!! $product->code !!}</td>
         <td>{!! $product->name !!}</td>
         <td>{!! $product->price !!} руб.</td>

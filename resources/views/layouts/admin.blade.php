@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">EmStorm</a>
+                <a class="navbar-brand" href="{{route('admin.product.index')}}">EmStorm</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

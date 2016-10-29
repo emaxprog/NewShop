@@ -1,23 +1,27 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="center-admin">
-        <div class="admin-create">
-            <h2>Добавить новый товар</h2>
-            <div class="admin-form">
-                <form action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
-                    {{csrf_field()}}
-                    <div class="row {{$errors->has('name')?'error':''}}">
-                        <label>Название товара</label>
-                        <input type="text" name="name" placeholder="" value="{{old('name')}}">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data"
+                  class="form form-horizontal">
+                {{csrf_field()}}
+                <h2 class="text-center">Добавить новый товар</h2>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Название товара</label>
+                    <div class="col-md-10">
+                        <input type="text" name="name" placeholder="Введите название" value="{{old('name')}}"
+                               class="form-control">
                         @if($errors->has('name'))
-                            <span class="help-block">
+                            <div class="alert alert-danger">
                                 <strong>{{ $errors->first('name') }}</strong>
-                            </span>
+                            </div>
                         @endif
                     </div>
-                    <div class="row">
-                        <label>Производитель</label>
-                        <select name="manufacturer_id">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Производитель</label>
+                    <div class="col-md-10">
+                        <select name="manufacturer_id" class="form-control">
                             @foreach($manufacturers as $manufacturer)
                                 <option value="{{$manufacturer->id}}">
                                     {!! $manufacturer->name !!}
@@ -25,27 +29,35 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="row {{$errors->has('code')?'error':''}}">
-                        <label>Артикул</label>
-                        <input type="text" name="code" placeholder="" value="{{old('code')}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Артикул</label>
+                    <div class="col-md-10">
+                        <input type="text" name="code" placeholder="Введите артикул" value="{{old('code')}}"
+                               class="form-control">
                         @if ($errors->has('code'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('code') }}</strong>
-                                    </span>
+                            <div class="alert alert-danger">
+                                <strong>{{ $errors->first('code') }}</strong>
+                            </div>
                         @endif
                     </div>
-                    <div class="row {{$errors->has('price')?'error':''}}">
-                        <label>Стоимость, руб.</label>
-                        <input type="text" name="price" placeholder="" value="{{old('price')}}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Стоимость, руб.</label>
+                    <div class="col-md-10">
+                        <input type="text" name="price" placeholder="Введите стоимость" value="{{old('price')}}"
+                               class="form-control">
                         @if ($errors->has('price'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('price') }}</strong>
-                                    </span>
+                            <div class="alert alert-danger">
+                                <strong>{{ $errors->first('price') }}</strong>
+                            </div>
                         @endif
                     </div>
-                    <div class="row">
-                        <label>Категория</label>
-                        <select name="category_id">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Категория</label>
+                    <div class="col-md-10">
+                        <select name="category_id" class="form-control">
                             @foreach ($subcategories as $subcategory)
                                 <option value="{{$subcategory->id}}">
                                     {!! $subcategory->name !!}
@@ -53,61 +65,90 @@
                             @endforeach
                         </select>
                     </div>
+                </div>
 
-                    <div class="row {{$errors->has('images')?'error':''}}">
-                        <label>Изображение товара</label>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Изображение товара</label>
+                    <div class="col-md-10">
                         <input type="file" name="images[]" accept="image/*">
                         @if ($errors->has('images'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('images') }}</strong>
-                                    </span>
+                            <div class="alert alert-danger">
+                                <strong>{{ $errors->first('images') }}</strong>
+                            </div>
                         @endif
                     </div>
-                    <div class="row">
-                        <label>Дополнительные изображения</label>
-                        <button type="button" class="add-images-products"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Дополнительные изображения</label>
+                    <div class="col-md-10">
+                        <button type="button" class="add-images-products btn btn-default"><i class="fa fa-plus"></i>
+                        </button>
                     </div>
-                    <div class="row {{$errors->has('description')?'error':''}}">
-                        <label>Детальное описание</label>
-                        <textarea name="description">{!! old('description') !!}</textarea>
-                        @if ($errors->has('description'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('description') }}</strong>
-                                    </span>
-                        @endif
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Краткое описание</label>
+                    <div class="col-md-10">
+                        <textarea name="description" class="form-control"
+                                  placeholder="Введите краткое описание">{!! old('description') !!}</textarea>
                     </div>
-                    <div class="row">
-                        <label>Новинка</label>
-                        <select name="is_new">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Новинка</label>
+                    <div class="col-md-10">
+                        <select name="is_new" class="form-control">
                             <option value="1" selected>Да</option>
                             <option value="0">Нет</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <label>Рекомендуемые</label>
-                        <select name="is_recommended">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Рекомендуемый</label>
+                    <div class="col-md-10">
+                        <select name="is_recommended" class="form-control">
                             <option value="1" selected>Да</option>
                             <option value="0">Нет</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <label>Статус</label>
-                        <select name="visibility">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Статус</label>
+                    <div class="col-md-10">
+                        <select name="visibility" class="form-control">
                             <option value="1" selected>Отображается</option>
                             <option value="0">Скрыт</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <label>Характеристики</label>
-                        <button class="btn" id="btn-add-parameters" type="button"><i class="fa fa-plus"></i>
-                        </button>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Количество</label>
+                    <div class="col-md-10">
+                        <input type="text" name="amount" class="form-control"
+                               placeholder="Введите количество товара" value="{{old('amount')}}">
+                        @if($errors->has('amount'))
+                            <div class="alert alert-danger">
+                                <strong>{!! $errors->first('amount') !!}</strong>
+                            </div>
+                        @endif
                     </div>
-                    <div class="row">
-                        <input type="submit" class="btn btn-default" value="Сохранить">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Характеристики</label>
+                    <div class="col-md-10">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <button class="btn btn-default" id="btn-add-parameters" type="button"><i
+                                            class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary center-block">Сохранить</button>
+                </div>
+            </form>
         </div>
+
     </div>
     <div class="modal fade" role="dialog" aria-hidden="true" id="modal-add-attribute">
         <div class="modal-dialog">
@@ -118,18 +159,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Наименование параметра</label>
+                        <label class="control-label">Наименование параметра</label>
                         <input type="text" name="attribute-name" class="form-control"
                                placeholder="Наименование параметра">
                     </div>
                     <div class="form-group">
-                        <label>Единица измерения</label>
+                        <label class="control-label">Единица измерения</label>
                         <input type="text" name="unit" class="form-control" placeholder="Единица измерения">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" id="btn-close" data-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary" id="btn-save">Сохранить изменения</button>
+                    <button type="button" class="btn btn-primary" id="btn-save" data-dismiss="modal">Сохранить
+                        изменения
+                    </button>
                 </div>
             </div>
         </div>

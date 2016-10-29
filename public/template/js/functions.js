@@ -151,20 +151,22 @@ $(document).ready(function () {
         }
     });
 
-    $('.delete-product').click(function () {
-        var tr = $(this).parent().parent();
+    $(document).on('click', '.delete-product', function () {
         var product_id = $(this).attr('data-id');
-        $.ajax({
-            url: '/admin/product/' + product_id,
-            type: 'DELETE',
-            data: {product_id: product_id},
-            success: function (data) {
-                tr.remove();
-            },
-            error: function (msg) {
-                console.log(msg);
-            }
-        });
+        var tr = $('tr[data-id="' + product_id + '"]');
+        if (confirm('Вы действительно хотите удалить данный продукт?')) {
+            $.ajax({
+                url: '/admin/product/' + product_id,
+                type: 'DELETE',
+                data: {product_id: product_id},
+                success: function (data) {
+                    tr.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
     });
 
     $('.delete-category').click(function () {
@@ -222,7 +224,6 @@ $(document).ready(function () {
             success: function (param) {
                 $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
                 $('.table-attributes').append('<tr><td>' + param.name + '</td> <td data-id="' + param.id + '" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td></tr>');
-                $('#modal-add-attribute').modal('close');
             },
             error: function (msg) {
                 console.log(msg);
