@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $.ajaxSetup({
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+    });
+
     $('.buy-btn').click(function () {
         var productId = parseInt($(this).attr('data-id'));
         var name = $(this).attr('data-name');
@@ -114,7 +118,6 @@ $(document).ready(function () {
         $.ajax({
             url: '/admin/product_attributes',
             type: 'GET',
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
                 button.after(data);
             },
@@ -138,7 +141,6 @@ $(document).ready(function () {
                 url: '/admin/product/' + productId + '/pav',
                 type: 'DELETE',
                 data: {attributeId: attributeId},
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 success: function (data) {
                     block.remove();
                 },
@@ -156,7 +158,6 @@ $(document).ready(function () {
             url: '/admin/product/' + product_id,
             type: 'DELETE',
             data: {product_id: product_id},
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
                 tr.remove();
             },
@@ -173,7 +174,6 @@ $(document).ready(function () {
             url: '/admin/category/' + category_id,
             type: 'DELETE',
             data: {category_id: category_id},
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function () {
                 tr.remove();
             },
@@ -190,7 +190,6 @@ $(document).ready(function () {
             url: '/admin/order/' + order_id,
             type: 'DELETE',
             data: {order_id: order_id},
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function () {
                 tr.remove();
             },
@@ -220,7 +219,6 @@ $(document).ready(function () {
             url: '/admin/product_attributes',
             type: 'POST',
             data: {name: name, unit: unit},
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (param) {
                 $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
                 $('.table-attributes').append('<tr><td>' + param.name + '</td> <td data-id="' + param.id + '" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td></tr>');
@@ -238,7 +236,6 @@ $(document).ready(function () {
         $.ajax({
             url: '/admin/product_attributes/' + id,
             type: 'DELETE',
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
                 tr.remove();
                 $('option[value="' + data + '"]').remove();
@@ -269,7 +266,6 @@ $(document).ready(function () {
             url: '/admin/product/' + product_id + '/image',
             type: 'DELETE',
             data: {src: src},
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
                 div.remove();
             },
@@ -375,6 +371,28 @@ $(document).ready(function () {
         $('.count-products').html(count);
     }
 
+    function uploadProducts() {
+        var progress = false;
+        var startFrom = 0;
+        var table = $('#table-products-ajax');
+        $('button#btn-more').click(function () {
+            $.ajax({
+                url: '/admin/product/upload/' + startFrom,
+                type: 'GET',
+                beforeSend: function () {
+                    progress = true;
+                },
+                success: function (data) {
+                    table.append(data);
+                    progress = false;
+                    startFrom += 5;
+                }
+            });
+        });
+        $('button#btn-more').trigger('click');
+    }
+
+    uploadProducts();
     insert_total_cost();
     count_products();
 });

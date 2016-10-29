@@ -28,11 +28,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->product->getUploadProducts();
-        $data = [
-            'products' => $products
-        ];
-        return view('product.index', $data);
+        return view('product.index');
     }
 
     /**
@@ -248,9 +244,8 @@ class ProductController extends Controller
         return 'OK';
     }
 
-    public function upload(Request $request)
+    public function upload($startFrom)
     {
-        $startFrom = $request->startFrom;
         $products = $this->product->getUploadProducts($startFrom);
         $data = [
             'products' => $products

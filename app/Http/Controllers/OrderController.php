@@ -7,6 +7,7 @@ use App\City;
 use App\Country;
 use App\Order;
 use App\OrderStatus;
+use App\Product;
 use App\Region;
 use Illuminate\Http\Request;
 
@@ -67,9 +68,12 @@ class OrderController extends Controller
         $order->payment_id = $request->payment;
         Auth::user()->orders()->save($order);
         $totalCost = 0;
-        foreach ($orderProducts as $product) {
-            $order->products()->attach($product->productId, ['amount' => $product->amount]);
-            $totalCost += $product->price * $product->amount;
+        foreach ($orderProducts as $orderProduct) {
+            $order->products()->attach($orderProduct->productId, ['amount' => $orderProduct->amount]);
+            $totalCost += $orderProduct->price * $orderProduct->amount;
+            $product = Product::find($orderProduct->productId);
+            $product->amount -= $orderProduct->amount;
+            $product->save();
         }
         $totalCost += Delivery::find($request->delivery)->price;
         $data = [
