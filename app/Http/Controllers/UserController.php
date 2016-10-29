@@ -85,12 +85,17 @@ class UserController extends Controller
             'name' => 'required|min:2',
             'surname' => 'required',
             'phone' => 'required|integer',
+            'address' => 'required|max:150',
+            'postcode' => 'required|integer',
         ]);
 
         $user = User::find($id);
         $user->name = $request->name;
         $user->surname = $request->surname;
         $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->postcode = $request->postcode;
+        $user->city_id = $request->city;
         $user->save();
 
         return redirect()->route('user.index');
@@ -105,5 +110,27 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function uploadRegions($id)
+    {
+        $regions = Country::find($id)->regions;
+
+        $data = [
+            'regions' => $regions
+        ];
+
+        return view('upload.regions', $data);
+    }
+
+    public function uploadCities($id)
+    {
+        $cities = Region::find($id)->cities;
+
+        $data = [
+            'cities' => $cities
+        ];
+
+        return view('upload.cities', $data);
     }
 }

@@ -13,8 +13,8 @@ class City extends Model
         return $this->belongsTo('App\Region');
     }
 
-    public function checkpoints()
+    public function users()
     {
-        return $this->belongsToMany('App\Checkpoint');
+        return $this->belongsToMany('App\User');
     }
 }

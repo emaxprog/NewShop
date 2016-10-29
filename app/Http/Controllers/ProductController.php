@@ -20,10 +20,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct(Product $product,Category $category)
+    public function __construct(Product $product, Category $category)
     {
-        $this->product=$product;
-        $this->category=$category;
+        $this->product = $product;
+        $this->category = $category;
     }
 
     public function index()
@@ -256,5 +256,10 @@ class ProductController extends Controller
             'products' => $products
         ];
         return view('product.upload', $data);
+    }
+
+    public function uploadAmount($id)
+    {
+        return Product::find($id)->amount;
     }
 }

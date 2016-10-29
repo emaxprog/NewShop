@@ -21,7 +21,6 @@ $(document).ready(function () {
             var flag = false;
             for (var i = 0; i < order.length; i++) {
                 if (order[i].productId == productId) {
-                    order[i].amount++;
                     flag = true;
                     break;
                 }
@@ -62,25 +61,47 @@ $(document).ready(function () {
     });
 
     $('.input-total-price').bind('change keyup', function () {
-        var amount = $(this).val();
-        if (!amount.match(/[0-9]+/) || amount <= 0) {
-            $(this).val('1');
-            amount = 1;
-        }
+        var inputTotalPrice = $(this);
         var productId = $(this).attr('data-id');
-        var price = $(this).attr('data-price');
-        var tdTotalPrice = $('tr[data-id="' + productId + '"]').children('.total-price');
-        tdTotalPrice.html(amount * price + " руб.");
-        set_cookie_basket(productId, amount);
-        insert_total_cost();
-    });
 
+        $.ajax({
+            url: '/product/' + productId + '/amount',
+            type: 'GET',
+            success: function (data) {
+                var uploadAmount = parseInt(data);
+                if (uploadAmount <= inputTotalPrice.val()) {
+                    inputTotalPrice.val(parseInt(uploadAmount));
+                    inputTotalPrice.tooltip({
+                        title: "Максимально доступное количество товара! К сожалению данный товар доступен в текущем количестве"
+                    }).tooltip('show');
+                }
+                else {
+                    inputTotalPrice.tooltip('destroy');
+                }
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        }).always(function () {
+            var amount = inputTotalPrice.val();
+            if (amount.match(/\D/) || amount <= 0) {
+                inputTotalPrice.val('1');
+                amount = 1;
+            }
+            var price = inputTotalPrice.attr('data-price');
+            var tdTotalPrice = $('tr[data-id="' + productId + '"]').children('.total-price');
+            tdTotalPrice.html(amount * price + " руб.");
+            set_cookie_basket(productId, amount);
+            insert_total_cost();
+        });
+    });
 
     $('.btn-plus').click(function () {
         var productId = $(this).attr('data-id');
         var inputTotalPrice = $('input[data-id="' + productId + '"]');
         inputTotalPrice.val(parseInt(inputTotalPrice.val()) + 1).change();
     });
+
 
     $('.btn-minus').click(function () {
         var productId = $(this).attr('data-id');
@@ -291,7 +312,7 @@ $(document).ready(function () {
         var countryId = $(this).val();
         var selectRegion = $('select#region');
         $.ajax({
-            url: '/order/regions/' + countryId,
+            url: '/user/regions/' + countryId,
             type: 'GET',
             success: function (data) {
                 selectRegion.html(data);
@@ -308,26 +329,10 @@ $(document).ready(function () {
         var regionId = $(this).val();
         var selectCity = $('select#city');
         $.ajax({
-            url: '/order/cities/' + regionId,
+            url: '/user/cities/' + regionId,
             type: 'GET',
             success: function (data) {
                 selectCity.html(data);
-            },
-            error: function (msg) {
-                console.log(msg);
-            }
-        });
-    });
-
-    /*Подгрузка точек выдачи*/
-    $('select#city').change(function () {
-        var cityId = $(this).val();
-        var selectCheckpoint = $('select#checkpoint');
-        $.ajax({
-            url: '/order/checkpoints/' + cityId,
-            type: 'GET',
-            success: function (data) {
-                selectCheckpoint.html(data);
             },
             error: function (msg) {
                 console.log(msg);

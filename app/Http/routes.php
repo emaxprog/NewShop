@@ -13,6 +13,7 @@
 
 Route::auth();
 Route::resource('product', 'ProductController', ['only' => 'show']);
+Route::get('product/{id}/amount', 'ProductController@uploadAmount');
 Route::resource('user', 'UserController');
 Route::post('feedback', 'HomeController@feedback');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
@@ -33,9 +34,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 Route::resource('order', 'OrderController', ['only' => ['create', 'store']]);
 
-Route::get('order/regions/{id}', 'OrderController@getRegions');
-Route::get('order/cities/{id}', 'OrderController@getCities');
-Route::get('order/checkpoints/{id}', 'OrderController@getCheckpoints');
+Route::get('user/regions/{id}', 'OrderController@uploadRegions');
+Route::get('user/cities/{id}', 'OrderController@uploadCities');
 
 Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
 Route::group(['prefix' => 'catalog'], function () {

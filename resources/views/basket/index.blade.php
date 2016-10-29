@@ -23,18 +23,19 @@
                             <td>{{$product->price}}</td>
                             <td>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" value="{{$product->amount}}"
-                                               class="input-total-price form-control"
-                                               data-id="{{$product->productId}}" data-price="{{$product->price}}">
-                                    </div>
-                                    <button type="button" class="btn btn-plus btn-default"
-                                            data-id="{{$product->productId}}"><i
-                                                class="fa fa-plus"></i></button>
-                                    <button type="button" class="btn btn-minus btn-default"
+                                    <button type="button" class="btn btn-minus btn-default col-md-2"
                                             data-id="{{$product->productId}}"><i
                                                 class="fa fa-minus "></i>
                                     </button>
+                                    <div class="col-md-4">
+                                        <input type="text" value="{{$product->amount}}"
+                                               class="input-total-price form-control"
+                                               data-id="{{$product->productId}}" data-price="{{$product->price}}"
+                                               data-toggle="tooltip" title="">
+                                    </div>
+                                    <button type="button" class="btn btn-plus btn-default col-md-2"
+                                            data-id="{{$product->productId}}"><i
+                                                class="fa fa-plus"></i></button>
                                 </div>
                             </td>
                             <td class="total-price">{{$product->price*$product->amount}} руб.</td>

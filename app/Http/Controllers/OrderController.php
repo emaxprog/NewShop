@@ -46,17 +46,9 @@ class OrderController extends Controller
 
         $deliveries = Delivery::all();
         $payments = Payment::all();
-        $countries = Country::all();
-        $regions = Region::all();
-        $cities = City::all();
-        $checkpoints = Checkpoint::all();
         $data = [
             'deliveries' => $deliveries,
             'payments' => $payments,
-            'countries' => $countries,
-            'regions' => $regions,
-            'cities' => $cities,
-            'checkpoints' => $checkpoints
         ];
         return view('order.create', $data);
     }
@@ -69,19 +61,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'street' => 'required',
-            'num_home' => 'required|integer',
-            'mail_index' => 'required|integer'
-        ]);
-
         $orderProducts = json_decode($_COOKIE['basket']);
-        $userId = Auth::user()->id;
         $order = new Order();
-        $order->user_id = $userId;
         $order->delivery_id = $request->delivery;
         $order->payment_id = $request->payment;
-        $order->save();
+        Auth::user()->orders()->save($order);
         $totalCost = 0;
         foreach ($orderProducts as $product) {
             $order->products()->attach($product->productId, ['amount' => $product->amount]);
@@ -161,38 +145,5 @@ class OrderController extends Controller
         Order::destroy($id);
 
         return 'OK';
-    }
-
-    public function getRegions($id)
-    {
-        $regions = Country::find($id)->regions;
-
-        $data = [
-            'regions' => $regions
-        ];
-
-        return view('upload.regions', $data);
-    }
-
-    public function getCities($id)
-    {
-        $cities = Region::find($id)->cities;
-
-        $data = [
-            'cities' => $cities
-        ];
-
-        return view('upload.cities', $data);
-    }
-
-    public function getCheckpoints($id)
-    {
-        $checkpoints = City::find($id)->checkpoints;
-
-        $data = [
-            'checkpoints' => $checkpoints
-        ];
-
-        return view('upload.checkpoints', $data);
     }
 }

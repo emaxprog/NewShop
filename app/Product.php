@@ -60,13 +60,13 @@ class Product extends Model
 
     public function getLatestProducts()
     {
-        $latestProducts = $this->latest('id')->preview()->published()->take(6)->get();
+        $latestProducts = $this->latest('id')->preview()->available()->published()->take(6)->get();
         return $latestProducts;
     }
 
     public function getRecommendedProducts()
     {
-        $recommendedProducts = $this->latest('id')->preview()->recommended()->published()->take(3)->get();
+        $recommendedProducts = $this->latest('id')->preview()->recommended()->available()->published()->take(3)->get();
         return $recommendedProducts;
     }
 
@@ -94,7 +94,7 @@ class Product extends Model
 
     public function paginateProductsOfCategory($id, $num)
     {
-        $productsOfCategory = $this->preview()->category($id)->paginate($num);
+        $productsOfCategory = $this->preview()->category($id)->available()->paginate($num);
         return $productsOfCategory;
     }
 
@@ -141,6 +141,11 @@ class Product extends Model
         if (empty($arr))
             return [];
         return implode(';', $arr);
+    }
+
+    public function scopeAvailable($query)
+    {
+        $query->where('amount', '>=', 1);
     }
 
     public function scopeRangePrice($query, $minPrice, $maxPrice)
