@@ -21,8 +21,7 @@ class CatalogController extends Controller
         if ($request->has('manufacturers')) {
             $selectedManufacturersIds = $request->manufacturers;
         }
-        $selectedProducts = $productModel->getSelectedProducts($id, 3, $minPrice, $maxPrice, $selectedManufacturersIds);
-        $products = $selectedProducts;
+        $products = $productModel->getSelectedProducts($id, 6, $minPrice, $maxPrice, $selectedManufacturersIds);
         $data = [
             'id' => $id,
             'products' => $products,

@@ -65,15 +65,14 @@ class ProductController extends Controller
         ]);
 
         $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
-        $pathsToImages = [];
+        $images = [];
         foreach ($request->file('images') as $image) {
             if (empty($image))
                 continue;
             $imageName = $image->getClientOriginalName();
-            $pathsToImages[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
+            $images[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
             $image->move($root, $imageName);
         }
-        $images = implode(';', $pathsToImages);
         $product = new Product();
         $product->name = $request->name;
         $product->category_id = $request->category_id;
@@ -110,7 +109,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $images = Product::getArrayImages($product->images);
+        $images = $product->images;
         $params = $this->product->getParams($id);
         $data = [
             'product' => $product,
@@ -129,7 +128,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        $product->images != null ? $images = Product::getArrayImages($product->images) : $images = [];
+        $images = $product->images != null ? $product->images : [];
         $manufacturers = Manufacturer::all();
         $subcategories = $this->category->getSubcategoriesAll();
         $params = Product::getParams($id);
@@ -162,7 +161,7 @@ class ProductController extends Controller
         ]);
 
         $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
-        $pathToImages = [];
+        $images = [];
 
         $product = Product::find($id);
         $product->name = $request->name;
@@ -180,16 +179,14 @@ class ProductController extends Controller
                 if (empty($image))
                     continue;
                 $imageName = $image->getClientOriginalName();
-                $pathToImages[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
+                $images[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
                 $image->move($root, $imageName);
             }
-            $images = $pathToImages;
             if ($product->images != null) {
-                $product->images = Product::getArrayImages($product->images);
                 $product->images = array_merge($product->images, $images);
-            } else
+            } else {
                 $product->images = $images;
-            $product->images = Product::toStrImages($product->images);
+            }
         }
         $product->save();
         $attrValue = isset($request->parameters) ? array_combine($request->parameters, $request->values) : null;
@@ -220,7 +217,6 @@ class ProductController extends Controller
             return "Продукт успешно удален!";
         }
         $root = $_SERVER['DOCUMENT_ROOT'];
-        $images = Product::getArrayImages($images);
         Product::destroy($id);
         foreach ($images as $image) {
             unlink($root . $image);
@@ -233,7 +229,7 @@ class ProductController extends Controller
         $image_path = $request->src;
         $root = $_SERVER['DOCUMENT_ROOT'];
         $product = Product::find($id);
-        $images = explode(';', $product->images);
+        $images = $product->images;
         if (($key = array_search($image_path, $images)) >= 0) {
             unset($images[$key]);
             if (file_exists($root . $image_path))
@@ -241,8 +237,7 @@ class ProductController extends Controller
         }
         $product->images = null;
         if (!empty($images)) {
-            $newImages = implode(';', $images);
-            $product->images = $newImages;
+            $product->images = $images;
         }
         $product->save();
         return 'OK';

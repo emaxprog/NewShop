@@ -13,12 +13,11 @@ class CreateBasketsTable extends Migration
     public function up()
     {
         Schema::create('baskets', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->mediumInteger('amount')->unsigned();
 
-            $table->primary(['basket_id', 'product_id']);
+            $table->primary(['user_id', 'product_id']);
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')

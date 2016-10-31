@@ -82,7 +82,7 @@
                     @endif
                     <li>
                         <a href="{{route('basket')}}"><i class="fa fa-shopping-cart fa-lg"></i> Корзина <span
-                                    class="count-products badge"></span></a>
+                                    class="baskets-counter badge"></span></a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->

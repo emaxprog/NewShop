@@ -24,12 +24,16 @@ class Product extends Model
 
     public $timestamps = false;
 
+    protected $casts = [
+        'images' => 'array'
+    ];
+
     const PATH_TO_IMAGES_OF_PRODUCTS = '/template/images/content/products/';
     const PATH_TO_NO_IMAGE = '/template/images/site/noImage.jpg';
 
     public function orders()
     {
-        return $this->belongsToMany('App\Order')->withPivot('amount')->withTimestamps();
+        return $this->belongsToMany('App\Order')->withPivot('amount');
     }
 
     public function attribute_values()
@@ -60,31 +64,23 @@ class Product extends Model
 
     public function getLatestProducts()
     {
-        $latestProducts = $this->latest('id')->preview()->available()->published()->take(6)->get();
-        return $latestProducts;
+        return $this->latest('id')->preview()->available()->published()->take(6)->get();
+
     }
 
     public function getRecommendedProducts()
     {
-        $recommendedProducts = $this->latest('id')->preview()->recommended()->available()->published()->take(3)->get();
-        return $recommendedProducts;
+        return $this->latest('id')->preview()->recommended()->available()->published()->take(3)->get();
     }
 
     public static function getPreview($images)
     {
-        if ($images != null) {
-            $images = explode(';', $images);
-            return $images[0];
-        }
-        return self::PATH_TO_NO_IMAGE;
+        return $images != null ? $images[0] : self::PATH_TO_NO_IMAGE;
     }
 
     public static function getImage($imagePath)
     {
-        if ($imagePath != null) {
-            return $imagePath;
-        }
-        return self::PATH_TO_NO_IMAGE;
+        return $imagePath != null ? $imagePath : self::PATH_TO_NO_IMAGE;
     }
 
     public function paginateProducts($num)
@@ -94,20 +90,12 @@ class Product extends Model
 
     public function paginateProductsOfCategory($id, $num)
     {
-        $productsOfCategory = $this->preview()->category($id)->available()->paginate($num);
-        return $productsOfCategory;
+        return $this->preview()->category($id)->available()->paginate($num);
     }
 
     public function getUploadProducts($startFrom = 0)
     {
         return $this->latest('id')->skip($startFrom)->take(5)->get();
-    }
-
-    public static function getAvailabilityText($id)
-    {
-        if ($id)
-            return 'Да';
-        return 'Нет';
     }
 
     public static function getParams($id)
@@ -127,20 +115,6 @@ class Product extends Model
             $params[] = $row;
         }
         return $params;
-    }
-
-    public static function getArrayImages($str)
-    {
-        if (!$str)
-            return [];
-        return explode(';', $str);
-    }
-
-    public static function toStrImages($arr)
-    {
-        if (empty($arr))
-            return [];
-        return implode(';', $arr);
     }
 
     public function scopeAvailable($query)

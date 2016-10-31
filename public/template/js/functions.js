@@ -113,6 +113,66 @@ $(document).ready(function () {
         inputTotalPrice.val(parseInt(inputTotalPrice.val()) - 1).change();
     });
 
+
+    /*Управление категориями*/
+
+    $('.delete-category').click(function () {
+        var category_id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + category_id + '"]');
+        if (confirm('Вы действительно хотите удалить данную категорию?')) {
+            $.ajax({
+                url: '/admin/category/' + category_id,
+                type: 'DELETE',
+                success: function () {
+                    tr.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
+    });
+
+    /*Управление заказами*/
+
+    $('.delete-order').click(function () {
+        var order_id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + order_id + '"]');
+        if (confirm('Вы действительно хотите удалить данный заказ?')) {
+            $.ajax({
+                url: '/admin/order/' + order_id,
+                type: 'DELETE',
+                success: function () {
+                    tr.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
+    });
+
+    /*Управление продуктами*/
+
+
+    $(document).on('click', '.delete-product', function () {
+        var product_id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + product_id + '"]');
+        if (confirm('Вы действительно хотите удалить данный продукт?')) {
+            $.ajax({
+                url: '/admin/product/' + product_id,
+                type: 'DELETE',
+                data: {product_id: product_id},
+                success: function () {
+                    tr.remove();
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
+    });
+
     $('#btn-add-parameters').click(function () {
         var button = $(this);
         $.ajax({
@@ -143,58 +203,6 @@ $(document).ready(function () {
                 data: {attributeId: attributeId},
                 success: function (data) {
                     block.remove();
-                },
-                error: function (msg) {
-                    console.log(msg);
-                }
-            });
-        }
-    });
-
-    $(document).on('click', '.delete-product', function () {
-        var product_id = $(this).attr('data-id');
-        var tr = $('tr[data-id="' + product_id + '"]');
-        if (confirm('Вы действительно хотите удалить данный продукт?')) {
-            $.ajax({
-                url: '/admin/product/' + product_id,
-                type: 'DELETE',
-                data: {product_id: product_id},
-                success: function () {
-                    tr.remove();
-                },
-                error: function (msg) {
-                    console.log(msg);
-                }
-            });
-        }
-    });
-
-    $('.delete-category').click(function () {
-        var category_id = $(this).attr('data-id');
-        var tr = $('tr[data-id="' + category_id + '"]');
-        if (confirm('Вы действительно хотите удалить данную категорию?')) {
-            $.ajax({
-                url: '/admin/category/' + category_id,
-                type: 'DELETE',
-                success: function () {
-                    tr.remove();
-                },
-                error: function (msg) {
-                    console.log(msg);
-                }
-            });
-        }
-    });
-
-    $('.delete-order').click(function () {
-        var order_id = $(this).attr('data-id');
-        var tr = $('tr[data-id="' + order_id + '"]');
-        if (confirm('Вы действительно хотите удалить данный заказ?')) {
-            $.ajax({
-                url: '/admin/order/' + order_id,
-                type: 'DELETE',
-                success: function () {
-                    tr.remove();
                 },
                 error: function (msg) {
                     console.log(msg);
@@ -277,6 +285,9 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    /*Управление афишей*/
 
     $('#add-image-afisha').click(function () {
         var imgs = $('img');
@@ -371,7 +382,7 @@ $(document).ready(function () {
         for (var i = 0; i < order.length; i++) {
             count += parseInt(order[i].amount);
         }
-        $('.count-products').html(count);
+        $('.baskets-counter').html(count);
     }
 
     function uploadProducts() {

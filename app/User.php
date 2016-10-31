@@ -26,6 +26,11 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
+    protected $casts = [
+        'is_admin' => 'boolean'
+    ];
+
+
     public function orders()
     {
         return $this->hasMany('App\Order');
