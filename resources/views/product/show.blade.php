@@ -17,8 +17,8 @@
                     <button type="button" onclick="return false" data-id="{{$product->id}}"
                             data-name="{{$product->name}}"
                             data-price="{{$product->price}}"
-                            class="buy-btn btn btn-primary"><i
-                                class="fa fa-cart-plus fa-2x"></i>Добавить в корзину
+                            class="buy-btn btn btn-primary">
+                        <i class="fa fa-cart-plus fa-2x"></i>Добавить в корзину
                     </button>
                 </div>
             </section>

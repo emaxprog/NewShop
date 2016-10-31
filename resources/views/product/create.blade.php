@@ -20,7 +20,15 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-2">Производитель</label>
-                    <div class="col-md-10">
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-default col-md-12" id="btn-manufacturer-minus"><i
+                                    class="fa fa-minus"></i></button>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-default col-md-12" id="btn-manufacturer-plus"><i
+                                    class="fa fa-plus"></i></button>
+                    </div>
+                    <div class="col-md-8">
                         <select name="manufacturer_id" class="form-control">
                             @foreach($manufacturers as $manufacturer)
                                 <option value="{{$manufacturer->id}}">
@@ -148,8 +156,79 @@
                 </div>
             </form>
         </div>
-
     </div>
+    <div class="modal fade" role="dialog" aria-hidden="true" id="modal-add-manufacturer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Добавить производителя</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label">Название производителя</label>
+                        <input type="text" name="manufacturer-name" class="form-control"
+                               placeholder="Наименование параметра">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Страна производства</label>
+                        <select name="manufacturer-country" class="form-control">
+                            @foreach($countries as $country)
+                                <option value="{{$country->id}}">{!! $country->name !!}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btn-close-manufacturer" data-dismiss="modal">
+                        Закрыть
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btn-save-manufacturer" data-dismiss="modal">
+                        Сохранить
+                        изменения
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-hidden="true" id="modal-delete-manufacturer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Удалить производителя</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-manufacturers">
+                        <thead>
+                        <tr>
+                            <th>Производитель</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($manufacturers as $manufacturer)
+                            <tr data-id="{{$manufacturer->id}}">
+                                <td>{!! $manufacturer->name !!}</td>
+                                <td>
+                                    <button type="button" data-id="{{$manufacturer->id}}"
+                                            class="btn btn-danger delete-manufacturer"><i
+                                                class="fa fa-trash fa-lg"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-da-close" class="btn btn-default" data-dismiss="modal">Закрыть
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" role="dialog" aria-hidden="true" id="modal-add-attribute">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -169,8 +248,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="btn-close" data-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary" id="btn-save" data-dismiss="modal">Сохранить
+                    <button type="button" class="btn btn-default" id="btn-close-attribute" data-dismiss="modal">
+                        Закрыть
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btn-save-attribute" data-dismiss="modal">
+                        Сохранить
                         изменения
                     </button>
                 </div>
@@ -195,10 +277,11 @@
                         </thead>
                         <tbody>
                         @foreach($productAttributes as $attribute)
-                            <tr>
+                            <tr data-id="{{$attribute->id}}">
                                 <td>{!! $attribute->name !!}</td>
-                                <td data-id="{{$attribute->id}}" class="delete-attribute">
-                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash fa-lg"></i>
+                                <td>
+                                    <button type="button" class="btn btn-danger delete-attribute"
+                                            data-id="{{$attribute->id}}"><i class="fa fa-trash fa-lg"></i>
                                     </button>
                                 </td>
                             </tr>

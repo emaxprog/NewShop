@@ -173,6 +173,8 @@ $(document).ready(function () {
         }
     });
 
+    /*Управление характеристиками товаров*/
+
     $('#btn-add-parameters').click(function () {
         var button = $(this);
         $.ajax({
@@ -224,7 +226,7 @@ $(document).ready(function () {
         $('#modal-delete-attribute').modal('close');
     });
 
-    $(document).on('click', '#btn-save', function () {
+    $(document).on('click', '#btn-save-attribute', function () {
         var name = $('input[name="attribute-name"]').val();
         var unit = $('input[name="unit"]').val();
         $.ajax({
@@ -233,7 +235,7 @@ $(document).ready(function () {
             data: {name: name, unit: unit},
             success: function (param) {
                 $('select[name="parameters[]"]').append('<option value="' + param.id + '">' + param.name + '(' + param.unit + ')</option>');
-                $('.table-attributes').append('<tr><td>' + param.name + '</td> <td data-id="' + param.id + '" class="delete-attribute"><i class="fa fa-trash fa-lg"></i></td></tr>');
+                $('.table-attributes').append('<tr data-id="' + param.id + '"><td>' + param.name + '</td> <td><button type="button"  data-id="' + param.id + '" class="btn btn-danger delete-attribute"><i class="fa fa-trash fa-lg"></i></button></td></tr>');
             },
             error: function (msg) {
                 console.log(msg);
@@ -242,19 +244,63 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.delete-attribute', function () {
-        var tr = $(this).parent();
         var id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + id + '"]');
         $.ajax({
             url: '/admin/product_attributes/' + id,
             type: 'DELETE',
-            success: function (data) {
+            success: function () {
                 tr.remove();
-                $('option[value="' + data + '"]').remove();
+                $('select[name="parameters[]"] option[value="' + id + '"]').remove();
             },
             error: function (msg) {
                 console.log(msg);
             }
         });
+    });
+
+    /*Управление производителями*/
+
+    $(document).on('click', '#btn-save-manufacturer', function () {
+        var name = $('input[name="manufacturer-name"]').val();
+        var country_id = $('select[name="manufacturer-country"]').val();
+        $.ajax({
+            url: '/admin/product/manufacturer',
+            type: 'POST',
+            data: {name: name, country_id: country_id},
+            success: function (param) {
+                $('select[name="manufacturer_id"]').append('<option value="' + param.id + '">' + param.name + '</option>');
+                $('.table-manufacturers').append('<tr data-id="' + param.id + '"><td>' + param.name + '</td> <td><button type="button"  data-id="' + param.id + '" class="btn btn-danger delete-manufacturer"><i class="fa fa-trash fa-lg"></i></button></td></tr>');
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
+
+    $(document).on('click', '.delete-manufacturer', function () {
+        var id = $(this).attr('data-id');
+        var tr = $('tr[data-id="' + id + '"]');
+        $.ajax({
+            url: '/admin/product/manufacturer/' + id,
+            type: 'DELETE',
+            success: function () {
+                tr.remove();
+                $('select[name="manufacturer_id"] option[value="' + id + '"]').remove();
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
+    $('#btn-manufacturer-plus').click(function () {
+        $('#modal-add-manufacturer').modal();
+    });
+
+    $('#btn-manufacturer-minus').click(function () {
+        $('#modal-delete-manufacturer').modal();
     });
 
 

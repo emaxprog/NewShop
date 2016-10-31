@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Manufacturer extends Model
 {
+    protected $fillable = ['name', 'country_id'];
+
     public $timestamps = false;
 
 

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\ProductAttribute;
+use App\Manufacturer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ProductAttributeController extends Controller
+class ManufacturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,7 @@ class ProductAttributeController extends Controller
      */
     public function index()
     {
-        $productAttributes = ProductAttribute::all();
-        $data = [
-            'productAttributes' => $productAttributes
-        ];
-        return view('productAttribute.index', $data);
+        //
     }
 
     /**
@@ -41,11 +37,8 @@ class ProductAttributeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'attribute-name' => 'require|unique:product_attributes,name'
-        ]);
-        $param = ProductAttribute::create($request->all());
-        return $param;
+        $manufacturer = Manufacturer::create($request->all());
+        return $manufacturer;
     }
 
     /**
@@ -90,7 +83,7 @@ class ProductAttributeController extends Controller
      */
     public function destroy($id)
     {
-        ProductAttribute::destroy($id);
+        Manufacturer::destroy($id);
         return "OK";
     }
 }
