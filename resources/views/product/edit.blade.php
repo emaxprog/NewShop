@@ -22,14 +22,6 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-2">Производитель</label>
-                    <div class="col-md-1">
-                        <button type="button" class="btn btn-default col-md-12" id="btn-manufacturer-minus"><i
-                                    class="fa fa-minus"></i></button>
-                    </div>
-                    <div class="col-md-1">
-                        <button type="button" class="btn btn-default col-md-12" id="btn-manufacturer-plus"><i
-                                    class="fa fa-plus"></i></button>
-                    </div>
                     <div class="col-md-8">
                         <select name="manufacturer_id" class="form-control">
                             @foreach($manufacturers as $manufacturer)
@@ -39,6 +31,14 @@
                                 </option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-default col-md-12" id="btn-manufacturer-minus"><i
+                                    class="fa fa-minus"></i></button>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-default col-md-12" id="btn-manufacturer-plus"><i
+                                    class="fa fa-plus"></i></button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -183,9 +183,6 @@
                     @foreach($params as $param)
                         <div class="form-group">
                             <label class=" control-label col-md-2">Параметр</label>
-                            <button type="button" class="btn btn-default btn-add-parameter col-md-1" data-toggle="modal"
-                                    data-target="#modal-add-attribute"><i class="fa fa-plus"></i>
-                            </button>
                             <div class="col-md-3">
                                 <select name="parameters[]" class="form-control">
                                     @foreach($productAttributes as $attribute)
@@ -198,6 +195,9 @@
                             </div>
                             <button type="button" class="btn btn-default btn-remove-attribute col-md-1"><i
                                         class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-add-parameter col-md-1" data-toggle="modal"
+                                    data-target="#modal-add-attribute"><i class="fa fa-plus"></i>
                             </button>
                             <label class="control-label col-md-1">Значение параметра</label>
                             <div class="col-md-3">

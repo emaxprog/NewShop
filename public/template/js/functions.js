@@ -315,8 +315,8 @@ $(document).ready(function () {
     });
 
     $('.delete-image').click(function () {
-        var div = $(this).parent();
-        var img = $(this).prev();
+        var div = $(this).parent().parent().parent();
+        var img = $(this).parent().prev();
         var src = img.attr('src');
         var product_id = img.attr('data-id');
         $.ajax({
