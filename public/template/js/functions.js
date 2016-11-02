@@ -332,7 +332,27 @@ $(document).ready(function () {
         });
     });
 
+    /*Поиск товаров в Админке*/
 
+    $('button#btn-search-products').click(function () {
+        var val = $('input[name="search"]').val();
+        var table = $('#table-products-ajax');
+
+        $.ajax({
+            url: '/admin/product/search',
+            type: 'GET',
+            data: {val: val},
+            beforeSend: function () {
+                table.html('');
+            },
+            success: function (data) {
+                table.append(data);
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
     /*Управление афишей*/
 
     $('#add-image-afisha').click(function () {

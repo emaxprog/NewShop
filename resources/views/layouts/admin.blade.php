@@ -39,22 +39,23 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{route('admin.product.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
-                            товарами</a>
+                    <li><a href="{{route('admin.product.index')}}"><i class="fa fa-gamepad fa-lg"></i> Товары</a>
                     </li>
-                    <li><a href="{{route('admin.category.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
-                            категориями</a>
+                    <li><a href="{{route('admin.category.index')}}"><i class="fa fa-gamepad fa-lg"></i> Категории</a>
                     </li>
-                    <li><a href="{{route('admin.order.index')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
-                            заказами</a></li>
-                    <li><a href="{{route('admin.afisha.edit')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
-                            афишей</a></li>
-                    <li><a href="{{route('admin.header.edit')}}"><i class="fa fa-gamepad fa-lg"></i> Управление
-                            шапкой</a></li>
+                    <li><a href="{{route('admin.order.index')}}"><i class="fa fa-gamepad fa-lg"></i> Заказы</a></li>
+                    <li><a href="{{route('admin.afisha.edit')}}"><i class="fa fa-gamepad fa-lg"></i> Афиша</a></li>
+                    <li><a href="{{route('admin.header.edit')}}"><i class="fa fa-gamepad fa-lg"></i> Шапка</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{url('/logout')}}"><i class="fa fa-sign-out fa-lg"></i> На сайт</a></li>
                 </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" name="search" class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-default" id="btn-search-products">Поиск</button>
+                </form>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

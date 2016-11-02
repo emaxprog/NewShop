@@ -98,6 +98,11 @@ class Product extends Model
         return $this->latest('id')->skip($startFrom)->take(5)->get();
     }
 
+    public function getProductsSearch($val)
+    {
+        return $this->searchCode($val)->get();
+    }
+
     public static function getParams($id)
     {
         $db = DB::connection()->getPdo();
@@ -120,6 +125,11 @@ class Product extends Model
     public function scopeAvailable($query)
     {
         $query->where('amount', '>=', 1);
+    }
+
+    public function scopeSearchCode($query, $val)
+    {
+        $query->where('code', 'like', '%' . $val . '%');
     }
 
     public function scopeRangePrice($query, $minPrice, $maxPrice)

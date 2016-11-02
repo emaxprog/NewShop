@@ -256,4 +256,13 @@ class ProductController extends Controller
     {
         return Product::find($id)->amount;
     }
+
+    public function search(Request $request)
+    {
+        $products = $this->product->getProductsSearch($request->val);
+        $data = [
+            'products' => $products
+        ];
+        return view('product.upload', $data);
+    }
 }

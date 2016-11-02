@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::delete('product/{id}/image', 'ProductController@image_destroy');
     Route::get('product/upload/{startFrom}', 'ProductController@upload');
     Route::delete('product/manufacturer/{id}', 'ManufacturerController@destroy');
+    Route::get('product/search', 'ProductController@search');
     Route::post('product/manufacturer', 'ManufacturerController@store');
     Route::resource('product_attributes', 'ProductAttributeController');
     Route::resource('product', 'ProductController', ['except' => 'show']);
