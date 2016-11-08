@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $.ajaxSetup({
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+    });
+
     $('#feedback-btn').click(function () {
         $('.error').html('');
         var name = $('#name').val();
@@ -13,10 +17,10 @@ $(document).ready(function () {
             $('.error-name').html('<span>' + error + '</span>');
         }
 
-        if (!checkPhone(phone)) {
-            error = 'Некорректный телефон';
-            $('.error-phone').html('<span>' + error + '</span>');
-        }
+        // if (!checkPhone(phone)) {
+        //     error = 'Некорректный телефон';
+        //     $('.error-phone').html('<span>' + error + '</span>');
+        // }
 
         if (!checkEmail(email)) {
             error = 'Некорректный Email';
@@ -36,10 +40,13 @@ $(document).ready(function () {
                 type: 'POST',
                 url: '/feedback',
                 data: $('#feedback-form').serialize(),
-                dataType: 'html',
                 success: function (data) {
                     $('.popup-success').html('<span>' + data + '</span>');
                     $('.popup-success-wrapper').delay(2000).fadeOut(1000);
+                    $('#popup').modal('hide');
+                },
+                error: function (msg) {
+                    console.log(msg);
                 }
             });
         }

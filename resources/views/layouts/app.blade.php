@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Интернет-магазин</title>
     <link rel="icon" type="image/x-icon" href="{{$header->favicon}}">
     <link rel="stylesheet" type="text/css" href="/template/styles/font-awesome-4.6.3/css/font-awesome.min.css">
@@ -14,7 +15,7 @@
     {{--<script rel="script" type="text/javascript" src="/template/js/fixed_menu.min.js"></script>--}}
     {{--<script rel="script" type="text/javascript" src="/template/js/fixed_hover.min.js"></script>--}}
     <script rel="script" type="text/javascript" src="/template/js/menu-select.min.js"></script>
-    <script rel="script" type="text/javascript" src="/template/js/feedback.min.js"></script>
+    <script rel="script" type="text/javascript" src="/template/js/feedback.js"></script>
     <script rel="script" type="text/javascript" src="/template/js/functions.js"></script>
 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -176,7 +177,8 @@
                         <div class="text-danger error-message"></div>
                     </div>
                     <div class="form-group text-center">
-                        <button type="submit" name="submitbtn" class="btn btn-primary" id="feedback-btn">Отправить
+                        <button type="submit" name="submitbtn" class="btn btn-primary"
+                                id="feedback-btn">Отправить
                         </button>
                     </div>
                 </form>

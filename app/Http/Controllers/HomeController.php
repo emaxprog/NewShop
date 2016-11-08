@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Afisha;
 use App\Category;
+use App\Events\Event;
+use App\Events\OrderIsConfirmed;
 use App\Header;
+use App\Jobs\Feedback;
 use App\Product;
 use Illuminate\Http\Request;
+use  Queue;
 
 use App\Http\Requests;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -98,16 +103,13 @@ class HomeController extends Controller
 
     public function feedback(Request $request)
     {
-        $userEmail = $request->email;
-        $userName = $request->name;
-        $userPhone = $request->phone;
-        $userMessage = $request->message;
-        $adminEmail = 'alexandr@localhost';
-        $subject = 'Тема';
-        $message = "От кого:" . $userEmail . "\n\nТел:" . $userPhone . "\n\nСообщение:" . $userMessage;
-        $headers = "Content-type:text/plain; charset=utf-8";
-
-        mail($adminEmail, $subject, $message, $headers);
+        $data = [
+            'email' => $request->input('email'),
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'message' => $request->input('message'),
+        ];
+        Queue::push(new Feedback($data));
         return 'Сообщение отправлено!';
     }
 }

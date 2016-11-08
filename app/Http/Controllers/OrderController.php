@@ -81,6 +81,9 @@ class OrderController extends Controller
             'totalCost' => $totalCost
         ];
         setcookie('basket', '');
+        
+        event(new OrderIsConfirmed(Auth::user()));
+
         return view('order.store', $data);
     }
 
