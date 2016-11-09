@@ -15,6 +15,7 @@ use App\Http\Requests;
 use Auth;
 use App\Delivery;
 use App\Payment;
+use App\Events\OrderIsConfirmed;
 
 class OrderController extends Controller
 {
