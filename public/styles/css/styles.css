@@ -64,6 +64,10 @@ body {
     color: #303030; }
   .list-products .thumbnail .product-price {
     font-size: 20px; }
+.list-products .product-block .new {
+  position: absolute;
+  top: 5px;
+  right: 20px; }
 .list-products .product-block:hover {
   transform: scale(1.05);
   transition: transform 0.7s; }

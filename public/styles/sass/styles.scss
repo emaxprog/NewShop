@@ -89,6 +89,13 @@ body {
       font-size: 20px;
     }
   }
+  .product-block {
+    .new {
+      position: absolute;
+      top: 5px;
+      right: 20px;
+    }
+  }
   .product-block:hover {
     transform: scale(1.05);
     transition: transform 0.7s;
@@ -97,7 +104,7 @@ body {
 
 /*Страница продукта*/
 
-.info-product{
+.info-product {
   font-size: 16px;
   padding: 20px;
 }
