@@ -57,7 +57,7 @@
                         <a href="#">О компании</a>
                     </li>
                     <li>
-                        <a href="" onclick="return false" data-toggle="modal" data-target="#popup">Обратная связь</a>
+                        <a href="#" onclick="return false" data-toggle="modal" data-target="#popup">Обратная связь</a>
                     </li>
                     <li>
                         <a href="#">Гарантия</a>
@@ -106,14 +106,14 @@
                             <a href="{{route('home')}}">Главная</a>
                         </li>
                         <li>
-                            <a href="">О компании</a>
+                            <a href="#">О компании</a>
                         </li>
                         <li>
-                            <a href="" onclick="return false" data-toggle="modal" data-target="#popup">Обратная
+                            <a href="#" onclick="return false" data-toggle="modal" data-target="#popup">Обратная
                                 связь</a>
                         </li>
                         <li>
-                            <a href="">Гарантия</a>
+                            <a href="#">Гарантия</a>
                         </li>
 
                     </ul>

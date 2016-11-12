@@ -73,7 +73,7 @@
                             @if ($product->is_new)
                                 <img src="/template/images/site/new.png" class="new">
                             @endif
-                            <a href="/product/{{$product->id}}">
+                            <a href="{{route('product.show',['id'=>$product->id])}}">
                                 <img src="{{\App\Product::getPreview($product->images)}}" alt="Apple MacBook"
                                      title="Apple MacBook" id="img-{{$product->id}}" class="img-rounded img-responsive"
                                      height="150px">

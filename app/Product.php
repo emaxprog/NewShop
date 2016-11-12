@@ -49,8 +49,8 @@ class Product extends Model
     public function getSelectedProducts($id, $num, $minPrice, $maxPrice, $manufacturersIds)
     {
         if ($minPrice == null && $maxPrice == null) {
-            $minPrice = 10000;
-            $maxPrice = 300000;
+            $minPrice = 0;
+            $maxPrice = 9999999999;
         }
         if ($manufacturersIds == null)
             return $selectedProducts = $this->preview()->category($id)
