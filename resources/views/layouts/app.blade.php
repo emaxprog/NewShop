@@ -126,7 +126,7 @@
                          title="Способы оплаты">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 f-contacts">
                 <h2>Контакты</h2>
                 <ul class="list-unstyled">
                     <li><i class="fa fa-phone fa-lg"></i> {!! $header->phone1 !!}</li>
