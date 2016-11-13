@@ -1,8 +1,20 @@
 @import "templates";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 70px;
   @extend %background-img;
+  padding-bottom: 250px;
+}
+
+#footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 /*Навигационная панель*/
@@ -17,7 +29,7 @@ body {
       color: #FFFFFF;
     }
   }
-  .navbar-nav > li:focus{
+  .navbar-nav > li:focus {
     border: none;
 
   }

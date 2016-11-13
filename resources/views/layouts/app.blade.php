@@ -95,7 +95,7 @@
         @yield('content')
     </div>
 </div>
-<footer class="panel-footer">
+<footer class="panel-footer" id="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
