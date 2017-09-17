@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
 class CategoryController extends Controller
 {
     /**
@@ -55,17 +53,6 @@ class CategoryController extends Controller
         Category::create($request->all());
 
         return redirect()->route('admin.category.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

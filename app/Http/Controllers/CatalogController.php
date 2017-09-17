@@ -6,8 +6,6 @@ use App\Manufacturer;
 use App\Product;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
 class CatalogController extends Controller
 {
     public function index(Request $request, $id, Product $productModel)

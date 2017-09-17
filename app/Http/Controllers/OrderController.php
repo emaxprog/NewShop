@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Checkpoint;
-use App\City;
-use App\Country;
 use App\Order;
 use App\OrderStatus;
 use App\Product;
-use App\Region;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Auth;
 use App\Delivery;
 use App\Payment;
@@ -83,7 +77,7 @@ class OrderController extends Controller
         ];
         setcookie('basket', '');
         
-        event(new OrderIsConfirmed(Auth::user()));
+//        event(new OrderIsConfirmed(Auth::user()));
 
         return view('order.store', $data);
     }

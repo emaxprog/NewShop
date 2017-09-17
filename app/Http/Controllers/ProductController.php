@@ -8,9 +8,6 @@ use App\ProductAttributeValue;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Manufacturer;
-use PDO;
-use App\Http\Requests;
-use DB;
 
 class ProductController extends Controller
 {

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Afisha;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
 class AfishaController extends Controller
 {
     public function edit()

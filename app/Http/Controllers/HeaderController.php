@@ -5,13 +5,10 @@ namespace App\Http\Controllers;
 use App\Header;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
 class HeaderController extends Controller
 {
     public function edit()
     {
-        $phone1 = $phone2 = $address = $logotype = $favicon = null;
         $header = Header::find(1);
 
         $data = [
