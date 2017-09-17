@@ -18,19 +18,8 @@ class AfishaController extends Controller
 
     public function update(Request $request)
     {
-        $pathToDirImages = $_SERVER['DOCUMENT_ROOT'] . Afisha::PATH_TO_DIR_IMAGES;
         if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                if (empty($image))
-                    continue;
-                for ($i = 0; $i < 10; $i++) {
-                    $pathToImage = $pathToDirImages . $i . '.jpg';
-                    if (file_exists($pathToImage))
-                        continue;
-                    $image->move($pathToDirImages, $i . '.jpg');
-                    break;
-                }
-            }
+            Afisha::saveImages($request->file('images'));
         }
 
         return redirect()->route('admin.product.index');
@@ -38,11 +27,7 @@ class AfishaController extends Controller
 
     public function destroy(Request $request)
     {
-        $root = $_SERVER['DOCUMENT_ROOT'];
-        $src = $request->src;
-        $image = $root . $src;
-        if (file_exists($image))
-            unlink($image);
+        Afisha::deleteImage($request->src);
         return 'OK';
     }
 }

@@ -54,22 +54,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'code' => 'required|integer|unique:products',
-            'price' => 'required|integer',
-            'amount' => 'required|integer'
-        ]);
+        $this->validate($request, Product::$rules);
+        $images = Product::saveImages($request->file('images'));
 
-        $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
-        $images = [];
-        foreach ($request->file('images') as $image) {
-            if (empty($image))
-                continue;
-            $imageName = $image->getClientOriginalName();
-            $images[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
-            $image->move($root, $imageName);
-        }
         $product = new Product();
         $product->name = $request->name;
         $product->category_id = $request->category_id;
@@ -150,15 +137,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id, ProductAttributeValue $pavModel)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'code' => 'required|integer|unique:products,code,' . $id,
-            'price' => 'required|integer',
-            'amount' => 'required|integer'
-        ]);
-
-        $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
-        $images = [];
+        $this->validate($request, Product::$rules);
 
         $product = Product::find($id);
         $product->name = $request->name;
@@ -172,18 +151,7 @@ class ProductController extends Controller
         $product->visibility = $request->visibility;
         $product->amount = $request->amount;
         if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                if (empty($image))
-                    continue;
-                $imageName = $image->getClientOriginalName();
-                $images[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
-                $image->move($root, $imageName);
-            }
-            if ($product->images != null) {
-                $product->images = array_merge($product->images, $images);
-            } else {
-                $product->images = $images;
-            }
+            Product::saveImages($request->file('images'), $product);
         }
         $product->save();
         $attrValue = isset($request->parameters) ? array_combine($request->parameters, $request->values) : null;
@@ -223,20 +191,7 @@ class ProductController extends Controller
 
     public function image_destroy($id, Request $request)
     {
-        $image_path = $request->src;
-        $root = $_SERVER['DOCUMENT_ROOT'];
-        $product = Product::find($id);
-        $images = $product->images;
-        if (($key = array_search($image_path, $images)) >= 0) {
-            unset($images[$key]);
-            if (file_exists($root . $image_path))
-                unlink($root . $image_path);
-        }
-        $product->images = null;
-        if (!empty($images)) {
-            $product->images = $images;
-        }
-        $product->save();
+        Product::deleteImages($request->src, $id);
         return 'OK';
     }
 

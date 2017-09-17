@@ -28,6 +28,13 @@ class Product extends Model
         'images' => 'array'
     ];
 
+    public static $rules = [
+        'name' => 'required',
+        'code' => 'required|integer',
+        'price' => 'required|integer',
+        'amount' => 'required|integer'
+    ];
+
     const PATH_TO_IMAGES_OF_PRODUCTS = '/template/images/content/products/';
     const PATH_TO_NO_IMAGE = '/template/images/site/noImage.jpg';
 
@@ -120,6 +127,44 @@ class Product extends Model
             $params[] = $row;
         }
         return $params;
+    }
+
+    public static function saveImages($imageFiles, &$product = null)
+    {
+        $root = $_SERVER['DOCUMENT_ROOT'] . Product::PATH_TO_IMAGES_OF_PRODUCTS;
+        $images = [];
+        foreach ($imageFiles as $image) {
+            if (empty($image))
+                continue;
+            $imageName = $image->getClientOriginalName();
+            $images[] = Product::PATH_TO_IMAGES_OF_PRODUCTS . $imageName;
+            $image->move($root, $imageName);
+        }
+        if ($product) {
+            if ($product->images != null) {
+                $product->images = array_merge($product->images, $images);
+            } else {
+                $product->images = $images;
+            }
+        }
+        return $images;
+    }
+
+    public static function deleteImages($imageSrc,$id)
+    {
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        $product = self::find($id);
+        $images = $product->images;
+        if (($key = array_search($imageSrc, $images)) >= 0) {
+            unset($images[$key]);
+            if (file_exists($root . $imageSrc))
+                unlink($root . $imageSrc);
+        }
+        $product->images = null;
+        if (!empty($images)) {
+            $product->images = $images;
+        }
+        $product->save();
     }
 
     public function scopeAvailable($query)
